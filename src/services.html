@@ -297,223 +297,229 @@
 
                          <!-- Repairs Tab -->
                          <div class="tab-pane fade" id="repairs-tab">
-                              <!-- Header with Report Repair Button -->
-                              <div class="row mb-3">
-                                   <div class="col-12 d-flex justify-content-end">
-                                        <button class="btn btn-success d-flex align-items-center gap-2 px-3 py-2 shadow-sm" data-bs-toggle="modal" data-bs-target="#reportRepairModal">
-                                             <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                  <path d="M6.42231 6.41634V2.91634H7.58814V6.41634H11.0856V7.58301H7.58814V11.083H6.42231V7.58301H2.9248V6.41634H6.42231Z" fill="white"/>
-                                             </svg>
-                                             Report Repair
-                                        </button>
-                                   </div>
-                              </div>
-
-                              <!-- Repair Cards Grid -->
-                              <div class="row g-3">
-                                   <!-- Repair Card 1 -->
-                                   <div class="col-lg-6">
-                                        <div class="card shadow-sm h-100 border">
-                                             <div class="card-body p-4">
-                                                  <!-- Header with badges and actions -->
-                                                  <div class="d-flex justify-content-between align-items-start mb-3">
-                                                       <div class="d-flex gap-2">
-                                                            <span class="badge badge-soft-success px-3 py-2 fs-12 fw-semibold">Low</span>
-                                                            <span class="badge badge-soft-warning px-3 py-2 fs-12 fw-semibold">Reported</span>
-                                                       </div>
-                                                       <div class="d-flex gap-2">
-                                                            <button class="btn btn-sm p-1 bg-transparent border-0">
-                                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                      <path d="M2.5 13.75V16.25H5M15.625 5.44922L14.1346 4.00703C13.8909 3.77099 13.559 3.63867 13.2133 3.63867C12.8676 3.63867 12.5357 3.77099 12.292 4.00703L4.375 11.6758V14.1676H6.86682L14.7838 6.49883M15.625 5.44922L17.0828 6.86563C17.3189 7.10936 17.4512 7.44125 17.4512 7.78695C17.4512 8.13265 17.3189 8.46454 17.0828 8.70828L9.16582 16.3771M15.625 5.44922L9.16582 16.3771" stroke="#2948FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                 </svg>
-                                                            </button>
-                                                            <button class="btn btn-sm p-1 bg-transparent border-0">
-                                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                      <path d="M12.8125 3.125H16.875V4.375H15.625V16.25C15.625 16.5815 15.4933 16.8995 15.2589 17.1339C15.0245 17.3683 14.7065 17.5 14.375 17.5H5.625C5.29348 17.5 4.97554 17.3683 4.74112 17.1339C4.5067 16.8995 4.375 16.5815 4.375 16.25V4.375H3.125V3.125H7.1875M6.875 8.125V13.125M10 8.125V13.125M13.125 8.125V13.125M8.125 3.125H11.875V4.375H8.125V3.125Z" stroke="#E96767" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                 </svg>
-                                                            </button>
-                                                       </div>
-                                                  </div>
-
-                                                  <!-- Title and Boat Info -->
-                                                  <h6 class="fw-semibold text-dark mb-2 fs-5">Anchor Windlass Noise</h6>
-                                                  <p class="text-muted mb-3 fs-6">Blue Horizon (BH-2024-006)</p>
-
-                                                  <!-- Description -->
-                                                  <p class="text-dark mb-3 fs-6" style="line-height: 1.6;">Unusual grinding noise from anchor windlass during operation</p>
-
-                                                  <!-- Details Grid -->
-                                                  <div class="row g-3 mb-3">
-                                                       <div class="col-6">
-                                                            <div class="text-muted small mb-1">Reported</div>
-                                                            <div class="fw-medium text-dark fs-6">03/02/2026</div>
-                                                       </div>
-                                                       <div class="col-6 text-end">
-                                                            <div class="text-muted small mb-1">Cost</div>
-                                                            <div class="fw-medium text-dark fs-6">$300.00 (est)</div>
-                                                       </div>
-                                                  </div>
-
-                                                  <!-- Parts Needed -->
-                                                  <div>
-                                                       <div class="text-muted small mb-2">Parts Needed:</div>
-                                                       <div class="fw-medium text-dark fs-6">Windlass gears, lubricant</div>
-                                                  </div>
+                              <div class="row mt-0">
+                                   <div class="col-12">
+                                        <div class="card shadow-sm">
+                                             <!-- Header with Report Repair Button -->
+                                             <div class="card-header bg-white border-bottom px-4 py-3 d-flex justify-content-end">
+                                                  <button class="btn btn-success btn-sm d-flex align-items-center gap-2 px-3 py-2" data-bs-toggle="modal" data-bs-target="#reportRepairModal">
+                                                       <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M6.42231 6.41634V2.91634H7.58814V6.41634H11.0856V7.58301H7.58814V11.083H6.42231V7.58301H2.9248V6.41634H6.42231Z" fill="white"/>
+                                                       </svg>
+                                                       Report Repair
+                                                  </button>
                                              </div>
-                                        </div>
-                                   </div>
 
-                                   <!-- Repair Card 2 -->
-                                   <div class="col-lg-6">
-                                        <div class="card shadow-sm h-100 border">
-                                             <div class="card-body p-4">
-                                                  <!-- Header with badges and actions -->
-                                                  <div class="d-flex justify-content-between align-items-start mb-3">
-                                                       <div class="d-flex gap-2">
-                                                            <span class="badge badge-soft-danger px-3 py-2 fs-12 fw-semibold">Medium</span>
-                                                            <span class="badge badge-soft-warning px-3 py-2 fs-12 fw-semibold">Reported</span>
+                                             <div class="card-body p-4 bg-light-subtle">
+                                                  <!-- Repair Cards Grid -->
+                                                  <div class="row g-3">
+                                                       <!-- Repair Card 1 -->
+                                                       <div class="col-lg-6">
+                                                            <div class="card shadow-sm h-100 border">
+                                                                 <div class="card-body p-4">
+                                                                      <!-- Header with badges and actions -->
+                                                                      <div class="d-flex justify-content-between align-items-start mb-3">
+                                                                           <div class="d-flex gap-2">
+                                                                                <span class="badge badge-soft-success px-3 py-2 fs-12 fw-semibold">Low</span>
+                                                                                <span class="badge badge-soft-warning px-3 py-2 fs-12 fw-semibold">Reported</span>
+                                                                           </div>
+                                                                           <div class="d-flex gap-2">
+                                                                                <button class="btn btn-sm p-1 bg-transparent border-0">
+                                                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                          <path d="M2.5 13.75V16.25H5M15.625 5.44922L14.1346 4.00703C13.8909 3.77099 13.559 3.63867 13.2133 3.63867C12.8676 3.63867 12.5357 3.77099 12.292 4.00703L4.375 11.6758V14.1676H6.86682L14.7838 6.49883M15.625 5.44922L17.0828 6.86563C17.3189 7.10936 17.4512 7.44125 17.4512 7.78695C17.4512 8.13265 17.3189 8.46454 17.0828 8.70828L9.16582 16.3771M15.625 5.44922L9.16582 16.3771" stroke="#2948FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                                     </svg>
+                                                                                </button>
+                                                                                <button class="btn btn-sm p-1 bg-transparent border-0">
+                                                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                          <path d="M12.8125 3.125H16.875V4.375H15.625V16.25C15.625 16.5815 15.4933 16.8995 15.2589 17.1339C15.0245 17.3683 14.7065 17.5 14.375 17.5H5.625C5.29348 17.5 4.97554 17.3683 4.74112 17.1339C4.5067 16.8995 4.375 16.5815 4.375 16.25V4.375H3.125V3.125H7.1875M6.875 8.125V13.125M10 8.125V13.125M13.125 8.125V13.125M8.125 3.125H11.875V4.375H8.125V3.125Z" stroke="#E96767" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                                     </svg>
+                                                                                </button>
+                                                                           </div>
+                                                                      </div>
+
+                                                                      <!-- Title and Boat Info -->
+                                                                      <h6 class="fw-semibold text-dark mb-2 fs-5">Anchor Windlass Noise</h6>
+                                                                      <p class="text-muted mb-3 fs-6">Blue Horizon (BH-2024-006)</p>
+
+                                                                      <!-- Description -->
+                                                                      <p class="text-dark mb-3 fs-6" style="line-height: 1.6;">Unusual grinding noise from anchor windlass during operation</p>
+
+                                                                      <!-- Details Grid -->
+                                                                      <div class="row g-3 mb-3">
+                                                                           <div class="col-6">
+                                                                                <div class="text-muted small mb-1">Reported</div>
+                                                                                <div class="fw-medium text-dark fs-6">03/02/2026</div>
+                                                                           </div>
+                                                                           <div class="col-6 text-end">
+                                                                                <div class="text-muted small mb-1">Cost</div>
+                                                                                <div class="fw-medium text-dark fs-6">$300.00 (est)</div>
+                                                                           </div>
+                                                                      </div>
+
+                                                                      <!-- Parts Needed -->
+                                                                      <div>
+                                                                           <div class="text-muted small mb-2">Parts Needed:</div>
+                                                                           <div class="fw-medium text-dark fs-6">Windlass gears, lubricant</div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
                                                        </div>
-                                                       <div class="d-flex gap-2">
-                                                            <button class="btn btn-sm p-1 bg-transparent border-0">
-                                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                      <path d="M2.5 13.75V16.25H5M15.625 5.44922L14.1346 4.00703C13.8909 3.77099 13.559 3.63867 13.2133 3.63867C12.8676 3.63867 12.5357 3.77099 12.292 4.00703L4.375 11.6758V14.1676H6.86682L14.7838 6.49883M15.625 5.44922L17.0828 6.86563C17.3189 7.10936 17.4512 7.44125 17.4512 7.78695C17.4512 8.13265 17.3189 8.46454 17.0828 8.70828L9.16582 16.3771M15.625 5.44922L9.16582 16.3771" stroke="#2948FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                 </svg>
-                                                            </button>
-                                                            <button class="btn btn-sm p-1 bg-transparent border-0">
-                                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                      <path d="M12.8125 3.125H16.875V4.375H15.625V16.25C15.625 16.5815 15.4933 16.8995 15.2589 17.1339C15.0245 17.3683 14.7065 17.5 14.375 17.5H5.625C5.29348 17.5 4.97554 17.3683 4.74112 17.1339C4.5067 16.8995 4.375 16.5815 4.375 16.25V4.375H3.125V3.125H7.1875M6.875 8.125V13.125M10 8.125V13.125M13.125 8.125V13.125M8.125 3.125H11.875V4.375H8.125V3.125Z" stroke="#E96767" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                 </svg>
-                                                            </button>
+
+                                                       <!-- Repair Card 2 -->
+                                                       <div class="col-lg-6">
+                                                            <div class="card shadow-sm h-100 border">
+                                                                 <div class="card-body p-4">
+                                                                      <!-- Header with badges and actions -->
+                                                                      <div class="d-flex justify-content-between align-items-start mb-3">
+                                                                           <div class="d-flex gap-2">
+                                                                                <span class="badge badge-soft-danger px-3 py-2 fs-12 fw-semibold">Medium</span>
+                                                                                <span class="badge badge-soft-warning px-3 py-2 fs-12 fw-semibold">Reported</span>
+                                                                           </div>
+                                                                           <div class="d-flex gap-2">
+                                                                                <button class="btn btn-sm p-1 bg-transparent border-0">
+                                                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                          <path d="M2.5 13.75V16.25H5M15.625 5.44922L14.1346 4.00703C13.8909 3.77099 13.559 3.63867 13.2133 3.63867C12.8676 3.63867 12.5357 3.77099 12.292 4.00703L4.375 11.6758V14.1676H6.86682L14.7838 6.49883M15.625 5.44922L17.0828 6.86563C17.3189 7.10936 17.4512 7.44125 17.4512 7.78695C17.4512 8.13265 17.3189 8.46454 17.0828 8.70828L9.16582 16.3771M15.625 5.44922L9.16582 16.3771" stroke="#2948FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                                     </svg>
+                                                                                </button>
+                                                                                <button class="btn btn-sm p-1 bg-transparent border-0">
+                                                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                          <path d="M12.8125 3.125H16.875V4.375H15.625V16.25C15.625 16.5815 15.4933 16.8995 15.2589 17.1339C15.0245 17.3683 14.7065 17.5 14.375 17.5H5.625C5.29348 17.5 4.97554 17.3683 4.74112 17.1339C4.5067 16.8995 4.375 16.5815 4.375 16.25V4.375H3.125V3.125H7.1875M6.875 8.125V13.125M10 8.125V13.125M13.125 8.125V13.125M8.125 3.125H11.875V4.375H8.125V3.125Z" stroke="#E96767" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                                     </svg>
+                                                                                </button>
+                                                                           </div>
+                                                                      </div>
+
+                                                                      <!-- Title and Boat Info -->
+                                                                      <h6 class="fw-semibold text-dark mb-2 fs-5">Anchor Windlass Noise</h6>
+                                                                      <p class="text-muted mb-3 fs-6">Blue Horizon (BH-2024-006)</p>
+
+                                                                      <!-- Description -->
+                                                                      <p class="text-dark mb-3 fs-6" style="line-height: 1.6;">Unusual grinding noise from anchor windlass during operation</p>
+
+                                                                      <!-- Details Grid -->
+                                                                      <div class="row g-3 mb-3">
+                                                                           <div class="col-6">
+                                                                                <div class="text-muted small mb-1">Reported</div>
+                                                                                <div class="fw-medium text-dark fs-6">03/02/2026</div>
+                                                                           </div>
+                                                                           <div class="col-6 text-end">
+                                                                                <div class="text-muted small mb-1">Cost</div>
+                                                                                <div class="fw-medium text-dark fs-6">$300.00 (est)</div>
+                                                                           </div>
+                                                                      </div>
+
+                                                                      <!-- Parts Needed -->
+                                                                      <div>
+                                                                           <div class="text-muted small mb-2">Parts Needed:</div>
+                                                                           <div class="fw-medium text-dark fs-6">Windlass gears, lubricant</div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
                                                        </div>
-                                                  </div>
 
-                                                  <!-- Title and Boat Info -->
-                                                  <h6 class="fw-semibold text-dark mb-2 fs-5">Anchor Windlass Noise</h6>
-                                                  <p class="text-muted mb-3 fs-6">Blue Horizon (BH-2024-006)</p>
+                                                       <!-- Repair Card 3 -->
+                                                       <div class="col-lg-6">
+                                                            <div class="card shadow-sm h-100 border">
+                                                                 <div class="card-body p-4">
+                                                                      <!-- Header with badges and actions -->
+                                                                      <div class="d-flex justify-content-between align-items-start mb-3">
+                                                                           <div class="d-flex gap-2">
+                                                                                <span class="badge badge-soft-danger px-3 py-2 fs-12 fw-semibold">High</span>
+                                                                                <span class="badge badge-soft-warning px-3 py-2 fs-12 fw-semibold">Reported</span>
+                                                                           </div>
+                                                                           <div class="d-flex gap-2">
+                                                                                <button class="btn btn-sm p-1 bg-transparent border-0">
+                                                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                          <path d="M2.5 13.75V16.25H5M15.625 5.44922L14.1346 4.00703C13.8909 3.77099 13.559 3.63867 13.2133 3.63867C12.8676 3.63867 12.5357 3.77099 12.292 4.00703L4.375 11.6758V14.1676H6.86682L14.7838 6.49883M15.625 5.44922L17.0828 6.86563C17.3189 7.10936 17.4512 7.44125 17.4512 7.78695C17.4512 8.13265 17.3189 8.46454 17.0828 8.70828L9.16582 16.3771M15.625 5.44922L9.16582 16.3771" stroke="#2948FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                                     </svg>
+                                                                                </button>
+                                                                                <button class="btn btn-sm p-1 bg-transparent border-0">
+                                                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                          <path d="M12.8125 3.125H16.875V4.375H15.625V16.25C15.625 16.5815 15.4933 16.8995 15.2589 17.1339C15.0245 17.3683 14.7065 17.5 14.375 17.5H5.625C5.29348 17.5 4.97554 17.3683 4.74112 17.1339C4.5067 16.8995 4.375 16.5815 4.375 16.25V4.375H3.125V3.125H7.1875M6.875 8.125V13.125M10 8.125V13.125M13.125 8.125V13.125M8.125 3.125H11.875V4.375H8.125V3.125Z" stroke="#E96767" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                                     </svg>
+                                                                                </button>
+                                                                           </div>
+                                                                      </div>
 
-                                                  <!-- Description -->
-                                                  <p class="text-dark mb-3 fs-6" style="line-height: 1.6;">Unusual grinding noise from anchor windlass during operation</p>
+                                                                      <!-- Title and Boat Info -->
+                                                                      <h6 class="fw-semibold text-dark mb-2 fs-5">Anchor Windlass Noise</h6>
+                                                                      <p class="text-muted mb-3 fs-6">Blue Horizon (BH-2024-006)</p>
 
-                                                  <!-- Details Grid -->
-                                                  <div class="row g-3 mb-3">
-                                                       <div class="col-6">
-                                                            <div class="text-muted small mb-1">Reported</div>
-                                                            <div class="fw-medium text-dark fs-6">03/02/2026</div>
+                                                                      <!-- Description -->
+                                                                      <p class="text-dark mb-3 fs-6" style="line-height: 1.6;">Unusual grinding noise from anchor windlass during operation</p>
+
+                                                                      <!-- Details Grid -->
+                                                                      <div class="row g-3 mb-3">
+                                                                           <div class="col-6">
+                                                                                <div class="text-muted small mb-1">Reported</div>
+                                                                                <div class="fw-medium text-dark fs-6">03/02/2026</div>
+                                                                           </div>
+                                                                           <div class="col-6 text-end">
+                                                                                <div class="text-muted small mb-1">Cost</div>
+                                                                                <div class="fw-medium text-dark fs-6">$300.00 (est)</div>
+                                                                           </div>
+                                                                      </div>
+
+                                                                      <!-- Parts Needed -->
+                                                                      <div>
+                                                                           <div class="text-muted small mb-2">Parts Needed:</div>
+                                                                           <div class="fw-medium text-dark fs-6">Windlass gears, lubricant</div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
                                                        </div>
-                                                       <div class="col-6 text-end">
-                                                            <div class="text-muted small mb-1">Cost</div>
-                                                            <div class="fw-medium text-dark fs-6">$300.00 (est)</div>
+
+                                                       <!-- Repair Card 4 -->
+                                                       <div class="col-lg-6">
+                                                            <div class="card shadow-sm h-100 border">
+                                                                 <div class="card-body p-4">
+                                                                      <!-- Header with badges and actions -->
+                                                                      <div class="d-flex justify-content-between align-items-start mb-3">
+                                                                           <div class="d-flex gap-2">
+                                                                                <span class="badge badge-soft-success px-3 py-2 fs-12 fw-semibold">Low</span>
+                                                                                <span class="badge badge-soft-warning px-3 py-2 fs-12 fw-semibold">Reported</span>
+                                                                           </div>
+                                                                           <div class="d-flex gap-2">
+                                                                                <button class="btn btn-sm p-1 bg-transparent border-0">
+                                                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                          <path d="M2.5 13.75V16.25H5M15.625 5.44922L14.1346 4.00703C13.8909 3.77099 13.559 3.63867 13.2133 3.63867C12.8676 3.63867 12.5357 3.77099 12.292 4.00703L4.375 11.6758V14.1676H6.86682L14.7838 6.49883M15.625 5.44922L17.0828 6.86563C17.3189 7.10936 17.4512 7.44125 17.4512 7.78695C17.4512 8.13265 17.3189 8.46454 17.0828 8.70828L9.16582 16.3771M15.625 5.44922L9.16582 16.3771" stroke="#2948FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                                     </svg>
+                                                                                </button>
+                                                                                <button class="btn btn-sm p-1 bg-transparent border-0">
+                                                                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                          <path d="M12.8125 3.125H16.875V4.375H15.625V16.25C15.625 16.5815 15.4933 16.8995 15.2589 17.1339C15.0245 17.3683 14.7065 17.5 14.375 17.5H5.625C5.29348 17.5 4.97554 17.3683 4.74112 17.1339C4.5067 16.8995 4.375 16.5815 4.375 16.25V4.375H3.125V3.125H7.1875M6.875 8.125V13.125M10 8.125V13.125M13.125 8.125V13.125M8.125 3.125H11.875V4.375H8.125V3.125Z" stroke="#E96767" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                                     </svg>
+                                                                                </button>
+                                                                           </div>
+                                                                      </div>
+
+                                                                      <!-- Title and Boat Info -->
+                                                                      <h6 class="fw-semibold text-dark mb-2 fs-5">Anchor Windlass Noise</h6>
+                                                                      <p class="text-muted mb-3 fs-6">Blue Horizon (BH-2024-006)</p>
+
+                                                                      <!-- Description -->
+                                                                      <p class="text-dark mb-3 fs-6" style="line-height: 1.6;">Unusual grinding noise from anchor windlass during operation</p>
+
+                                                                      <!-- Details Grid -->
+                                                                      <div class="row g-3 mb-3">
+                                                                           <div class="col-6">
+                                                                                <div class="text-muted small mb-1">Reported</div>
+                                                                                <div class="fw-medium text-dark fs-6">03/02/2026</div>
+                                                                           </div>
+                                                                           <div class="col-6 text-end">
+                                                                                <div class="text-muted small mb-1">Cost</div>
+                                                                                <div class="fw-medium text-dark fs-6">$300.00 (est)</div>
+                                                                           </div>
+                                                                      </div>
+
+                                                                      <!-- Parts Needed -->
+                                                                      <div>
+                                                                           <div class="text-muted small mb-2">Parts Needed:</div>
+                                                                           <div class="fw-medium text-dark fs-6">Windlass gears, lubricant</div>
+                                                                      </div>
+                                                                 </div>
+                                                            </div>
                                                        </div>
-                                                  </div>
-
-                                                  <!-- Parts Needed -->
-                                                  <div>
-                                                       <div class="text-muted small mb-2">Parts Needed:</div>
-                                                       <div class="fw-medium text-dark fs-6">Windlass gears, lubricant</div>
-                                                  </div>
-                                             </div>
-                                        </div>
-                                   </div>
-
-                                   <!-- Repair Card 3 -->
-                                   <div class="col-lg-6">
-                                        <div class="card shadow-sm h-100 border">
-                                             <div class="card-body p-4">
-                                                  <!-- Header with badges and actions -->
-                                                  <div class="d-flex justify-content-between align-items-start mb-3">
-                                                       <div class="d-flex gap-2">
-                                                            <span class="badge badge-soft-danger px-3 py-2 fs-12 fw-semibold">High</span>
-                                                            <span class="badge badge-soft-warning px-3 py-2 fs-12 fw-semibold">Reported</span>
-                                                       </div>
-                                                       <div class="d-flex gap-2">
-                                                            <button class="btn btn-sm p-1 bg-transparent border-0">
-                                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                      <path d="M2.5 13.75V16.25H5M15.625 5.44922L14.1346 4.00703C13.8909 3.77099 13.559 3.63867 13.2133 3.63867C12.8676 3.63867 12.5357 3.77099 12.292 4.00703L4.375 11.6758V14.1676H6.86682L14.7838 6.49883M15.625 5.44922L17.0828 6.86563C17.3189 7.10936 17.4512 7.44125 17.4512 7.78695C17.4512 8.13265 17.3189 8.46454 17.0828 8.70828L9.16582 16.3771M15.625 5.44922L9.16582 16.3771" stroke="#2948FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                 </svg>
-                                                            </button>
-                                                            <button class="btn btn-sm p-1 bg-transparent border-0">
-                                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                      <path d="M12.8125 3.125H16.875V4.375H15.625V16.25C15.625 16.5815 15.4933 16.8995 15.2589 17.1339C15.0245 17.3683 14.7065 17.5 14.375 17.5H5.625C5.29348 17.5 4.97554 17.3683 4.74112 17.1339C4.5067 16.8995 4.375 16.5815 4.375 16.25V4.375H3.125V3.125H7.1875M6.875 8.125V13.125M10 8.125V13.125M13.125 8.125V13.125M8.125 3.125H11.875V4.375H8.125V3.125Z" stroke="#E96767" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                 </svg>
-                                                            </button>
-                                                       </div>
-                                                  </div>
-
-                                                  <!-- Title and Boat Info -->
-                                                  <h6 class="fw-semibold text-dark mb-2 fs-5">Anchor Windlass Noise</h6>
-                                                  <p class="text-muted mb-3 fs-6">Blue Horizon (BH-2024-006)</p>
-
-                                                  <!-- Description -->
-                                                  <p class="text-dark mb-3 fs-6" style="line-height: 1.6;">Unusual grinding noise from anchor windlass during operation</p>
-
-                                                  <!-- Details Grid -->
-                                                  <div class="row g-3 mb-3">
-                                                       <div class="col-6">
-                                                            <div class="text-muted small mb-1">Reported</div>
-                                                            <div class="fw-medium text-dark fs-6">03/02/2026</div>
-                                                       </div>
-                                                       <div class="col-6 text-end">
-                                                            <div class="text-muted small mb-1">Cost</div>
-                                                            <div class="fw-medium text-dark fs-6">$300.00 (est)</div>
-                                                       </div>
-                                                  </div>
-
-                                                  <!-- Parts Needed -->
-                                                  <div>
-                                                       <div class="text-muted small mb-2">Parts Needed:</div>
-                                                       <div class="fw-medium text-dark fs-6">Windlass gears, lubricant</div>
-                                                  </div>
-                                             </div>
-                                        </div>
-                                   </div>
-
-                                   <!-- Repair Card 4 -->
-                                   <div class="col-lg-6">
-                                        <div class="card shadow-sm h-100 border">
-                                             <div class="card-body p-4">
-                                                  <!-- Header with badges and actions -->
-                                                  <div class="d-flex justify-content-between align-items-start mb-3">
-                                                       <div class="d-flex gap-2">
-                                                            <span class="badge badge-soft-success px-3 py-2 fs-12 fw-semibold">Low</span>
-                                                            <span class="badge badge-soft-warning px-3 py-2 fs-12 fw-semibold">Reported</span>
-                                                       </div>
-                                                       <div class="d-flex gap-2">
-                                                            <button class="btn btn-sm p-1 bg-transparent border-0">
-                                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                      <path d="M2.5 13.75V16.25H5M15.625 5.44922L14.1346 4.00703C13.8909 3.77099 13.559 3.63867 13.2133 3.63867C12.8676 3.63867 12.5357 3.77099 12.292 4.00703L4.375 11.6758V14.1676H6.86682L14.7838 6.49883M15.625 5.44922L17.0828 6.86563C17.3189 7.10936 17.4512 7.44125 17.4512 7.78695C17.4512 8.13265 17.3189 8.46454 17.0828 8.70828L9.16582 16.3771M15.625 5.44922L9.16582 16.3771" stroke="#2948FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                 </svg>
-                                                            </button>
-                                                            <button class="btn btn-sm p-1 bg-transparent border-0">
-                                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                      <path d="M12.8125 3.125H16.875V4.375H15.625V16.25C15.625 16.5815 15.4933 16.8995 15.2589 17.1339C15.0245 17.3683 14.7065 17.5 14.375 17.5H5.625C5.29348 17.5 4.97554 17.3683 4.74112 17.1339C4.5067 16.8995 4.375 16.5815 4.375 16.25V4.375H3.125V3.125H7.1875M6.875 8.125V13.125M10 8.125V13.125M13.125 8.125V13.125M8.125 3.125H11.875V4.375H8.125V3.125Z" stroke="#E96767" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                                 </svg>
-                                                            </button>
-                                                       </div>
-                                                  </div>
-
-                                                  <!-- Title and Boat Info -->
-                                                  <h6 class="fw-semibold text-dark mb-2 fs-5">Anchor Windlass Noise</h6>
-                                                  <p class="text-muted mb-3 fs-6">Blue Horizon (BH-2024-006)</p>
-
-                                                  <!-- Description -->
-                                                  <p class="text-dark mb-3 fs-6" style="line-height: 1.6;">Unusual grinding noise from anchor windlass during operation</p>
-
-                                                  <!-- Details Grid -->
-                                                  <div class="row g-3 mb-3">
-                                                       <div class="col-6">
-                                                            <div class="text-muted small mb-1">Reported</div>
-                                                            <div class="fw-medium text-dark fs-6">03/02/2026</div>
-                                                       </div>
-                                                       <div class="col-6 text-end">
-                                                            <div class="text-muted small mb-1">Cost</div>
-                                                            <div class="fw-medium text-dark fs-6">$300.00 (est)</div>
-                                                       </div>
-                                                  </div>
-
-                                                  <!-- Parts Needed -->
-                                                  <div>
-                                                       <div class="text-muted small mb-2">Parts Needed:</div>
-                                                       <div class="fw-medium text-dark fs-6">Windlass gears, lubricant</div>
                                                   </div>
                                              </div>
                                         </div>

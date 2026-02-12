@@ -102,7 +102,7 @@
                                                                  <button class="btn btn-sm" style="padding: 8px 16px; font-size: 14px; border-radius: 5.6px; background: rgba(108, 117, 125, 0.06); border: 1px solid rgba(108, 117, 125, 0.25); color: #6C757D;">
                                                                       Clear Filters
                                                                  </button>
-                                                                 <button class="btn btn-success btn-sm d-flex align-items-center gap-2" style="padding: 9px 17px; font-size: 14px; border-radius: 5.6px;">
+                                                                 <button class="btn btn-success btn-sm d-flex align-items-center gap-2" style="padding: 9px 17px; font-size: 14px; border-radius: 5.6px;" data-bs-toggle="modal" data-bs-target="#scheduleServiceModal">
                                                                       <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                            <path d="M6.42231 6.41634V2.91634H7.58814V6.41634H11.0856V7.58301H7.58814V11.083H6.42231V7.58301H2.9248V6.41634H6.42231Z" fill="white"/>
                                                                       </svg>
@@ -322,6 +322,98 @@
 
      </div>
      <!-- END Wrapper -->
+
+     <!-- Schedule Service Modal -->
+     <div class="modal fade" id="scheduleServiceModal" tabindex="-1" aria-labelledby="scheduleServiceModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" style="max-width: 550px;">
+               <div class="modal-content" style="border-radius: 8px; border: none; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);">
+                    <div class="modal-header border-0" style="padding: 24px 24px 16px;">
+                         <h5 class="modal-title fw-semibold" id="scheduleServiceModalLabel" style="font-size: 20px; color: #212529;">Schedule New Service</h5>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="padding: 0 24px 24px;">
+                         <form>
+                              <!-- Boat -->
+                              <div class="mb-3">
+                                   <label for="boatSelect" class="form-label" style="font-size: 14px; font-weight: 500; color: #212529; margin-bottom: 8px;">Boat <span class="text-danger">*</span></label>
+                                   <select class="form-select" id="boatSelect" required style="border-color: #E8EDF1; border-radius: 5.6px; padding: 10px 14px; font-size: 14px; color: #687D92;">
+                                        <option value="" selected>Select a boat</option>
+                                        <option value="1">Ocean Explorer - FL001</option>
+                                        <option value="2">Sea Breeze - FL002</option>
+                                        <option value="3">Wave Runner - FL003</option>
+                                        <option value="4">Blue Horizon - FL004</option>
+                                   </select>
+                              </div>
+
+                              <!-- Service Type and Status Row -->
+                              <div class="row g-3 mb-3">
+                                   <div class="col-md-6">
+                                        <label for="serviceType" class="form-label" style="font-size: 14px; font-weight: 500; color: #212529; margin-bottom: 8px;">Service Type <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="serviceType" placeholder="e.g., Routine Maintenance, Inspection" required style="border-color: #E8EDF1; border-radius: 5.6px; padding: 10px 14px; font-size: 14px;">
+                                   </div>
+                                   <div class="col-md-6">
+                                        <label for="statusSelect" class="form-label" style="font-size: 14px; font-weight: 500; color: #212529; margin-bottom: 8px;">Status <span class="text-danger">*</span></label>
+                                        <select class="form-select" id="statusSelect" required style="border-color: #E8EDF1; border-radius: 5.6px; padding: 10px 14px; font-size: 14px;">
+                                             <option value="scheduled" selected>Scheduled</option>
+                                             <option value="in-progress">In Progress</option>
+                                             <option value="completed">Completed</option>
+                                             <option value="overdue">Overdue</option>
+                                        </select>
+                                   </div>
+                              </div>
+
+                              <!-- Scheduled Date and Completed Date Row -->
+                              <div class="row g-3 mb-3">
+                                   <div class="col-md-6">
+                                        <label for="scheduledDate" class="form-label" style="font-size: 14px; font-weight: 500; color: #212529; margin-bottom: 8px;">Scheduled Date <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" id="scheduledDate" placeholder="dd-mm-yyyy" required style="border-color: #E8EDF1; border-radius: 5.6px; padding: 10px 14px; font-size: 14px; color: #687D92;">
+                                   </div>
+                                   <div class="col-md-6">
+                                        <label for="completedDate" class="form-label" style="font-size: 14px; font-weight: 500; color: #212529; margin-bottom: 8px;">Completed Date</label>
+                                        <input type="date" class="form-control" id="completedDate" placeholder="dd-mm-yyyy" style="border-color: #E8EDF1; border-radius: 5.6px; padding: 10px 14px; font-size: 14px; color: #687D92;">
+                                   </div>
+                              </div>
+
+                              <!-- Estimated Cost and Actual Cost Row -->
+                              <div class="row g-3 mb-3">
+                                   <div class="col-md-6">
+                                        <label for="estimatedCost" class="form-label" style="font-size: 14px; font-weight: 500; color: #212529; margin-bottom: 8px;">Estimated Cost</label>
+                                        <input type="number" class="form-control" id="estimatedCost" placeholder="0.00" step="0.01" min="0" style="border-color: #E8EDF1; border-radius: 5.6px; padding: 10px 14px; font-size: 14px; color: #687D92;">
+                                   </div>
+                                   <div class="col-md-6">
+                                        <label for="actualCost" class="form-label" style="font-size: 14px; font-weight: 500; color: #212529; margin-bottom: 8px;">Actual Cost</label>
+                                        <input type="number" class="form-control" id="actualCost" placeholder="0.00" step="0.01" min="0" style="border-color: #E8EDF1; border-radius: 5.6px; padding: 10px 14px; font-size: 14px; color: #687D92;">
+                                   </div>
+                              </div>
+
+                              <!-- Technician -->
+                              <div class="mb-3">
+                                   <label for="technician" class="form-label" style="font-size: 14px; font-weight: 500; color: #212529; margin-bottom: 8px;">Technician</label>
+                                   <input type="text" class="form-control" id="technician" placeholder="Technician name or company" style="border-color: #E8EDF1; border-radius: 5.6px; padding: 10px 14px; font-size: 14px;">
+                              </div>
+
+                              <!-- Description -->
+                              <div class="mb-3">
+                                   <label for="description" class="form-label" style="font-size: 14px; font-weight: 500; color: #212529; margin-bottom: 8px;">Description</label>
+                                   <textarea class="form-control" id="description" rows="3" placeholder="Service description..." style="border-color: #E8EDF1; border-radius: 5.6px; padding: 10px 14px; font-size: 14px; resize: vertical;"></textarea>
+                              </div>
+
+                              <!-- Notes -->
+                              <div class="mb-4">
+                                   <label for="notes" class="form-label" style="font-size: 14px; font-weight: 500; color: #212529; margin-bottom: 8px;">Notes</label>
+                                   <textarea class="form-control" id="notes" rows="3" placeholder="Additional notes..." style="border-color: #E8EDF1; border-radius: 5.6px; padding: 10px 14px; font-size: 14px; resize: vertical;"></textarea>
+                              </div>
+
+                              <!-- Buttons -->
+                              <div class="d-flex gap-3 justify-content-end">
+                                   <button type="button" class="btn btn-light px-4" data-bs-dismiss="modal" style="padding: 10px 24px; font-size: 14px; font-weight: 500; border-radius: 5.6px; border: 1px solid #E8EDF1; color: #6C757D;">Cancel</button>
+                                   <button type="submit" class="btn px-4" style="padding: 10px 24px; font-size: 14px; font-weight: 500; border-radius: 5.6px; background: #2948FF; color: #FFF; border: none;">Schedule Service</button>
+                              </div>
+                         </form>
+                    </div>
+               </div>
+          </div>
+     </div>
 
      @@include("partials/vendor-scripts.html")
 

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     @@include("partials/title-meta.html", {"sub-title": "New Booking"})
+     @@include("partials/head-css.html")
+</head>
+
+<body>
+     <!-- START Wrapper -->
+     <div class="wrapper">
+          @@include("partials/menu.html")
+
+          <!-- Start right Content here -->
+          <div class="page-content">
+               <!-- Start Container Fluid -->
+               <div class="container-fluid">
+
+                    <!-- Page Title -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="page-title-box d-flex align-items-center justify-content-between">
+                                   <div class="d-flex align-items-center gap-2">
+                                        <a href="javascript:history.back()" class="btn btn-sm btn-light">
+                                             <i class="ri-arrow-left-line"></i>
+                                        </a>
+                                        <h4 class="mb-0 fw-semibold">New Booking</h4>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <form id="bookingForm">
+                         <!-- Member Details Section -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <h5 class="card-title mb-4">Member Details</h5>
+                                             <div class="row g-3">
+                                                  <div class="col-md-4">
+                                                       <label for="member" class="form-label">Member <span class="text-danger">*</span></label>
+                                                       <input type="text" class="form-control" id="member" placeholder="Name" required>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <label for="contactNumber" class="form-label">Contact Number</label>
+                                                       <input type="tel" class="form-control" id="contactNumber" placeholder="Number">
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                                       <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Booking Details Section -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <h5 class="card-title mb-4">Booking Details</h5>
+                                             <div class="row g-3">
+                                                  <div class="col-md-6">
+                                                       <label for="boat" class="form-label">Boat <span class="text-danger">*</span></label>
+                                                       <select class="form-select" id="boat" required>
+                                                            <option value="" selected>Select Boat..</option>
+                                                            <option value="sea-breeze">Sea Breeze</option>
+                                                            <option value="ocean-explorer">Ocean Explorer</option>
+                                                            <option value="wave-runner">Wave Runner</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                       <label for="location" class="form-label">Location / Dock <span class="text-danger">*</span></label>
+                                                       <select class="form-select" id="location" required>
+                                                            <option value="" selected>Select</option>
+                                                            <option value="miami-marina-dock-a">Miami Marina - Dock A</option>
+                                                            <option value="bay-harbor-dock-b">Bay Harbor - Dock B</option>
+                                                            <option value="coastal-point-dock-c">Coastal Point - Dock C</option>
+                                                       </select>
+                                                  </div>
+
+                                                  <div class="col-md-3">
+                                                       <label for="date" class="form-label">Date</label>
+                                                       <div class="input-group">
+                                                            <span class="input-group-text"><i class="ri-calendar-line"></i></span>
+                                                            <input type="date" class="form-control" id="date">
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                       <label for="time" class="form-label">Time</label>
+                                                       <select class="form-select" id="time">
+                                                            <option value="" selected>10:00</option>
+                                                            <option value="08:00">08:00</option>
+                                                            <option value="09:00">09:00</option>
+                                                            <option value="10:00">10:00</option>
+                                                            <option value="11:00">11:00</option>
+                                                            <option value="12:00">12:00</option>
+                                                            <option value="13:00">13:00</option>
+                                                            <option value="14:00">14:00</option>
+                                                            <option value="15:00">15:00</option>
+                                                            <option value="16:00">16:00</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                       <label for="duration" class="form-label">Duration (Hours) <span class="text-danger">*</span></label>
+                                                       <select class="form-select" id="duration" required>
+                                                            <option value="" selected>04 hours</option>
+                                                            <option value="1">01 hour</option>
+                                                            <option value="2">02 hours</option>
+                                                            <option value="3">03 hours</option>
+                                                            <option value="4">04 hours</option>
+                                                            <option value="5">05 hours</option>
+                                                            <option value="6">06 hours</option>
+                                                            <option value="8">08 hours</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                       <label for="endTime" class="form-label">End Time</label>
+                                                       <select class="form-select" id="endTime">
+                                                            <option value="" selected>10:00</option>
+                                                            <option value="14:00">14:00</option>
+                                                            <option value="15:00">15:00</option>
+                                                            <option value="16:00">16:00</option>
+                                                            <option value="17:00">17:00</option>
+                                                            <option value="18:00">18:00</option>
+                                                       </select>
+                                                  </div>
+
+                                                  <div class="col-md-6">
+                                                       <label for="destination" class="form-label">Destination</label>
+                                                       <input type="text" class="form-control" id="destination" placeholder="Enter Destination">
+                                                  </div>
+
+                                                  <div class="col-md-3">
+                                                       <label class="form-label d-block">Driver Requested</label>
+                                                       <div class="d-flex gap-3 mt-2">
+                                                            <div class="form-check">
+                                                                 <input class="form-check-input" type="radio" name="driverRequested" id="driverYes" value="yes" checked>
+                                                                 <label class="form-check-label" for="driverYes">
+                                                                      Yes
+                                                                 </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                 <input class="form-check-input" type="radio" name="driverRequested" id="driverNo" value="no">
+                                                                 <label class="form-check-label" for="driverNo">
+                                                                      No
+                                                                 </label>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+
+                                                  <div class="col-md-3">
+                                                       <label class="form-label d-block">Status</label>
+                                                       <div class="d-flex gap-3 mt-2">
+                                                            <div class="form-check">
+                                                                 <input class="form-check-input" type="radio" name="status" id="statusPending" value="pending" checked>
+                                                                 <label class="form-check-label" for="statusPending">
+                                                                      Pending
+                                                                 </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                 <input class="form-check-input" type="radio" name="status" id="statusConfirmed" value="confirmed">
+                                                                 <label class="form-check-label" for="statusConfirmed">
+                                                                      Confirmed
+                                                                 </label>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+
+                                                  <div class="col-12">
+                                                       <label for="notes" class="form-label">Notes</label>
+                                                       <textarea class="form-control" id="notes" rows="3" placeholder="Notes"></textarea>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Additional Settings Section -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <h5 class="card-title mb-4">Additional Settings</h5>
+                                             <div class="row g-3">
+                                                  <div class="col-md-6">
+                                                       <label for="dockmaster" class="form-label">Assign Dockmaster <span class="text-danger">*</span></label>
+                                                       <select class="form-select" id="dockmaster" required>
+                                                            <option value="" selected>Select</option>
+                                                            <option value="captain-james">Captain James</option>
+                                                            <option value="captain-mike">Captain Mike Rodriguez</option>
+                                                            <option value="captain-sarah">Captain Sarah Wilson</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                       <label for="internalNotes" class="form-label">Internal Notes</label>
+                                                       <textarea class="form-control" id="internalNotes" rows="4" placeholder="Notes"></textarea>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Action Buttons -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="d-flex justify-content-end gap-2 mb-4">
+                                        <button type="button" class="btn btn-outline-secondary" onclick="history.back()">
+                                             Cancel
+                                        </button>
+                                        <button type="submit" class="btn btn-primary">
+                                             Create Booking
+                                        </button>
+                                   </div>
+                              </div>
+                         </div>
+                    </form>
+
+               </div>
+               <!-- End Container Fluid -->
+
+               @@include("partials/footer.html")
+          </div>
+          <!-- End Page Content -->
+     </div>
+     <!-- END Wrapper -->
+
+     @@include("partials/vendor-scripts.html")
+
+     <script>
+          // Form validation and submission
+          document.getElementById('bookingForm').addEventListener('submit', function(e) {
+               e.preventDefault();
+               
+               // Basic validation
+               const requiredFields = this.querySelectorAll('[required]');
+               let isValid = true;
+               
+               requiredFields.forEach(field => {
+                    if (!field.value) {
+                         isValid = false;
+                         field.classList.add('is-invalid');
+                    } else {
+                         field.classList.remove('is-invalid');
+                    }
+               });
+
+               if (isValid) {
+                    // Show success message
+                    alert('Booking created successfully!');
+                    // Redirect to booking list or details
+                    window.location.href = 'booking-details.html';
+               } else {
+                    alert('Please fill in all required fields.');
+               }
+          });
+
+          // Auto-calculate end time based on duration
+          document.getElementById('duration').addEventListener('change', function() {
+               const startTime = document.getElementById('time').value;
+               const duration = parseInt(this.value);
+               
+               if (startTime && duration) {
+                    const [hours, minutes] = startTime.split(':').map(Number);
+                    const endHours = (hours + duration) % 24;
+                    const endTime = `${String(endHours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+                    document.getElementById('endTime').value = endTime;
+               }
+          });
+     </script>
+
+</body>
+
+</html>

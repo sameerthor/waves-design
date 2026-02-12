@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     @@include("partials/title-meta.html", {"sub-title": "Staff List"})
+
+     @@include("partials/head-css.html")
+</head>
+
+<body>
+
+     <!-- START Wrapper -->
+     <div class="wrapper">
+
+          @@include("partials/menu.html")
+
+          <!-- ==================================================== -->
+          <!-- Start right Content here -->
+          <!-- ==================================================== -->
+          <div class="page-content">
+
+               <!-- Start Container Fluid -->
+               <div class="container-fluid">
+
+                    <!-- Page Title -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="page-title-box d-flex align-items-center justify-content-between">
+                                   <div class="d-flex align-items-center gap-2">
+                                        <a href="javascript:history.back()" class="btn btn-sm btn-light">
+                                             <i class="ri-arrow-left-line"></i>
+                                        </a>
+                                        <h4 class="mb-0 fw-semibold">Staff</h4>
+                                   </div>
+                                   <a href="staff-add.html" class="btn btn-success">
+                                        <i class="ri-add-line me-1"></i> Add Staff
+                                   </a>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- Staff List Table -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <!-- Search and Filters -->
+                                        <div class="row align-items-center mb-3 pb-3 border-bottom">
+                                             <div class="col-lg-5 col-md-6 mb-3 mb-md-0">
+                                                  <div class="search-box">
+                                                       <input type="text" class="form-control" id="staffSearchInput" placeholder="Search by Staff Name or Role">
+                                                       <i class="ri-search-line search-icon"></i>
+                                                  </div>
+                                             </div>
+                                             <div class="col-lg-2 col-md-6 mb-3 mb-md-0">
+                                                  <p class="text-dark fw-medium mb-0">24 staff found</p>
+                                             </div>
+                                             <div class="col-lg-5">
+                                                  <div class="d-flex gap-2 justify-content-lg-end flex-wrap">
+                                                       <select class="form-select form-select-sm w-auto">
+                                                            <option selected>Role</option>
+                                                            <option>Captain</option>
+                                                            <option>Crew Member</option>
+                                                            <option>Maintenance</option>
+                                                       </select>
+                                                       <select class="form-select form-select-sm w-auto">
+                                                            <option selected>Availability</option>
+                                                            <option>Available</option>
+                                                            <option>On Duty</option>
+                                                            <option>Unavailable</option>
+                                                       </select>
+                                                       <button class="btn btn-sm btn-outline-secondary">
+                                                            Clear Filters
+                                                       </button>
+                                                  </div>
+                                             </div>
+                                        </div>
+
+                                        <!-- Table -->
+                                        <div class="table-responsive">
+                                             <table class="table table-hover align-middle mb-0">
+                                                  <thead class="table-light">
+                                                       <tr>
+                                                            <th class="text-center" style="width: 40px;">
+                                                                 <input type="checkbox" class="form-check-input" id="checkAllStaff">
+                                                            </th>
+                                                            <th>Name</th>
+                                                            <th>Role</th>
+                                                            <th>Contact</th>
+                                                            <th>Availability</th>
+                                                            <th>Action</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td class="text-center"><input type="checkbox" class="form-check-input staff-checkbox"></td>
+                                                            <td><a href="staff-details.html" class="text-dark fw-medium">John Smith</a></td>
+                                                            <td class="fw-medium">Captain</td>
+                                                            <td>+1 234-567-8901</td>
+                                                            <td><span class="badge bg-success-subtle text-success">Available</span></td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-primary" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-20"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="staff-details.html"><i class="ri-eye-line me-2"></i>View</a></li>
+                                                                           <li><a class="dropdown-item" href="staff-edit.html"><i class="ri-edit-line me-2"></i>Edit</a></li>
+                                                                           <li><hr class="dropdown-divider"></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i>Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td class="text-center"><input type="checkbox" class="form-check-input staff-checkbox"></td>
+                                                            <td><a href="staff-details.html" class="text-dark fw-medium">Sarah Johnson</a></td>
+                                                            <td class="fw-medium">Crew Member</td>
+                                                            <td>+1 234-567-8902</td>
+                                                            <td><span class="badge bg-warning-subtle text-warning">On Duty</span></td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-primary" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-20"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="staff-details.html"><i class="ri-eye-line me-2"></i>View</a></li>
+                                                                           <li><a class="dropdown-item" href="staff-edit.html"><i class="ri-edit-line me-2"></i>Edit</a></li>
+                                                                           <li><hr class="dropdown-divider"></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i>Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td class="text-center"><input type="checkbox" class="form-check-input staff-checkbox"></td>
+                                                            <td><a href="staff-details.html" class="text-dark fw-medium">Michael Brown</a></td>
+                                                            <td class="fw-medium">Maintenance</td>
+                                                            <td>+1 234-567-8903</td>
+                                                            <td><span class="badge bg-success-subtle text-success">Available</span></td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-primary" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-20"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="staff-details.html"><i class="ri-eye-line me-2"></i>View</a></li>
+                                                                           <li><a class="dropdown-item" href="staff-edit.html"><i class="ri-edit-line me-2"></i>Edit</a></li>
+                                                                           <li><hr class="dropdown-divider"></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i>Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td class="text-center"><input type="checkbox" class="form-check-input staff-checkbox"></td>
+                                                            <td><a href="staff-details.html" class="text-dark fw-medium">Emily Davis</a></td>
+                                                            <td class="fw-medium">Captain</td>
+                                                            <td>+1 234-567-8904</td>
+                                                            <td><span class="badge bg-danger-subtle text-danger">Unavailable</span></td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-primary" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-20"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="staff-details.html"><i class="ri-eye-line me-2"></i>View</a></li>
+                                                                           <li><a class="dropdown-item" href="staff-edit.html"><i class="ri-edit-line me-2"></i>Edit</a></li>
+                                                                           <li><hr class="dropdown-divider"></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i>Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td class="text-center"><input type="checkbox" class="form-check-input staff-checkbox"></td>
+                                                            <td><a href="staff-details.html" class="text-dark fw-medium">David Wilson</a></td>
+                                                            <td class="fw-medium">Crew Member</td>
+                                                            <td>+1 234-567-8905</td>
+                                                            <td><span class="badge bg-success-subtle text-success">Available</span></td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-primary" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-20"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="staff-details.html"><i class="ri-eye-line me-2"></i>View</a></li>
+                                                                           <li><a class="dropdown-item" href="staff-edit.html"><i class="ri-edit-line me-2"></i>Edit</a></li>
+                                                                           <li><hr class="dropdown-divider"></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i>Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </div>
+
+                                        <!-- Pagination -->
+                                        <div class="d-flex justify-content-end mt-4">
+                                             <nav>
+                                                  <ul class="pagination pagination-sm mb-0">
+                                                       <li class="page-item disabled">
+                                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                       </li>
+                                                       <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                       <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                       <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                       <li class="page-item">
+                                                            <a class="page-link" href="#">Next</a>
+                                                       </li>
+                                                  </ul>
+                                             </nav>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+               <!-- End Container Fluid -->
+
+               @@include("partials/footer.html")
+
+          </div>
+          <!-- End Page-content -->
+     </div>
+     <!-- END Wrapper -->
+
+     @@include("partials/vendor-scripts.html")
+
+     <script>
+          document.addEventListener('DOMContentLoaded', function() {
+               // Check all staff functionality
+               const checkAllStaff = document.getElementById('checkAllStaff');
+               const staffCheckboxes = document.querySelectorAll('.staff-checkbox');
+               
+               if (checkAllStaff) {
+                    checkAllStaff.addEventListener('change', function() {
+                         staffCheckboxes.forEach(checkbox => {
+                              checkbox.checked = this.checked;
+                         });
+                    });
+               }
+
+               // Search functionality
+               const searchInput = document.getElementById('staffSearchInput');
+               if (searchInput) {
+                    searchInput.addEventListener('input', function() {
+                         const searchTerm = this.value.toLowerCase();
+                         const tableRows = document.querySelectorAll('tbody tr');
+                         
+                         tableRows.forEach(row => {
+                              const text = row.textContent.toLowerCase();
+                              row.style.display = text.includes(searchTerm) ? '' : 'none';
+                         });
+                    });
+               }
+          });
+     </script>
+
+</body>
+
+</html>

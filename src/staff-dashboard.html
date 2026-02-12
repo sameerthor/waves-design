@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     @@include("partials/title-meta.html", {"sub-title": "Staff Dashboard"})
+
+     @@include("partials/head-css.html")
+</head>
+
+<body>
+
+     <!-- START Wrapper -->
+     <div class="wrapper">
+
+          @@include("partials/menu.html")
+
+          <!-- ==================================================== -->
+          <!-- Start right Content here -->
+          <!-- ==================================================== -->
+          <div class="page-content">
+
+               <!-- Start Container Fluid -->
+               <div class="container-fluid">
+
+                    <!-- Page Title -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="page-title-box d-flex align-items-center justify-content-between">
+                                   <div class="d-flex align-items-center gap-2">
+                                        <a href="javascript:history.back()" class="btn btn-sm btn-light">
+                                             <i class="ri-arrow-left-line"></i>
+                                        </a>
+                                        <h4 class="mb-0 fw-semibold">Staff</h4>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- Stats Cards Row -->
+                    <div class="row">
+                         <div class="col-xl-3 col-md-6">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                             <div>
+                                                  <h6 class="text-muted fw-semibold mb-2">Total Staff</h6>
+                                                  <h3 class="mb-0 fw-medium">24</h3>
+                                                  <p class="text-success mb-0 mt-2 d-flex align-items-center gap-1">
+                                                       <i class="ri-arrow-up-line"></i>
+                                                       <span class="fw-medium">+2</span>
+                                                       <small class="text-muted fw-normal">from last month</small>
+                                                  </p>
+                                             </div>
+                                             <div class="avatar-lg bg-primary rounded d-flex align-items-center justify-content-center">
+                                                  <i class="ri-user-line fs-24 text-white"></i>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="col-xl-3 col-md-6">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                             <div>
+                                                  <h6 class="text-muted fw-semibold mb-2">Available</h6>
+                                                  <h3 class="mb-0 fw-medium">18</h3>
+                                                  <p class="text-success mb-0 mt-2 d-flex align-items-center gap-1">
+                                                       <i class="ri-arrow-up-line"></i>
+                                                       <span class="fw-medium">+5%</span>
+                                                       <small class="text-muted fw-normal">from last week</small>
+                                                  </p>
+                                             </div>
+                                             <div class="avatar-lg bg-success rounded d-flex align-items-center justify-content-center">
+                                                  <i class="ri-checkbox-circle-line fs-24 text-white"></i>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="col-xl-3 col-md-6">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                             <div>
+                                                  <h6 class="text-muted fw-semibold mb-2">On Duty</h6>
+                                                  <h3 class="mb-0 fw-medium">12</h3>
+                                                  <p class="text-danger mb-0 mt-2 d-flex align-items-center gap-1">
+                                                       <i class="ri-arrow-down-line"></i>
+                                                       <span class="fw-medium">-3%</span>
+                                                       <small class="text-muted fw-normal">from yesterday</small>
+                                                  </p>
+                                             </div>
+                                             <div class="avatar-lg bg-warning rounded d-flex align-items-center justify-content-center">
+                                                  <i class="ri-time-line fs-24 text-white"></i>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="col-xl-3 col-md-6">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                             <div>
+                                                  <h6 class="text-muted fw-semibold mb-2">Unavailable</h6>
+                                                  <h3 class="mb-0 fw-medium">6</h3>
+                                                  <p class="text-success mb-0 mt-2 d-flex align-items-center gap-1">
+                                                       <i class="ri-arrow-up-line"></i>
+                                                       <span class="fw-medium">+2</span>
+                                                       <small class="text-muted fw-normal">from last month</small>
+                                                  </p>
+                                             </div>
+                                             <div class="avatar-lg bg-danger rounded d-flex align-items-center justify-content-center">
+                                                  <i class="ri-error-warning-line fs-24 text-white"></i>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- All Staff Table -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="card">
+                                   <div class="card-header d-flex justify-content-between align-items-center border-bottom">
+                                        <h5 class="card-title mb-0 fw-semibold">All Staff</h5>
+                                        <a href="staff-add.html" class="btn btn-success">
+                                             <i class="ri-add-line me-1"></i> Add Staff
+                                        </a>
+                                   </div>
+                                   <div class="card-body">
+                                        <!-- Search and Filters -->
+                                        <div class="row align-items-center mb-3 pb-3 border-bottom">
+                                             <div class="col-lg-5 col-md-6 mb-3 mb-md-0">
+                                                  <div class="search-box">
+                                                       <input type="text" class="form-control" id="staffSearchInput" placeholder="Search by Staff Name or Role">
+                                                       <i class="ri-search-line search-icon"></i>
+                                                  </div>
+                                             </div>
+                                             <div class="col-lg-2 col-md-6 mb-3 mb-md-0">
+                                                  <p class="text-dark fw-medium mb-0">24 staff found</p>
+                                             </div>
+                                             <div class="col-lg-5">
+                                                  <div class="d-flex gap-2 justify-content-lg-end flex-wrap">
+                                                       <select class="form-select form-select-sm w-auto">
+                                                            <option selected>Role</option>
+                                                            <option>Captain</option>
+                                                            <option>Crew Member</option>
+                                                            <option>Maintenance</option>
+                                                       </select>
+                                                       <select class="form-select form-select-sm w-auto">
+                                                            <option selected>Availability</option>
+                                                            <option>Available</option>
+                                                            <option>On Duty</option>
+                                                            <option>Unavailable</option>
+                                                       </select>
+                                                       <button class="btn btn-sm btn-outline-secondary">
+                                                            <i class="ri-filter-line me-1"></i> Filters
+                                                       </button>
+                                                  </div>
+                                             </div>
+                                        </div>
+
+                                        <!-- Table -->
+                                        <div class="table-responsive">
+                                             <table class="table table-hover align-middle mb-0">
+                                                  <thead class="table-light">
+                                                       <tr>
+                                                            <th class="text-center" style="width: 40px;">
+                                                                 <input type="checkbox" class="form-check-input">
+                                                            </th>
+                                                            <th>Name</th>
+                                                            <th>Role</th>
+                                                            <th>Contact</th>
+                                                            <th>Availability</th>
+                                                            <th>Action</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td class="text-center"><input type="checkbox" class="form-check-input"></td>
+                                                            <td><a href="staff-details.html" class="text-dark fw-medium">John Smith</a></td>
+                                                            <td class="fw-medium">Captain</td>
+                                                            <td>+1 234-567-8901</td>
+                                                            <td><span class="badge bg-success-subtle text-success">Available</span></td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-primary" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-20"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="staff-details.html"><i class="ri-eye-line me-2"></i>View</a></li>
+                                                                           <li><a class="dropdown-item" href="staff-edit.html"><i class="ri-edit-line me-2"></i>Edit</a></li>
+                                                                           <li><hr class="dropdown-divider"></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i>Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td class="text-center"><input type="checkbox" class="form-check-input"></td>
+                                                            <td><a href="staff-details.html" class="text-dark fw-medium">Sarah Johnson</a></td>
+                                                            <td class="fw-medium">Crew Member</td>
+                                                            <td>+1 234-567-8902</td>
+                                                            <td><span class="badge bg-warning-subtle text-warning">On Duty</span></td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-primary" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-20"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="staff-details.html"><i class="ri-eye-line me-2"></i>View</a></li>
+                                                                           <li><a class="dropdown-item" href="staff-edit.html"><i class="ri-edit-line me-2"></i>Edit</a></li>
+                                                                           <li><hr class="dropdown-divider"></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i>Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td class="text-center"><input type="checkbox" class="form-check-input"></td>
+                                                            <td><a href="staff-details.html" class="text-dark fw-medium">Michael Brown</a></td>
+                                                            <td class="fw-medium">Maintenance</td>
+                                                            <td>+1 234-567-8903</td>
+                                                            <td><span class="badge bg-success-subtle text-success">Available</span></td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-primary" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-20"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="staff-details.html"><i class="ri-eye-line me-2"></i>View</a></li>
+                                                                           <li><a class="dropdown-item" href="staff-edit.html"><i class="ri-edit-line me-2"></i>Edit</a></li>
+                                                                           <li><hr class="dropdown-divider"></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i>Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td class="text-center"><input type="checkbox" class="form-check-input"></td>
+                                                            <td><a href="staff-details.html" class="text-dark fw-medium">Emily Davis</a></td>
+                                                            <td class="fw-medium">Captain</td>
+                                                            <td>+1 234-567-8904</td>
+                                                            <td><span class="badge bg-danger-subtle text-danger">Unavailable</span></td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-primary" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-20"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="staff-details.html"><i class="ri-eye-line me-2"></i>View</a></li>
+                                                                           <li><a class="dropdown-item" href="staff-edit.html"><i class="ri-edit-line me-2"></i>Edit</a></li>
+                                                                           <li><hr class="dropdown-divider"></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i>Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </div>
+
+                                        <!-- View All Button -->
+                                        <div class="d-flex justify-content-end mt-4">
+                                             <a href="staff-list.html" class="btn btn-primary">
+                                                  View All
+                                             </a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+               <!-- End Container Fluid -->
+
+               @@include("partials/footer.html")
+
+          </div>
+          <!-- End Page-content -->
+     </div>
+     <!-- END Wrapper -->
+
+     @@include("partials/vendor-scripts.html")
+
+     <script>
+          document.addEventListener('DOMContentLoaded', function() {
+               // Search functionality
+               const searchInput = document.getElementById('staffSearchInput');
+               if (searchInput) {
+                    searchInput.addEventListener('input', function() {
+                         const searchTerm = this.value.toLowerCase();
+                         const tableRows = document.querySelectorAll('tbody tr');
+                         
+                         tableRows.forEach(row => {
+                              const text = row.textContent.toLowerCase();
+                              row.style.display = text.includes(searchTerm) ? '' : 'none';
+                         });
+                    });
+               }
+          });
+     </script>
+
+</body>
+
+</html>

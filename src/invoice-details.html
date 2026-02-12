@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     @@include("partials/title-meta.html", {"sub-title": "Invoice Details"})
+
+     @@include("partials/head-css.html")
+</head>
+
+<body>
+
+     <!-- START Wrapper -->
+     <div class="wrapper">
+
+          @@include("partials/menu.html")
+
+          <!-- ==================================================== -->
+          <!-- Start right Content here -->
+          <!-- ==================================================== -->
+          <div class="page-content">
+
+               <!-- Start Container Fluid -->
+               <div class="container-fluid">
+
+                    <!-- Page Title -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="page-title-box d-flex align-items-center justify-content-between">
+                                   <div class="d-flex align-items-center gap-2">
+                                        <a href="javascript:history.back()" class="btn btn-sm btn-light">
+                                             <i class="ri-arrow-left-line"></i>
+                                        </a>
+                                        <h4 class="mb-0 fw-semibold">Invoice Details</h4>
+                                   </div>
+                                   <div class="d-flex gap-2">
+                                        <a href="invoice-edit.html" class="btn btn-outline-primary">
+                                             <i class="ri-edit-line me-1"></i> Edit
+                                        </a>
+                                        <button class="btn btn-primary">
+                                             <i class="ri-printer-line me-1"></i> Print
+                                        </button>
+                                        <button class="btn btn-success">
+                                             <i class="ri-download-line me-1"></i> Download
+                                        </button>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- Invoice -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <!-- Invoice Header -->
+                                        <div class="row mb-5">
+                                             <div class="col-sm-6">
+                                                  <h3 class="mb-3">WAVES</h3>
+                                                  <p class="text-muted mb-1">Marina Management System</p>
+                                                  <p class="text-muted mb-1">123 Harbor Street</p>
+                                                  <p class="text-muted mb-1">Miami, FL 33101</p>
+                                                  <p class="text-muted">contact@waves.com</p>
+                                             </div>
+                                             <div class="col-sm-6 text-sm-end">
+                                                  <h4 class="mb-3">INVOICE</h4>
+                                                  <p class="mb-1"><strong>Invoice #:</strong> INV-001</p>
+                                                  <p class="mb-1"><strong>Issue Date:</strong> 15/01/2024</p>
+                                                  <p class="mb-1"><strong>Due Date:</strong> 15/02/2024</p>
+                                                  <p><span class="badge bg-success fs-14 px-3 py-2">Paid</span></p>
+                                             </div>
+                                        </div>
+
+                                        <hr class="my-4">
+
+                                        <!-- Bill To / Ship To -->
+                                        <div class="row mb-4">
+                                             <div class="col-md-6">
+                                                  <h5 class="mb-3">Bill To:</h5>
+                                                  <h6 class="mb-2">John Smith</h6>
+                                                  <p class="text-muted mb-1">james.mitchell@email.com</p>
+                                                  <p class="text-muted mb-1">+1 (555) 123-4567</p>
+                                                  <p class="text-muted">Bay Harbor</p>
+                                             </div>
+                                             <div class="col-md-6">
+                                                  <h5 class="mb-3">Booking Details:</h5>
+                                                  <p class="mb-1"><strong>Booking ID:</strong> BK-2024-001</p>
+                                                  <p class="mb-1"><strong>Boat:</strong> Sea Breeze 42</p>
+                                                  <p class="mb-1"><strong>Location:</strong> Miami Marina - Dock A</p>
+                                                  <p><strong>Date:</strong> 15/01/2024 - 10:00</p>
+                                             </div>
+                                        </div>
+
+                                        <!-- Invoice Items -->
+                                        <div class="table-responsive mb-4">
+                                             <table class="table table-bordered">
+                                                  <thead class="table-light">
+                                                       <tr>
+                                                            <th>Description</th>
+                                                            <th width="120">Quantity</th>
+                                                            <th width="150">Rate</th>
+                                                            <th width="150" class="text-end">Amount</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td>
+                                                                 <strong>Boat Rental - Sea Breeze 42</strong>
+                                                                 <br>
+                                                                 <small class="text-muted">4 hours rental service</small>
+                                                            </td>
+                                                            <td>4 hrs</td>
+                                                            <td>$500.00</td>
+                                                            <td class="text-end">$2,000.00</td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td>
+                                                                 <strong>Captain Service</strong>
+                                                                 <br>
+                                                                 <small class="text-muted">Professional captain for 4 hours</small>
+                                                            </td>
+                                                            <td>4 hrs</td>
+                                                            <td>$75.00</td>
+                                                            <td class="text-end">$300.00</td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td>
+                                                                 <strong>Fuel Surcharge</strong>
+                                                                 <br>
+                                                                 <small class="text-muted">Estimated fuel consumption</small>
+                                                            </td>
+                                                            <td>1</td>
+                                                            <td>$150.00</td>
+                                                            <td class="text-end">$150.00</td>
+                                                       </tr>
+                                                       <tr>
+                                                            <td>
+                                                                 <strong>Cleaning Fee</strong>
+                                                            </td>
+                                                            <td>1</td>
+                                                            <td>$50.00</td>
+                                                            <td class="text-end">$50.00</td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </div>
+
+                                        <!-- Invoice Summary -->
+                                        <div class="row">
+                                             <div class="col-md-6">
+                                                  <div class="mb-3">
+                                                       <h6>Notes:</h6>
+                                                       <p class="text-muted">Thank you for choosing WAVES Marina. Please make payment before the due date. Contact us if you have any questions.</p>
+                                                  </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                  <div class="table-responsive">
+                                                       <table class="table table-borderless">
+                                                            <tbody>
+                                                                 <tr>
+                                                                      <td class="text-end"><strong>Subtotal:</strong></td>
+                                                                      <td class="text-end" width="150">$2,500.00</td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <td class="text-end">Tax (0%):</td>
+                                                                      <td class="text-end">$0.00</td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <td class="text-end">Discount:</td>
+                                                                      <td class="text-end">-$0.00</td>
+                                                                 </tr>
+                                                                 <tr class="border-top">
+                                                                      <td class="text-end"><h5 class="mb-0">Total:</h5></td>
+                                                                      <td class="text-end"><h5 class="mb-0">$2,500.00</h5></td>
+                                                                 </tr>
+                                                            </tbody>
+                                                       </table>
+                                                  </div>
+                                             </div>
+                                        </div>
+
+                                        <!-- Payment Information -->
+                                        <div class="row mt-4">
+                                             <div class="col-12">
+                                                  <div class="alert alert-success">
+                                                       <div class="d-flex align-items-center">
+                                                            <i class="ri-checkbox-circle-line fs-24 me-2"></i>
+                                                            <div>
+                                                                 <strong>Payment Received</strong>
+                                                                 <p class="mb-0">Paid on 15/01/2024 via Credit Card ending in ****1234</p>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+
+                                        <hr class="my-4">
+
+                                        <p class="text-muted text-center mb-0">If you have any questions concerning this invoice, contact us at support@waves.com</p>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+               <!-- End Container Fluid -->
+
+               @@include("partials/footer.html")
+
+          </div>
+          <!-- End Page-content -->
+     </div>
+     <!-- END Wrapper -->
+
+     @@include("partials/vendor-scripts.html")
+
+</body>
+
+</html>

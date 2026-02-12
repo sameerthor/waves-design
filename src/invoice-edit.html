@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     @@include("partials/title-meta.html", {"sub-title": "Edit Invoice"})
+
+     @@include("partials/head-css.html")
+</head>
+
+<body>
+
+     <!-- START Wrapper -->
+     <div class="wrapper">
+
+          @@include("partials/menu.html")
+
+          <!-- ==================================================== -->
+          <!-- Start right Content here -->
+          <!-- ==================================================== -->
+          <div class="page-content">
+
+               <!-- Start Container Fluid -->
+               <div class="container-fluid">
+
+                    <!-- Page Title -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="page-title-box d-flex align-items-center justify-content-between">
+                                   <div class="d-flex align-items-center gap-2">
+                                        <a href="javascript:history.back()" class="btn btn-sm btn-light">
+                                             <i class="ri-arrow-left-line"></i>
+                                        </a>
+                                        <h4 class="mb-0 fw-semibold">Edit Invoice - INV-001</h4>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <form id="invoiceForm">
+                         <!-- Customer Details Section -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <h5 class="card-title mb-4">Customer Details</h5>
+                                             <div class="row g-3">
+                                                  <div class="col-md-6">
+                                                       <label for="customer" class="form-label">Customer <span class="text-danger">*</span></label>
+                                                       <select class="form-select" id="customer" required>
+                                                            <option value="" selected>Select Customer</option>
+                                                            <option value="john-smith" selected>John Smith</option>
+                                                            <option value="jane-doe">Jane Doe</option>
+                                                            <option value="robert-johnson">Robert Johnson</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                       <label for="booking" class="form-label">Related Booking</label>
+                                                       <select class="form-select" id="booking">
+                                                            <option value="">Select Booking (Optional)</option>
+                                                            <option value="bk-2024-001" selected>BK-2024-001 - Sea Breeze 42</option>
+                                                            <option value="bk-2024-002">BK-2024-002 - Ocean Explorer</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                                       <input type="email" class="form-control" id="email" value="james.mitchell@email.com" required>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <label for="phone" class="form-label">Phone</label>
+                                                       <input type="tel" class="form-control" id="phone" value="+1 (555) 123-4567">
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <label for="address" class="form-label">Address</label>
+                                                       <input type="text" class="form-control" id="address" value="Bay Harbor">
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Invoice Details Section -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <h5 class="card-title mb-4">Invoice Details</h5>
+                                             <div class="row g-3">
+                                                  <div class="col-md-4">
+                                                       <label for="invoiceNumber" class="form-label">Invoice Number <span class="text-danger">*</span></label>
+                                                       <input type="text" class="form-control" id="invoiceNumber" value="INV-001" required>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <label for="issueDate" class="form-label">Issue Date <span class="text-danger">*</span></label>
+                                                       <input type="date" class="form-control" id="issueDate" value="2024-01-15" required>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <label for="dueDate" class="form-label">Due Date <span class="text-danger">*</span></label>
+                                                       <input type="date" class="form-control" id="dueDate" value="2024-02-15" required>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                       <label for="paymentStatus" class="form-label">Payment Status <span class="text-danger">*</span></label>
+                                                       <select class="form-select" id="paymentStatus" required>
+                                                            <option value="pending">Pending</option>
+                                                            <option value="paid" selected>Paid</option>
+                                                            <option value="overdue">Overdue</option>
+                                                            <option value="cancelled">Cancelled</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                       <label for="paymentMethod" class="form-label">Payment Method</label>
+                                                       <select class="form-select" id="paymentMethod">
+                                                            <option value="">Select Payment Method</option>
+                                                            <option value="cash">Cash</option>
+                                                            <option value="credit-card" selected>Credit Card</option>
+                                                            <option value="bank-transfer">Bank Transfer</option>
+                                                            <option value="check">Check</option>
+                                                       </select>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Invoice Items Section -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <div class="d-flex justify-content-between align-items-center mb-4">
+                                                  <h5 class="card-title mb-0">Invoice Items</h5>
+                                                  <button type="button" class="btn btn-sm btn-primary" onclick="addInvoiceItem()">
+                                                       <i class="ri-add-line me-1"></i> Add Item
+                                                  </button>
+                                             </div>
+                                             
+                                             <div class="table-responsive">
+                                                  <table class="table table-bordered" id="invoice-items-table">
+                                                       <thead class="table-light">
+                                                            <tr>
+                                                                 <th width="40%">Description</th>
+                                                                 <th width="15%">Quantity</th>
+                                                                 <th width="20%">Rate</th>
+                                                                 <th width="20%">Amount</th>
+                                                                 <th width="5%"></th>
+                                                            </tr>
+                                                       </thead>
+                                                       <tbody id="invoice-items">
+                                                            <tr>
+                                                                 <td>
+                                                                      <input type="text" class="form-control item-description" value="Boat Rental - Sea Breeze 42" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="number" class="form-control item-quantity" value="4" min="1" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="number" class="form-control item-rate" value="500.00" min="0" step="0.01" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="text" class="form-control item-amount" value="$2000.00" readonly>
+                                                                 </td>
+                                                                 <td class="text-center">
+                                                                      <button type="button" class="btn btn-sm btn-light" onclick="removeInvoiceItem(this)">
+                                                                           <i class="ri-delete-bin-line text-danger"></i>
+                                                                      </button>
+                                                                 </td>
+                                                            </tr>
+                                                            <tr>
+                                                                 <td>
+                                                                      <input type="text" class="form-control item-description" value="Captain Service" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="number" class="form-control item-quantity" value="4" min="1" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="number" class="form-control item-rate" value="75.00" min="0" step="0.01" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="text" class="form-control item-amount" value="$300.00" readonly>
+                                                                 </td>
+                                                                 <td class="text-center">
+                                                                      <button type="button" class="btn btn-sm btn-light" onclick="removeInvoiceItem(this)">
+                                                                           <i class="ri-delete-bin-line text-danger"></i>
+                                                                      </button>
+                                                                 </td>
+                                                            </tr>
+                                                            <tr>
+                                                                 <td>
+                                                                      <input type="text" class="form-control item-description" value="Fuel Surcharge" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="number" class="form-control item-quantity" value="1" min="1" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="number" class="form-control item-rate" value="150.00" min="0" step="0.01" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="text" class="form-control item-amount" value="$150.00" readonly>
+                                                                 </td>
+                                                                 <td class="text-center">
+                                                                      <button type="button" class="btn btn-sm btn-light" onclick="removeInvoiceItem(this)">
+                                                                           <i class="ri-delete-bin-line text-danger"></i>
+                                                                      </button>
+                                                                 </td>
+                                                            </tr>
+                                                            <tr>
+                                                                 <td>
+                                                                      <input type="text" class="form-control item-description" value="Cleaning Fee" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="number" class="form-control item-quantity" value="1" min="1" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="number" class="form-control item-rate" value="50.00" min="0" step="0.01" required>
+                                                                 </td>
+                                                                 <td>
+                                                                      <input type="text" class="form-control item-amount" value="$50.00" readonly>
+                                                                 </td>
+                                                                 <td class="text-center">
+                                                                      <button type="button" class="btn btn-sm btn-light" onclick="removeInvoiceItem(this)">
+                                                                           <i class="ri-delete-bin-line text-danger"></i>
+                                                                      </button>
+                                                                 </td>
+                                                            </tr>
+                                                       </tbody>
+                                                  </table>
+                                             </div>
+
+                                             <div class="row mt-4">
+                                                  <div class="col-md-6">
+                                                       <div class="mb-3">
+                                                            <label for="notes" class="form-label">Notes</label>
+                                                            <textarea class="form-control" id="notes" rows="4" placeholder="Any additional notes...">Thank you for choosing WAVES Marina. Please make payment before the due date.</textarea>
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                       <table class="table table-borderless">
+                                                            <tbody>
+                                                                 <tr>
+                                                                      <td class="text-end"><strong>Subtotal:</strong></td>
+                                                                      <td class="text-end" width="150" id="subtotal">$2,500.00</td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <td class="text-end">
+                                                                           Tax:
+                                                                           <input type="number" class="form-control form-control-sm d-inline-block" style="width: 70px;" id="taxRate" value="0" min="0" max="100" step="0.1">
+                                                                           %
+                                                                      </td>
+                                                                      <td class="text-end" id="taxAmount">$0.00</td>
+                                                                 </tr>
+                                                                 <tr>
+                                                                      <td class="text-end">
+                                                                           Discount:
+                                                                           <input type="number" class="form-control form-control-sm d-inline-block" style="width: 100px;" id="discount" value="0" min="0" step="0.01">
+                                                                      </td>
+                                                                      <td class="text-end" id="discountAmount">-$0.00</td>
+                                                                 </tr>
+                                                                 <tr class="border-top">
+                                                                      <td class="text-end"><h5 class="mb-0">Total:</h5></td>
+                                                                      <td class="text-end"><h5 class="mb-0" id="total">$2,500.00</h5></td>
+                                                                 </tr>
+                                                            </tbody>
+                                                       </table>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Action Buttons -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="d-flex justify-content-end gap-2">
+                                        <button type="button" class="btn btn-light" onclick="window.history.back()">Cancel</button>
+                                        <button type="button" class="btn btn-outline-primary">Save as Draft</button>
+                                        <button type="submit" class="btn btn-success">Update Invoice</button>
+                                   </div>
+                              </div>
+                         </div>
+                    </form>
+
+               </div>
+               <!-- End Container Fluid -->
+
+               @@include("partials/footer.html")
+
+          </div>
+          <!-- End Page-content -->
+     </div>
+     <!-- END Wrapper -->
+
+     @@include("partials/vendor-scripts.html")
+
+     <script>
+          // Calculate item amount
+          document.getElementById('invoice-items').addEventListener('input', function(e) {
+               if (e.target.classList.contains('item-quantity') || e.target.classList.contains('item-rate')) {
+                    const row = e.target.closest('tr');
+                    const quantity = parseFloat(row.querySelector('.item-quantity').value) || 0;
+                    const rate = parseFloat(row.querySelector('.item-rate').value) || 0;
+                    const amount = quantity * rate;
+                    row.querySelector('.item-amount').value = '$' + amount.toFixed(2);
+                    calculateTotals();
+               }
+          });
+
+          // Add invoice item
+          function addInvoiceItem() {
+               const tbody = document.getElementById('invoice-items');
+               const newRow = tbody.rows[0].cloneNode(true);
+               newRow.querySelectorAll('input').forEach(input => {
+                    if (input.classList.contains('item-quantity')) {
+                         input.value = '1';
+                    } else if (!input.classList.contains('item-amount')) {
+                         input.value = '';
+                    }
+               });
+               tbody.appendChild(newRow);
+               calculateTotals();
+          }
+
+          // Remove invoice item
+          function removeInvoiceItem(button) {
+               if (document.getElementById('invoice-items').rows.length > 1) {
+                    const row = button.closest('tr');
+                    row.remove();
+                    calculateTotals();
+               } else {
+                    alert('At least one item is required');
+               }
+          }
+
+          // Calculate totals
+          function calculateTotals() {
+               const rows = document.querySelectorAll('#invoice-items tr');
+               let subtotal = 0;
+
+               rows.forEach(row => {
+                    const quantity = parseFloat(row.querySelector('.item-quantity').value) || 0;
+                    const rate = parseFloat(row.querySelector('.item-rate').value) || 0;
+                    subtotal += quantity * rate;
+               });
+
+               const taxRate = parseFloat(document.getElementById('taxRate').value) || 0;
+               const discount = parseFloat(document.getElementById('discount').value) || 0;
+               
+               const taxAmount = (subtotal * taxRate) / 100;
+               const total = subtotal + taxAmount - discount;
+
+               document.getElementById('subtotal').textContent = '$' + subtotal.toFixed(2);
+               document.getElementById('taxAmount').textContent = '$' + taxAmount.toFixed(2);
+               document.getElementById('discountAmount').textContent = '-$' + discount.toFixed(2);
+               document.getElementById('total').textContent = '$' + total.toFixed(2);
+          }
+
+          // Tax and discount change
+          document.getElementById('taxRate').addEventListener('input', calculateTotals);
+          document.getElementById('discount').addEventListener('input', calculateTotals);
+
+          // Form submission
+          document.getElementById('invoiceForm').addEventListener('submit', function(e) {
+               e.preventDefault();
+               alert('Invoice updated successfully!');
+               window.location.href = 'invoice-details.html';
+          });
+
+          // Calculate initial totals
+          document.addEventListener('DOMContentLoaded', function() {
+               calculateTotals();
+          });
+     </script>
+
+</body>
+
+</html>

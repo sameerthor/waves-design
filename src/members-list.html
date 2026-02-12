@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     @@include("partials/title-meta.html", {"sub-title": "Members List"})
+
+     @@include("partials/head-css.html")
+</head>
+
+<body>
+
+     <!-- START Wrapper -->
+     <div class="wrapper">
+
+          @@include("partials/menu.html")
+
+          <!-- ==================================================== -->
+          <!-- Start right Content here -->
+          <!-- ==================================================== -->
+          <div class="page-content">
+
+               <!-- Start Container Fluid -->
+               <div class="container-fluid">
+
+                    @@include("partials/page-title.html", {"title": "Membership", "sub-title": "Members"})
+
+                    <!-- Stats Cards Row -->
+                    <div class="row">
+                         <div class="col-xl-3 col-md-6">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                             <div>
+                                                  <h6 class="text-muted fw-semibold mb-2">New Members This Month</h6>
+                                                  <h3 class="mb-0">24</h3>
+                                                  <p class="text-muted mb-0 mt-2"><small>+12% from last month</small></p>
+                                             </div>
+                                             <div class="avatar-sm bg-primary rounded d-flex align-items-center justify-content-center">
+                                                  <iconify-icon icon="solar:user-plus-broken" class="fs-24 text-white"></iconify-icon>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="col-xl-3 col-md-6">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                             <div>
+                                                  <h6 class="text-muted fw-semibold mb-2">Total Active Members</h6>
+                                                  <h3 class="mb-0">1,234</h3>
+                                                  <p class="text-muted mb-0 mt-2"><small>+8% from last month</small></p>
+                                             </div>
+                                             <div class="avatar-sm bg-success rounded d-flex align-items-center justify-content-center">
+                                                  <iconify-icon icon="solar:users-group-two-rounded-broken" class="fs-24 text-white"></iconify-icon>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="col-xl-3 col-md-6">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                             <div>
+                                                  <h6 class="text-muted fw-semibold mb-2">Premium Members</h6>
+                                                  <h3 class="mb-0">6</h3>
+                                                  <p class="text-muted mb-0 mt-2"><small>Platinum + Gold Plus</small></p>
+                                             </div>
+                                             <div class="avatar-sm bg-warning rounded d-flex align-items-center justify-content-center">
+                                                  <iconify-icon icon="solar:crown-broken" class="fs-24 text-white"></iconify-icon>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="col-xl-3 col-md-6">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                             <div>
+                                                  <h6 class="text-muted fw-semibold mb-2">Overdue/At Risk</h6>
+                                                  <h3 class="mb-0">23</h3>
+                                                  <p class="text-muted mb-0 mt-2"><small>Need follow-up</small></p>
+                                             </div>
+                                             <div class="avatar-sm bg-danger rounded d-flex align-items-center justify-content-center">
+                                                  <iconify-icon icon="solar:info-circle-broken" class="fs-24 text-white"></iconify-icon>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row">
+                         <div class="col-xl-5">
+                              <div class="card">
+                                   <div class="card-header">
+                                        <h4 class="card-title">Membership Type Breakdown</h4>
+                                   </div>
+                                   <div class="card-body">
+                                        <div id="membership-chart" class="apex-charts"></div>
+                                        <div class="row mt-3">
+                                             <div class="col-6 col-md-3">
+                                                  <p class="text-muted mb-1">Gold 30%</p>
+                                             </div>
+                                             <div class="col-6 col-md-3">
+                                                  <p class="text-muted mb-1">Gold Plus 15%</p>
+                                             </div>
+                                             <div class="col-6 col-md-3">
+                                                  <p class="text-muted mb-1">Platinum 15%</p>
+                                             </div>
+                                             <div class="col-6 col-md-3">
+                                                  <p class="text-muted mb-1">Bronze 40%</p>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <div class="col-xl-7">
+                              <div class="card">
+                                   <div class="card-header">
+                                        <h4 class="card-title">Monthly Revenue Trend</h4>
+                                   </div>
+                                   <div class="card-body">
+                                        <div id="revenue-chart" class="apex-charts"></div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- Members List Table -->
+                    <div class="row">
+                         <div class="col-xl-12">
+                              <div class="card">
+                                   <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+                                        <h4 class="card-title mb-0">Latest Member Signups</h4>
+                                        <a href="#" class="btn btn-success btn-sm">
+                                             <i class="ri-add-line me-1"></i> Add New
+                                        </a>
+                                   </div>
+                                   <div class="card-body p-0">
+                                        <!-- Search and Filters -->
+                                        <div class="p-3 border-bottom bg-light">
+                                             <div class="row align-items-center">
+                                                  <div class="col-md-4">
+                                                       <form class="app-search">
+                                                            <div class="position-relative">
+                                                                 <input type="search" class="form-control" placeholder="Search by name" autocomplete="off">
+                                                                 <iconify-icon icon="solar:magnifer-broken" class="search-widget-icon"></iconify-icon>
+                                                            </div>
+                                                       </form>
+                                                  </div>
+                                                  <div class="col-md-2">
+                                                       <p class="text-dark fw-medium mb-0">1603 Members</p>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                       <div class="d-flex justify-content-end gap-2">
+                                                            <select class="form-select form-select-sm" style="width: auto;">
+                                                                 <option>Location</option>
+                                                                 <option>Bay Harbor</option>
+                                                                 <option>Marina District</option>
+                                                            </select>
+                                                            <select class="form-select form-select-sm" style="width: auto;">
+                                                                 <option>All Memberships</option>
+                                                                 <option>Platinum</option>
+                                                                 <option>Gold Plus</option>
+                                                                 <option>Gold</option>
+                                                                 <option>Bronze</option>
+                                                            </select>
+                                                            <select class="form-select form-select-sm" style="width: auto;">
+                                                                 <option>Status</option>
+                                                                 <option>Active</option>
+                                                                 <option>Overdue</option>
+                                                            </select>
+                                                            <button class="btn btn-outline-secondary btn-sm">Clear Filters</button>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+
+                                        <div class="table-responsive">
+                                             <table class="table table-hover align-middle mb-0">
+                                                  <thead class="table-light">
+                                                       <tr>
+                                                            <th>
+                                                                 <div class="form-check">
+                                                                      <input class="form-check-input" type="checkbox" id="checkAll">
+                                                                 </div>
+                                                            </th>
+                                                            <th>Member Name</th>
+                                                            <th>Membership Type</th>
+                                                            <th>Join Date</th>
+                                                            <th>Location</th>
+                                                            <th>Last Payment</th>
+                                                            <th>Status</th>
+                                                            <th>Actions</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td>
+                                                                 <div class="form-check">
+                                                                      <input class="form-check-input" type="checkbox">
+                                                                 </div>
+                                                            </td>
+                                                            <td>
+                                                                 <div class="d-flex flex-column">
+                                                                      <a href="members-details.html" class="text-dark fw-medium">James Mitchell</a>
+                                                                      <small class="text-muted">james.mitchell@email.com</small>
+                                                                 </div>
+                                                            </td>
+                                                            <td>
+                                                                 <span class="badge bg-secondary-subtle text-secondary rounded-pill px-3 py-2">
+                                                                      <i class="ri-vip-diamond-line me-1"></i> Platinum
+                                                                 </span>
+                                                            </td>
+                                                            <td>15/03/2022</td>
+                                                            <td>Bay Harbor</td>
+                                                            <td>15/01/2024</td>
+                                                            <td>
+                                                                 <span class="badge bg-success-subtle text-success">Active</span>
+                                                            </td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-muted" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-18"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="members-details.html"><i class="ri-eye-line me-2"></i> View Details</a></li>
+                                                                           <li><a class="dropdown-item" href="#"><i class="ri-edit-line me-2"></i> Edit</a></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i> Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+
+                                                       <tr>
+                                                            <td>
+                                                                 <div class="form-check">
+                                                                      <input class="form-check-input" type="checkbox">
+                                                                 </div>
+                                                            </td>
+                                                            <td>
+                                                                 <div class="d-flex flex-column">
+                                                                      <a href="members-details.html" class="text-dark fw-medium">Robert Johnson</a>
+                                                                      <small class="text-muted">robert.j@email.com</small>
+                                                                 </div>
+                                                            </td>
+                                                            <td>
+                                                                 <span class="badge bg-warning-subtle text-warning rounded-pill px-3 py-2">
+                                                                      <i class="ri-star-line me-1"></i> Gold Plus
+                                                                 </span>
+                                                            </td>
+                                                            <td>15/03/2022</td>
+                                                            <td>Bay Harbor</td>
+                                                            <td>15/01/2024</td>
+                                                            <td>
+                                                                 <span class="badge bg-success-subtle text-success">Active</span>
+                                                            </td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-muted" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-18"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="members-details.html"><i class="ri-eye-line me-2"></i> View Details</a></li>
+                                                                           <li><a class="dropdown-item" href="#"><i class="ri-edit-line me-2"></i> Edit</a></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i> Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+
+                                                       <tr>
+                                                            <td>
+                                                                 <div class="form-check">
+                                                                      <input class="form-check-input" type="checkbox">
+                                                                 </div>
+                                                            </td>
+                                                            <td>
+                                                                 <div class="d-flex flex-column">
+                                                                      <a href="members-details.html" class="text-dark fw-medium">Emily Davis</a>
+                                                                      <small class="text-muted">emily.davis@email.com</small>
+                                                                 </div>
+                                                            </td>
+                                                            <td>
+                                                                 <span class="badge bg-info-subtle text-info rounded-pill px-3 py-2">
+                                                                      <i class="ri-trophy-line me-1"></i> Gold
+                                                                 </span>
+                                                            </td>
+                                                            <td>15/03/2022</td>
+                                                            <td>Bay Harbor</td>
+                                                            <td>15/01/2024</td>
+                                                            <td>
+                                                                 <span class="badge bg-success-subtle text-success">Active</span>
+                                                            </td>
+                                                            <td>
+                                                                 <div class="dropdown">
+                                                                      <a href="#" class="text-muted" data-bs-toggle="dropdown">
+                                                                           <i class="ri-more-2-fill fs-18"></i>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu dropdown-menu-end">
+                                                                           <li><a class="dropdown-item" href="members-details.html"><i class="ri-eye-line me-2"></i> View Details</a></li>
+                                                                           <li><a class="dropdown-item" href="#"><i class="ri-edit-line me-2"></i> Edit</a></li>
+                                                                           <li><a class="dropdown-item text-danger" href="#"><i class="ri-delete-bin-line me-2"></i> Delete</a></li>
+                                                                      </ul>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </div>
+                                        
+                                        <!-- Pagination -->
+                                        <div class="p-3 border-top">
+                                             <div class="d-flex justify-content-between align-items-center">
+                                                  <div class="text-muted">Showing 1 to 3 of 1603 members</div>
+                                                  <nav>
+                                                       <ul class="pagination mb-0">
+                                                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                                       </ul>
+                                                  </nav>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+               <!-- End Container Fluid -->
+
+               @@include("partials/footer.html")
+
+          </div>
+          <!-- ==================================================== -->
+          <!-- End Page Content -->
+          <!-- ==================================================== -->
+
+     </div>
+     <!-- END Wrapper -->
+
+     @@include("partials/vendor-scripts.html")
+
+     <!-- Apexcharts JS -->
+     <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+     <!-- Charts Init -->
+     <script>
+          // Membership Type Breakdown Chart
+          var membershipOptions = {
+               series: [40, 30, 15, 15],
+               chart: {
+                    type: 'donut',
+                    height: 300
+               },
+               labels: ['Bronze', 'Gold', 'Gold Plus', 'Platinum'],
+               colors: ['#CD7F32', '#FFD700', '#FFA500', '#BAA9A9'],
+               legend: {
+                    show: false
+               },
+               dataLabels: {
+                    enabled: false
+               }
+          };
+          var membershipChart = new ApexCharts(document.querySelector("#membership-chart"), membershipOptions);
+          membershipChart.render();
+
+          // Revenue Trend Chart
+          var revenueOptions = {
+               series: [{
+                    name: '2025',
+                    data: [60, 197, 157, 189, 134, 213, 92, 202, 92, 105, 131]
+               }],
+               chart: {
+                    type: 'area',
+                    height: 300,
+                    toolbar: {
+                         show: false
+                    }
+               },
+               colors: ['#FB85D2'],
+               stroke: {
+                    curve: 'smooth',
+                    width: 2
+               },
+               fill: {
+                    type: 'gradient',
+                    gradient: {
+                         opacityFrom: 0.3,
+                         opacityTo: 0
+                    }
+               },
+               xaxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+               },
+               yaxis: {
+                    min: 0,
+                    max: 100
+               }
+          };
+          var revenueChart = new ApexCharts(document.querySelector("#revenue-chart"), revenueOptions);
+          revenueChart.render();
+     </script>
+
+</body>
+
+</html>

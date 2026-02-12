@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     @@include("partials/title-meta.html", {"sub-title": "Edit Staff"})
+
+     @@include("partials/head-css.html")
+</head>
+
+<body>
+
+     <!-- START Wrapper -->
+     <div class="wrapper">
+
+          @@include("partials/menu.html")
+
+          <!-- ==================================================== -->
+          <!-- Start right Content here -->
+          <!-- ==================================================== -->
+          <div class="page-content">
+
+               <!-- Start Container Fluid -->
+               <div class="container-fluid">
+
+                    <!-- Page Title -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="page-title-box d-flex align-items-center justify-content-between">
+                                   <div class="d-flex align-items-center gap-2">
+                                        <a href="staff-details.html" class="btn btn-sm btn-light">
+                                             <i class="ri-arrow-left-line"></i>
+                                        </a>
+                                        <h4 class="mb-0 fw-semibold">Edit Staff</h4>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- Edit Staff Form -->
+                    <div class="row">
+                         <div class="col-lg-8">
+                              <div class="card">
+                                   <div class="card-body">
+                                        <h5 class="card-title fw-semibold mb-4">Staff Information</h5>
+
+                                        <form class="needs-validation" novalidate>
+                                             <div class="mb-3">
+                                                  <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                                  <input type="text" class="form-control" id="fullName" value="John Smith" required>
+                                                  <div class="invalid-feedback">
+                                                       Please provide a valid name.
+                                                  </div>
+                                             </div>
+
+                                             <div class="row">
+                                                  <div class="col-md-6">
+                                                       <div class="mb-3">
+                                                            <label for="role" class="form-label">Role <span class="text-danger">*</span></label>
+                                                            <select class="form-select" id="role" required>
+                                                                 <option selected>Captain</option>
+                                                                 <option>Crew Member</option>
+                                                                 <option>Maintenance</option>
+                                                                 <option>Other</option>
+                                                            </select>
+                                                            <div class="invalid-feedback">
+                                                                 Please select a role.
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                       <div class="mb-3">
+                                                            <label for="availability" class="form-label">Availability <span class="text-danger">*</span></label>
+                                                            <select class="form-select" id="availability" required>
+                                                                 <option selected>Available</option>
+                                                                 <option>On Duty</option>
+                                                                 <option>Unavailable</option>
+                                                            </select>
+                                                            <div class="invalid-feedback">
+                                                                 Please select availability status.
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+
+                                             <div class="mb-3">
+                                                  <label for="contact" class="form-label">Contact Number <span class="text-danger">*</span></label>
+                                                  <input type="tel" class="form-control" id="contact" value="+1 234-567-8901" required>
+                                                  <div class="invalid-feedback">
+                                                       Please provide a valid contact number.
+                                                  </div>
+                                             </div>
+
+                                             <div class="row">
+                                                  <div class="col-md-6">
+                                                       <div class="mb-3">
+                                                            <label for="email" class="form-label">Email Address</label>
+                                                            <input type="email" class="form-control" id="email" value="john.smith@example.com">
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                       <div class="mb-3">
+                                                            <label for="experience" class="form-label">Years of Experience</label>
+                                                            <input type="number" class="form-control" id="experience" value="15">
+                                                       </div>
+                                                  </div>
+                                             </div>
+
+                                             <div class="mb-3">
+                                                  <label for="joiningDate" class="form-label">Joining Date</label>
+                                                  <input type="date" class="form-control" id="joiningDate" value="2020-01-01">
+                                             </div>
+
+                                             <div class="mb-3">
+                                                  <label for="notes" class="form-label">Notes</label>
+                                                  <textarea class="form-control" id="notes" rows="4">Highly experienced captain with excellent leadership skills and maritime knowledge.</textarea>
+                                             </div>
+
+                                             <div class="d-flex gap-2">
+                                                  <button type="submit" class="btn btn-primary">
+                                                       <i class="ri-save-line me-1"></i> Update Staff
+                                                  </button>
+                                                  <a href="staff-details.html" class="btn btn-outline-secondary">
+                                                       Cancel
+                                                  </a>
+                                             </div>
+                                        </form>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+               <!-- End Container Fluid -->
+
+               @@include("partials/footer.html")
+
+          </div>
+          <!-- End Page-content -->
+     </div>
+     <!-- END Wrapper -->
+
+     @@include("partials/vendor-scripts.html")
+
+     <script>
+          document.addEventListener('DOMContentLoaded', function() {
+               const form = document.querySelector('.needs-validation');
+               
+               form.addEventListener('submit', function(e) {
+                    if (!form.checkValidity()) {
+                         e.preventDefault();
+                         e.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+               }, false);
+          });
+     </script>
+
+</body>
+
+</html>

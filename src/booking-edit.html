@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     @@include("partials/title-meta.html", {"sub-title": "Edit Booking"})
+     @@include("partials/head-css.html")
+</head>
+
+<body>
+     <!-- START Wrapper -->
+     <div class="wrapper">
+          @@include("partials/menu.html")
+
+          <!-- Start right Content here -->
+          <div class="page-content">
+               <!-- Start Container Fluid -->
+               <div class="container-fluid">
+
+                    <!-- Page Title -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="page-title-box d-flex align-items-center justify-content-between">
+                                   <div class="d-flex align-items-center gap-2">
+                                        <a href="javascript:history.back()" class="btn btn-sm btn-light">
+                                             <i class="ri-arrow-left-line"></i>
+                                        </a>
+                                        <h4 class="mb-0 fw-semibold">Edit Booking</h4>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <form id="bookingEditForm">
+                         <!-- Booking Info Section -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <h5 class="card-title mb-4">Booking Info</h5>
+                                             <div class="row g-3">
+                                                  <div class="col-md-4">
+                                                       <label for="bookingId" class="form-label">Booking ID</label>
+                                                       <input type="text" class="form-control" id="bookingId" value="BKG-2025" disabled readonly>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <label for="member" class="form-label">Member</label>
+                                                       <input type="text" class="form-control" id="member" value="John Smith" readonly>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <label for="statusSelect" class="form-label">Status <span class="text-danger">*</span></label>
+                                                       <select class="form-select" id="statusSelect" required>
+                                                            <option value="pending">Pending</option>
+                                                            <option value="confirmed" selected>Confirmed</option>
+                                                            <option value="cancelled">Cancelled</option>
+                                                            <option value="completed">Completed</option>
+                                                       </select>
+                                                  </div>
+
+                                                  <div class="col-md-4">
+                                                       <label for="boat" class="form-label">Boat</label>
+                                                       <select class="form-select" id="boat">
+                                                            <option value="sea-breeze" selected>Sea Breeze</option>
+                                                            <option value="ocean-explorer">Ocean Explorer</option>
+                                                            <option value="wave-runner">Wave Runner</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <label for="location" class="form-label">Location / Dock</label>
+                                                       <select class="form-select" id="location">
+                                                            <option value="miami-marina-dock-a" selected>Miami Marina - Dock A</option>
+                                                            <option value="bay-harbor-dock-b">Bay Harbor - Dock B</option>
+                                                            <option value="coastal-point-dock-c">Coastal Point - Dock C</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                       <label for="dockmaster" class="form-label">Dockmaster</label>
+                                                       <select class="form-select" id="dockmaster">
+                                                            <option value="captain-james" selected>Captain James</option>
+                                                            <option value="captain-mike">Captain Mike Rodriguez</option>
+                                                            <option value="captain-sarah">Captain Sarah Wilson</option>
+                                                       </select>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Date & Time (Reschedule) Section -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <h5 class="card-title mb-4">Date & Time (Reschedule)</h5>
+                                             <div class="row g-3">
+                                                  <div class="col-md-3">
+                                                       <label for="startDate" class="form-label">Start Date <span class="text-danger">*</span></label>
+                                                       <div class="input-group">
+                                                            <span class="input-group-text"><i class="ri-calendar-line"></i></span>
+                                                            <input type="date" class="form-control" id="startDate" value="2025-09-18" required>
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                       <label for="startTime" class="form-label">Start Time <span class="text-danger">*</span></label>
+                                                       <select class="form-select" id="startTime" required>
+                                                            <option value="08:00">08:00</option>
+                                                            <option value="09:00">09:00</option>
+                                                            <option value="10:00" selected>10:00</option>
+                                                            <option value="11:00">11:00</option>
+                                                            <option value="12:00">12:00</option>
+                                                            <option value="13:00">13:00</option>
+                                                            <option value="14:00">14:00</option>
+                                                            <option value="15:00">15:00</option>
+                                                            <option value="16:00">16:00</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                       <label for="duration" class="form-label">Duration (Hours) <span class="text-danger">*</span></label>
+                                                       <select class="form-select" id="duration" required>
+                                                            <option value="1">01 hour</option>
+                                                            <option value="2">02 hours</option>
+                                                            <option value="3">03 hours</option>
+                                                            <option value="4" selected>04 hours</option>
+                                                            <option value="5">05 hours</option>
+                                                            <option value="6">06 hours</option>
+                                                            <option value="8">08 hours</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                       <label for="endTime" class="form-label">End Time</label>
+                                                       <select class="form-select" id="endTime">
+                                                            <option value="10:00" selected>10:00</option>
+                                                            <option value="14:00">14:00</option>
+                                                            <option value="15:00">15:00</option>
+                                                            <option value="16:00">16:00</option>
+                                                            <option value="17:00">17:00</option>
+                                                            <option value="18:00">18:00</option>
+                                                       </select>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Notes Section -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <h5 class="card-title mb-4">Notes</h5>
+                                             <div class="row g-3">
+                                                  <div class="col-md-6">
+                                                       <label for="customerNotes" class="form-label">Customer Notes</label>
+                                                       <textarea class="form-control" id="customerNotes" rows="4" placeholder="Anniversary celebration - please prepare champagne">Anniversary celebration - please prepare champagne</textarea>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                       <label for="internalNotes" class="form-label">Internal Notes</label>
+                                                       <textarea class="form-control" id="internalNotes" rows="4" placeholder="VIP member - priority service">VIP member - priority service</textarea>
+                                                  </div>
+                                                  
+                                                  <div class="col-12">
+                                                       <label for="reasonForEdit" class="form-label d-flex align-items-center gap-2">
+                                                            Reason for Edit <span class="text-danger">*</span>
+                                                            <span class="badge bg-danger">Required</span>
+                                                       </label>
+                                                       <textarea class="form-control border-warning" id="reasonForEdit" rows="3" placeholder="Enter reason for this edit ( for audit trial)" required style="background-color: rgba(255, 223, 123, 0.1);"></textarea>
+                                                       <small class="text-muted">This field is required for audit trail purposes</small>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Linked Modules (Read-Only) Section -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <h5 class="card-title mb-4">Linked Modules (Read-Only)</h5>
+                                             <div class="row g-3">
+                                                  <div class="col-md-6">
+                                                       <div class="border rounded p-3 d-flex justify-content-between align-items-center">
+                                                            <div>
+                                                                 <label class="fw-medium mb-0">Fuel Log Status</label>
+                                                            </div>
+                                                            <span class="badge bg-primary px-3 py-2">Created</span>
+                                                       </div>
+                                                  </div>
+                                                  <div class="col-md-6">
+                                                       <div class="border rounded p-3 d-flex justify-content-between align-items-center">
+                                                            <div>
+                                                                 <label class="fw-medium mb-0">Invoice Status</label>
+                                                            </div>
+                                                            <span class="badge bg-primary px-3 py-2">Generated</span>
+                                                       </div>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Action Buttons -->
+                         <div class="row">
+                              <div class="col-12">
+                                   <div class="d-flex justify-content-between mb-4">
+                                        <div class="d-flex gap-2">
+                                             <button type="button" class="btn btn-outline-warning d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#cancelBookingModal">
+                                                  <i class="ri-close-circle-line"></i>
+                                                  Cancel Booking
+                                             </button>
+                                             <button type="button" class="btn btn-danger d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#deleteBookingModal">
+                                                  <i class="ri-delete-bin-line"></i>
+                                                  Delete Booking
+                                             </button>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                             <button type="button" class="btn btn-outline-secondary" onclick="history.back()">
+                                                  Discard Changes
+                                             </button>
+                                             <button type="submit" class="btn btn-primary">
+                                                  Save Changes
+                                             </button>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </form>
+
+               </div>
+               <!-- End Container Fluid -->
+
+               @@include("partials/footer.html")
+          </div>
+          <!-- End Page Content -->
+     </div>
+     <!-- END Wrapper -->
+
+     <!-- Cancel Booking Modal -->
+     <div class="modal fade" id="cancelBookingModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+               <div class="modal-content">
+                    <div class="modal-header">
+                         <h5 class="modal-title">Cancel Booking</h5>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                         <p>Are you sure you want to cancel this booking? This action will update the booking status to "Cancelled".</p>
+                         <div class="mb-3">
+                              <label for="cancelReason" class="form-label">Cancellation Reason</label>
+                              <textarea class="form-control" id="cancelReason" rows="3" placeholder="Enter reason for cancellation"></textarea>
+                         </div>
+                    </div>
+                    <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                         <button type="button" class="btn btn-warning">Confirm Cancellation</button>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <!-- Delete Booking Modal -->
+     <div class="modal fade" id="deleteBookingModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+               <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                         <h5 class="modal-title">Delete Booking</h5>
+                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                         <div class="alert alert-danger d-flex align-items-center" role="alert">
+                              <i class="ri-error-warning-line fs-20 me-2"></i>
+                              <div>
+                                   <strong>Warning!</strong> This action cannot be undone.
+                              </div>
+                         </div>
+                         <p>Are you sure you want to permanently delete this booking? All associated data including fuel logs and invoices will be removed.</p>
+                         <div class="mb-3">
+                              <label for="deleteReason" class="form-label">Deletion Reason <span class="text-danger">*</span></label>
+                              <textarea class="form-control" id="deleteReason" rows="3" placeholder="Enter reason for deletion" required></textarea>
+                         </div>
+                    </div>
+                    <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                         <button type="button" class="btn btn-danger">Delete Permanently</button>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     @@include("partials/vendor-scripts.html")
+
+     <script>
+          // Form validation and submission
+          document.getElementById('bookingEditForm').addEventListener('submit', function(e) {
+               e.preventDefault();
+               
+               // Check if reason for edit is filled
+               const reasonForEdit = document.getElementById('reasonForEdit').value;
+               if (!reasonForEdit.trim()) {
+                    document.getElementById('reasonForEdit').classList.add('is-invalid');
+                    alert('Please provide a reason for this edit (required for audit trail).');
+                    return;
+               }
+
+               // Basic validation for required fields
+               const requiredFields = this.querySelectorAll('[required]');
+               let isValid = true;
+               
+               requiredFields.forEach(field => {
+                    if (!field.value) {
+                         isValid = false;
+                         field.classList.add('is-invalid');
+                    } else {
+                         field.classList.remove('is-invalid');
+                    }
+               });
+
+               if (isValid) {
+                    // Show success message
+                    alert('Booking updated successfully!');
+                    // Redirect to booking details
+                    window.location.href = 'booking-details.html';
+               } else {
+                    alert('Please fill in all required fields.');
+               }
+          });
+
+          // Auto-calculate end time based on duration
+          document.getElementById('duration').addEventListener('change', function() {
+               const startTime = document.getElementById('startTime').value;
+               const duration = parseInt(this.value);
+               
+               if (startTime && duration) {
+                    const [hours, minutes] = startTime.split(':').map(Number);
+                    const endHours = (hours + duration) % 24;
+                    const endTime = `${String(endHours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+                    document.getElementById('endTime').value = endTime;
+               }
+          });
+
+          // Highlight reason field when empty
+          document.getElementById('reasonForEdit').addEventListener('blur', function() {
+               if (!this.value.trim()) {
+                    this.classList.add('is-invalid');
+               } else {
+                    this.classList.remove('is-invalid');
+               }
+          });
+     </script>
+
+</body>
+
+</html>

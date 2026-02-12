@@ -47,12 +47,12 @@ html[data-menu-color="light"]{
 
 /* Main Menu Dark */
 html[data-menu-color="dark"] {
-    --#{$prefix}main-nav-bg:                               #1C252E;
-    --#{$prefix}main-nav-item-color:                       #a8b2b5;
-    --#{$prefix}main-nav-item-hover-bg:                    #{rgba($white, 0.06)};
+    --#{$prefix}main-nav-bg:                               linear-gradient(180deg, #2948FF 0%, #396AFC 97.15%);
+    --#{$prefix}main-nav-item-color:                       #{$white};
+    --#{$prefix}main-nav-item-hover-bg:                    #{rgba($white, 0.18)};
     --#{$prefix}main-nav-item-hover-color:                 #{$white};
-    --#{$prefix}main-nav-item-active-color:                 #{$gray-200};
-    --#{$prefix}main-nav-border-color:                     #2f3944;
+    --#{$prefix}main-nav-item-active-color:                 #{$white};
+    --#{$prefix}main-nav-border-color:                     #{rgba($white, 0.1)};
 }
 
 

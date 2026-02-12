@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     @@include("partials/title-meta.html", {"sub-title": "Edit Member"})
+
+     @@include("partials/head-css.html")
+</head>
+
+<body>
+
+     <!-- START Wrapper -->
+     <div class="wrapper">
+
+          @@include("partials/menu.html")
+
+          <!-- ==================================================== -->
+          <!-- Start right Content here -->
+          <!-- ==================================================== -->
+          <div class="page-content">
+
+               <!-- Start Container Fluid -->
+               <div class="container-fluid">
+
+                    <!-- Page Title -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="page-title-box">
+                                   <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Membership</a></li>
+                                             <li class="breadcrumb-item"><a href="members-list.html">Members</a></li>
+                                             <li class="breadcrumb-item active">Edit Member</li>
+                                        </ol>
+                                   </div>
+                                   <h4 class="page-title">
+                                        <a href="members-details.html" class="text-dark me-2">
+                                             <i class="ri-arrow-left-line"></i>
+                                        </a>
+                                        Edit Member
+                                   </h4>
+                              </div>
+                         </div>
+                    </div>
+
+                    <form>
+                         <div class="row">
+                              <div class="col-xl-8">
+                                   <!-- Personal Information -->
+                                   <div class="card">
+                                        <div class="card-header">
+                                             <h4 class="card-title mb-0">Personal Information</h4>
+                                        </div>
+                                        <div class="card-body">
+                                             <div class="row">
+                                                  <div class="col-md-6 mb-3">
+                                                       <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+                                                       <input type="text" class="form-control" id="firstName" value="James" required>
+                                                  </div>
+                                                  <div class="col-md-6 mb-3">
+                                                       <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+                                                       <input type="text" class="form-control" id="lastName" value="Mitchell" required>
+                                                  </div>
+                                             </div>
+                                             <div class="row">
+                                                  <div class="col-md-6 mb-3">
+                                                       <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                                       <input type="email" class="form-control" id="email" value="james.mitchell@email.com" required>
+                                                  </div>
+                                                  <div class="col-md-6 mb-3">
+                                                       <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                                       <input type="tel" class="form-control" id="phone" value="+1 (555) 123-4567" required>
+                                                  </div>
+                                             </div>
+                                             <div class="row">
+                                                  <div class="col-md-6 mb-3">
+                                                       <label for="dateOfBirth" class="form-label">Date of Birth</label>
+                                                       <input type="date" class="form-control" id="dateOfBirth" value="1985-06-15">
+                                                  </div>
+                                                  <div class="col-md-6 mb-3">
+                                                       <label for="gender" class="form-label">Gender</label>
+                                                       <select class="form-select" id="gender">
+                                                            <option>Select gender</option>
+                                                            <option value="male" selected>Male</option>
+                                                            <option value="female">Female</option>
+                                                            <option value="other">Other</option>
+                                                            <option value="prefer-not">Prefer not to say</option>
+                                                       </select>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+
+                                   <!-- Address Information -->
+                                   <div class="card">
+                                        <div class="card-header">
+                                             <h4 class="card-title mb-0">Address Information</h4>
+                                        </div>
+                                        <div class="card-body">
+                                             <div class="mb-3">
+                                                  <label for="address1" class="form-label">Address Line 1 <span class="text-danger">*</span></label>
+                                                  <input type="text" class="form-control" id="address1" value="123 Harbor Street" required>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="address2" class="form-label">Address Line 2</label>
+                                                  <input type="text" class="form-control" id="address2" value="Apt 4B">
+                                             </div>
+                                             <div class="row">
+                                                  <div class="col-md-6 mb-3">
+                                                       <label for="city" class="form-label">City <span class="text-danger">*</span></label>
+                                                       <input type="text" class="form-control" id="city" value="Bay Harbor" required>
+                                                  </div>
+                                                  <div class="col-md-3 mb-3">
+                                                       <label for="state" class="form-label">State <span class="text-danger">*</span></label>
+                                                       <select class="form-select" id="state" required>
+                                                            <option>Select</option>
+                                                            <option value="CA" selected>California</option>
+                                                            <option value="NY">New York</option>
+                                                            <option value="TX">Texas</option>
+                                                            <option value="FL">Florida</option>
+                                                       </select>
+                                                  </div>
+                                                  <div class="col-md-3 mb-3">
+                                                       <label for="zipCode" class="form-label">ZIP Code <span class="text-danger">*</span></label>
+                                                       <input type="text" class="form-control" id="zipCode" value="94002" required>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                   </div>
+
+                                   <!-- Emergency Contact -->
+                                   <div class="card">
+                                        <div class="card-header">
+                                             <h4 class="card-title mb-0">Emergency Contact</h4>
+                                        </div>
+                                        <div class="card-body">
+                                             <div class="row">
+                                                  <div class="col-md-6 mb-3">
+                                                       <label for="emergencyName" class="form-label">Contact Name</label>
+                                                       <input type="text" class="form-control" id="emergencyName" value="Sarah Mitchell">
+                                                  </div>
+                                                  <div class="col-md-6 mb-3">
+                                                       <label for="emergencyPhone" class="form-label">Contact Phone</label>
+                                                       <input type="tel" class="form-control" id="emergencyPhone" value="+1 (555) 987-6543">
+                                                  </div>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="emergencyRelation" class="form-label">Relationship</label>
+                                                  <input type="text" class="form-control" id="emergencyRelation" value="Spouse">
+                                             </div>
+                                        </div>
+                                   </div>
+
+                                   <!-- Additional Information -->
+                                   <div class="card">
+                                        <div class="card-header">
+                                             <h4 class="card-title mb-0">Additional Information</h4>
+                                        </div>
+                                        <div class="card-body">
+                                             <div class="mb-3">
+                                                  <label for="notes" class="form-label">Notes</label>
+                                                  <textarea class="form-control" id="notes" rows="4">Long-time member, very active in community events. Prefers morning time slots.</textarea>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="referralSource" class="form-label">How did they hear about us?</label>
+                                                  <select class="form-select" id="referralSource">
+                                                       <option>Select source</option>
+                                                       <option value="website">Website</option>
+                                                       <option value="social">Social Media</option>
+                                                       <option value="referral" selected>Member Referral</option>
+                                                       <option value="ad">Advertisement</option>
+                                                       <option value="other">Other</option>
+                                                  </select>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="col-xl-4">
+                                   <!-- Membership Details -->
+                                   <div class="card">
+                                        <div class="card-header">
+                                             <h4 class="card-title mb-0">Membership Details</h4>
+                                        </div>
+                                        <div class="card-body">
+                                             <div class="mb-3">
+                                                  <label class="form-label">Member ID</label>
+                                                  <input type="text" class="form-control" value="#000001" disabled>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="membershipType" class="form-label">Membership Type <span class="text-danger">*</span></label>
+                                                  <select class="form-select" id="membershipType" required>
+                                                       <option>Select membership type</option>
+                                                       <option value="platinum" selected>Platinum - $299/month</option>
+                                                       <option value="gold-plus">Gold Plus - $199/month</option>
+                                                       <option value="gold">Gold - $149/month</option>
+                                                       <option value="bronze">Bronze - $99/month</option>
+                                                  </select>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="startDate" class="form-label">Start Date</label>
+                                                  <input type="date" class="form-control" id="startDate" value="2022-03-15" disabled>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="status" class="form-label">Status <span class="text-danger">*</span></label>
+                                                  <select class="form-select" id="status" required>
+                                                       <option value="active" selected>Active</option>
+                                                       <option value="inactive">Inactive</option>
+                                                       <option value="suspended">Suspended</option>
+                                                       <option value="overdue">Overdue</option>
+                                                  </select>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="billingCycle" class="form-label">Billing Cycle</label>
+                                                  <select class="form-select" id="billingCycle">
+                                                       <option selected>Monthly</option>
+                                                       <option value="quarterly">Quarterly</option>
+                                                       <option value="annually">Annually</option>
+                                                  </select>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="location" class="form-label">Preferred Location <span class="text-danger">*</span></label>
+                                                  <select class="form-select" id="location" required>
+                                                       <option>Select location</option>
+                                                       <option value="bay-harbor" selected>Bay Harbor</option>
+                                                       <option value="marina-district">Marina District</option>
+                                                       <option value="coastal-point">Coastal Point</option>
+                                                  </select>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <div class="form-check">
+                                                       <input class="form-check-input" type="checkbox" id="autoRenewal" checked>
+                                                       <label class="form-check-label" for="autoRenewal">
+                                                            Enable auto-renewal
+                                                       </label>
+                                                  </div>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label class="form-label">Total Paid</label>
+                                                  <h4 class="text-success">$8,970</h4>
+                                             </div>
+                                        </div>
+                                   </div>
+
+                                   <!-- Payment Information -->
+                                   <div class="card">
+                                        <div class="card-header">
+                                             <h4 class="card-title mb-0">Payment Information</h4>
+                                        </div>
+                                        <div class="card-body">
+                                             <div class="mb-3">
+                                                  <label for="paymentMethod" class="form-label">Payment Method <span class="text-danger">*</span></label>
+                                                  <select class="form-select" id="paymentMethod" required>
+                                                       <option>Select payment method</option>
+                                                       <option value="credit-card" selected>Credit Card</option>
+                                                       <option value="debit-card">Debit Card</option>
+                                                       <option value="bank-transfer">Bank Transfer</option>
+                                                       <option value="cash">Cash</option>
+                                                  </select>
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="cardNumber" class="form-label">Card Number</label>
+                                                  <input type="text" class="form-control" id="cardNumber" value="**** **** **** 4567">
+                                             </div>
+                                             <div class="row">
+                                                  <div class="col-6 mb-3">
+                                                       <label for="expiryDate" class="form-label">Expiry Date</label>
+                                                       <input type="text" class="form-control" id="expiryDate" value="12/25">
+                                                  </div>
+                                                  <div class="col-6 mb-3">
+                                                       <label for="cvv" class="form-label">CVV</label>
+                                                       <input type="text" class="form-control" id="cvv" placeholder="***">
+                                                  </div>
+                                             </div>
+                                             <div class="alert alert-info">
+                                                  <small><i class="ri-information-line me-1"></i> Last payment: $299 on 15/01/2024</small>
+                                             </div>
+                                        </div>
+                                   </div>
+
+                                   <!-- Profile Photo -->
+                                   <div class="card">
+                                        <div class="card-header">
+                                             <h4 class="card-title mb-0">Profile Photo</h4>
+                                        </div>
+                                        <div class="card-body">
+                                             <div class="text-center mb-3">
+                                                  <img id="profilePreview" src="assets/images/users/avatar-2.jpg" alt="Profile Preview" class="avatar-xl rounded-circle mb-3">
+                                             </div>
+                                             <div class="mb-3">
+                                                  <label for="profilePhoto" class="form-label">Upload New Photo</label>
+                                                  <input class="form-control" type="file" id="profilePhoto" accept="image/*">
+                                             </div>
+                                             <p class="text-muted mb-0"><small>Recommended: Square image, at least 400x400px</small></p>
+                                        </div>
+                                   </div>
+
+                                   <!-- Form Actions -->
+                                   <div class="card">
+                                        <div class="card-body">
+                                             <div class="d-grid gap-2">
+                                                  <button type="submit" class="btn btn-primary">
+                                                       <i class="ri-save-line me-1"></i> Save Changes
+                                                  </button>
+                                                  <a href="members-details.html" class="btn btn-outline-secondary">
+                                                       <i class="ri-arrow-left-line me-1"></i> Back to Details
+                                                  </a>
+                                                  <a href="members-list.html" class="btn btn-outline-danger">
+                                                       <i class="ri-close-line me-1"></i> Cancel
+                                                  </a>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </form>
+
+               </div>
+               <!-- End Container Fluid -->
+
+               @@include("partials/footer.html")
+
+          </div>
+          <!-- ==================================================== -->
+          <!-- End Page Content -->
+          <!-- ==================================================== -->
+
+     </div>
+     <!-- END Wrapper -->
+
+     @@include("partials/vendor-scripts.html")
+
+     <script>
+          // Profile photo preview
+          document.getElementById('profilePhoto').addEventListener('change', function(e) {
+               const file = e.target.files[0];
+               if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                         document.getElementById('profilePreview').src = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+               }
+          });
+
+          // Form validation
+          document.querySelector('form').addEventListener('submit', function(e) {
+               e.preventDefault();
+               
+               // Basic validation
+               const requiredFields = this.querySelectorAll('[required]');
+               let isValid = true;
+               
+               requiredFields.forEach(field => {
+                    if (!field.value || field.disabled) {
+                         if (!field.disabled) {
+                              isValid = false;
+                              field.classList.add('is-invalid');
+                         }
+                    } else {
+                         field.classList.remove('is-invalid');
+                    }
+               });
+
+               if (isValid) {
+                    // Show success message
+                    alert('Member updated successfully!');
+                    // Redirect to member details
+                    window.location.href = 'members-details.html';
+               } else {
+                    alert('Please fill in all required fields.');
+               }
+          });
+     </script>
+
+</body>
+
+</html>

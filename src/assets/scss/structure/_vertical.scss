@@ -52,7 +52,8 @@
           transition: all 0.3s ease-in-out;
           width: $main-nav-width;
           font-family: $font-family-secondary;
-          background: $main-nav-bg;
+          background: #2948FF;
+          background: linear-gradient(180deg, #2948FF 0%, #396AFC 97.15%);
           min-width: $main-nav-width;
           padding-bottom: $spacer;
 

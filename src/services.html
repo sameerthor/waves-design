@@ -67,7 +67,7 @@
                                                   <div class="row align-items-center g-3">
                                                        <div class="col-lg-4">
                                                             <div class="position-relative">
-                                                                 <input type="text" class="form-control ps-5" placeholder="Search by Customer Name or Booking ID" style="height: 38px;">
+                                                                 <input type="text" class="form-control ps-5" placeholder="Search customer or booking ID" style="height: 38px;">
                                                                  <svg class="position-absolute top-50 translate-middle-y ms-3" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                       <path d="M13.8754 13.8754L16.5004 16.5004M5.06285 2.45285C6.55992 1.58894 8.31998 1.29869 10.0152 1.63617C11.7104 1.97364 13.2251 2.91583 14.2771 4.28721C15.3292 5.6586 15.8469 7.36567 15.7338 9.09041C15.6206 10.8152 14.8844 12.44 13.6622 13.6622C12.44 14.8844 10.8152 15.6206 9.09041 15.7338C7.36567 15.8469 5.6586 15.3292 4.28721 14.2771C2.91583 13.2251 1.97364 11.7104 1.63617 10.0152C1.29869 8.31998 1.58894 6.55992 2.45285 5.06285" stroke="#8486A7" stroke-width="1.125" stroke-linecap="round"/>
                                                                  </svg>
@@ -77,30 +77,24 @@
                                                             <div class="d-flex flex-wrap gap-2 justify-content-lg-end align-items-center">
                                                                  <button class="btn btn-outline-light btn-sm text-muted d-flex align-items-center gap-2 px-3 py-2 border">
                                                                       Location
-                                                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                            <path d="M11.9995 15.0006L7.75684 10.758L9.17106 9.34375L11.9995 12.1722L14.8279 9.34375L16.2421 10.758L11.9995 15.0006Z" fill="#6C757D"/>
                                                                       </svg>
                                                                  </button>
                                                                  <button class="btn btn-outline-light btn-sm text-muted d-flex align-items-center gap-2 px-3 py-2 border">
                                                                       Date Range
-                                                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                            <path d="M11.9995 15.0006L7.75684 10.758L9.17106 9.34375L11.9995 12.1722L14.8279 9.34375L16.2421 10.758L11.9995 15.0006Z" fill="#6C757D"/>
                                                                       </svg>
                                                                  </button>
-                                                                 <button class="btn btn-outline-light btn-sm text-muted d-flex align-items-center gap-2 px-3 py-2 border">
+                                                                 <button class="btn btn-outline-light btn-sm text-muted d-flex align-items-center gap-2 px-3 py-2 border text-nowrap">
                                                                       Boat Name
-                                                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                            <path d="M11.9995 15.0006L7.75684 10.758L9.17106 9.34375L11.9995 12.1722L14.8279 9.34375L16.2421 10.758L11.9995 15.0006Z" fill="#6C757D"/>
-                                                                      </svg>
-                                                                 </button>
-                                                                 <button class="btn btn-outline-light btn-sm text-muted d-flex align-items-center gap-2 px-3 py-2 border">
-                                                                      Status
-                                                                      <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                           <path d="M12.2318 3.25V4.41667H11.6489L8.73426 8.79167V13.75H5.23676V8.79167L2.32218 4.41667H1.73926V3.25H12.2318ZM3.72118 4.41667L6.4026 8.44167V12.5833H7.56843V8.44167L10.2499 4.41667H3.72118Z" fill="#6C757D"/>
                                                                       </svg>
                                                                  </button>
                                                                  <button class="btn btn-light btn-sm text-muted px-3 py-2 border">
-                                                                      Clear Filters
+                                                                      Clear
                                                                  </button>
                                                                  <button class="btn btn-success btn-sm d-flex align-items-center gap-2 px-3 py-2" data-bs-toggle="modal" data-bs-target="#scheduleServiceModal">
                                                                       <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,28 +108,19 @@
                                              </div>
 
                                              <!-- Sub Tabs -->
-                                             <div class="card-header bg-white border-bottom px-4 py-0">
-                                                  <ul class="nav nav-pills gap-4 border-0">
+                                             <div class="bg-light-subtle border-bottom px-4 py-3">
+                                                  <ul class="nav nav-pills gap-2 border-0">
                                                        <li class="nav-item">
-                                                            <a class="nav-link active px-0 py-3 bg-transparent text-dark fw-semibold position-relative border-0 rounded-0" href="#">
-                                                                 All
-                                                                 <span class="position-absolute bottom-0 start-0 w-100 bg-primary" style="height: 2px;"></span>
-                                                            </a>
+                                                            <a class="nav-link active rounded-pill px-3 py-1 fs-13 fw-semibold" href="#">All</a>
                                                        </li>
                                                        <li class="nav-item">
-                                                            <a class="nav-link px-0 py-3 bg-transparent text-dark fw-semibold border-0 rounded-0" href="#">
-                                                                 Pending
-                                                            </a>
+                                                            <a class="nav-link rounded-pill px-3 py-1 fs-13 fw-semibold text-muted" href="#">Pending</a>
                                                        </li>
                                                        <li class="nav-item">
-                                                            <a class="nav-link px-0 py-3 bg-transparent text-dark fw-semibold border-0 rounded-0" href="#">
-                                                                 Completed
-                                                            </a>
+                                                            <a class="nav-link rounded-pill px-3 py-1 fs-13 fw-semibold text-muted" href="#">Completed</a>
                                                        </li>
                                                        <li class="nav-item">
-                                                            <a class="nav-link px-0 py-3 bg-transparent text-dark fw-semibold border-0 rounded-0" href="#">
-                                                                 Scheduled
-                                                            </a>
+                                                            <a class="nav-link rounded-pill px-3 py-1 fs-13 fw-semibold text-muted" href="#">Scheduled</a>
                                                        </li>
                                                   </ul>
                                              </div>
@@ -143,7 +128,7 @@
                                              <!-- Table -->
                                              <div class="table-responsive">
                                                   <table class="table table-hover mb-0">
-                                                       <thead class="bg-white">
+                                                       <thead class="bg-light-subtle">
                                                             <tr class="border-bottom">
                                                                  <th class="fw-medium text-muted py-3 px-3 fs-6">
                                                                       <input type="checkbox" class="form-check-input me-2">

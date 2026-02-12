@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     @@include("partials/title-meta.html", {"sub-title": "Services"})
+     @@include("partials/head-css.html")
+</head>
+
+<body data-menu-color="dark">
+     <div class="wrapper">
+          @@include("partials/main-nav-fleet.html")
+          @@include("partials/topbar.html")
+
+          <div class="page-content" style="background: #F3F4F6;">
+               <div class="container-fluid">
+                    
+                    <!-- Back Button -->
+                    <div class="row mb-3">
+                         <div class="col-12">
+                              <a href="javascript:history.back()" class="d-inline-flex align-items-center gap-2 text-decoration-none" style="font-size: 20px; font-weight: 600; color: #212529;">
+                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z" fill="#212529"/>
+                                   </svg>
+                                   Services
+                              </a>
+                         </div>
+                    </div>
+
+                    <!-- Tab Navigation -->
+                    <div class="row">
+                         <div class="col-12">
+                              <div class="card shadow-sm mb-0" style="border-radius: 5.6px; border-bottom: 1px solid #EAEDF1;">
+                                   <div class="card-body p-0">
+                                        <ul class="nav nav-tabs border-0" style="padding: 0 20px;">
+                                             <li class="nav-item">
+                                                  <a class="nav-link active d-flex align-items-center gap-2" href="#services-tab" data-bs-toggle="tab" style="padding: 13px 0; margin-right: 40px; border: none; background: none; color: #212529; font-size: 16px; font-weight: 600; position: relative;">
+                                                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z" fill="currentColor"/>
+                                                       </svg>
+                                                       Services
+                                                       <span class="position-absolute bottom-0 start-0" style="width: 100%; height: 3px; background: #2948FF;"></span>
+                                                  </a>
+                                             </li>
+                                             <li class="nav-item">
+                                                  <a class="nav-link d-flex align-items-center gap-2" href="#repairs-tab" data-bs-toggle="tab" style="padding: 13px 0; border: none; background: none; color: #212529; font-size: 16px; font-weight: 600;">
+                                                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M5.32894 3.27158C6.56203 2.8332 7.99181 3.10749 8.97878 4.09446C10.0997 5.21537 10.3014 6.90741 9.58381 8.23385L20.2925 18.9437L18.8783 20.3579L8.16933 9.64875C6.84276 10.3669 5.1502 10.1654 4.02903 9.04421C3.04178 8.05696 2.76761 6.62665 3.20652 5.39332L5.44324 7.63C6.02903 8.21578 6.97878 8.21578 7.56456 7.63C8.15035 7.04421 8.15035 6.09446 7.56456 5.50868L5.32894 3.27158ZM15.6963 5.15512L18.8783 3.38736L20.2925 4.80157L18.5247 7.98355L16.7569 8.3371L14.6356 10.4584L13.2214 9.04421L15.3427 6.92289L15.6963 5.15512ZM8.97878 13.2868L10.393 14.7011L5.08969 20.0044C4.69917 20.3949 4.066 20.3949 3.67548 20.0044C3.31285 19.6417 3.28695 19.0699 3.59777 18.6774L3.67548 18.5902L8.97878 13.2868Z" fill="currentColor"/>
+                                                       </svg>
+                                                       Repairs
+                                                  </a>
+                                             </li>
+                                        </ul>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                         <!-- Services Tab -->
+                         <div class="tab-pane fade show active" id="services-tab">
+                              <div class="row mt-0">
+                                   <div class="col-12">
+                                        <div class="card shadow-sm" style="border-radius: 5.6px;">
+                                             <!-- Header with Filters -->
+                                             <div class="card-header bg-white border-bottom" style="padding: 15px 22px;">
+                                                  <div class="row align-items-center g-3">
+                                                       <div class="col-lg-4">
+                                                            <div class="position-relative">
+                                                                 <input type="text" class="form-control ps-5" placeholder="Search by Customer Name or Booking ID" style="border-color: #E8EDF1; border-radius: 5.6px; height: 38px;">
+                                                                 <svg class="position-absolute top-50 translate-middle-y ms-3" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                      <path d="M13.8754 13.8754L16.5004 16.5004M5.06285 2.45285C6.55992 1.58894 8.31998 1.29869 10.0152 1.63617C11.7104 1.97364 13.2251 2.91583 14.2771 4.28721C15.3292 5.6586 15.8469 7.36567 15.7338 9.09041C15.6206 10.8152 14.8844 12.44 13.6622 13.6622C12.44 14.8844 10.8152 15.6206 9.09041 15.7338C7.36567 15.8469 5.6586 15.3292 4.28721 14.2771C2.91583 13.2251 1.97364 11.7104 1.63617 10.0152C1.29869 8.31998 1.58894 6.55992 2.45285 5.06285" stroke="#8486A7" stroke-width="1.125" stroke-linecap="round"/>
+                                                                 </svg>
+                                                            </div>
+                                                       </div>
+                                                       <div class="col-lg-8">
+                                                            <div class="d-flex flex-wrap gap-2 justify-content-lg-end align-items-center">
+                                                                 <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2" style="padding: 8px 16px; font-size: 14px; border-radius: 5.6px; border-color: rgba(108, 117, 125, 0.25);">
+                                                                      Location
+                                                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                           <path d="M11.9995 15.0006L7.75684 10.758L9.17106 9.34375L11.9995 12.1722L14.8279 9.34375L16.2421 10.758L11.9995 15.0006Z" fill="#6C757D"/>
+                                                                      </svg>
+                                                                 </button>
+                                                                 <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2" style="padding: 8px 16px; font-size: 14px; border-radius: 5.6px; border-color: rgba(108, 117, 125, 0.25);">
+                                                                      Date Range
+                                                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                           <path d="M11.9995 15.0006L7.75684 10.758L9.17106 9.34375L11.9995 12.1722L14.8279 9.34375L16.2421 10.758L11.9995 15.0006Z" fill="#6C757D"/>
+                                                                      </svg>
+                                                                 </button>
+                                                                 <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2" style="padding: 8px 16px; font-size: 14px; border-radius: 5.6px; border-color: rgba(108, 117, 125, 0.25);">
+                                                                      Boat Name
+                                                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                           <path d="M11.9995 15.0006L7.75684 10.758L9.17106 9.34375L11.9995 12.1722L14.8279 9.34375L16.2421 10.758L11.9995 15.0006Z" fill="#6C757D"/>
+                                                                      </svg>
+                                                                 </button>
+                                                                 <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2" style="padding: 8px 16px; font-size: 14px; border-radius: 5.6px; border-color: rgba(108, 117, 125, 0.25);">
+                                                                      Status
+                                                                      <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                           <path d="M12.2318 3.25V4.41667H11.6489L8.73426 8.79167V13.75H5.23676V8.79167L2.32218 4.41667H1.73926V3.25H12.2318ZM3.72118 4.41667L6.4026 8.44167V12.5833H7.56843V8.44167L10.2499 4.41667H3.72118Z" fill="#6C757D"/>
+                                                                      </svg>
+                                                                 </button>
+                                                                 <button class="btn btn-sm" style="padding: 8px 16px; font-size: 14px; border-radius: 5.6px; background: rgba(108, 117, 125, 0.06); border: 1px solid rgba(108, 117, 125, 0.25); color: #6C757D;">
+                                                                      Clear Filters
+                                                                 </button>
+                                                                 <button class="btn btn-success btn-sm d-flex align-items-center gap-2" style="padding: 9px 17px; font-size: 14px; border-radius: 5.6px;">
+                                                                      <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                           <path d="M6.42231 6.41634V2.91634H7.58814V6.41634H11.0856V7.58301H7.58814V11.083H6.42231V7.58301H2.9248V6.41634H6.42231Z" fill="white"/>
+                                                                      </svg>
+                                                                      Schedule Service
+                                                                 </button>
+                                                            </div>
+                                                       </div>
+                                                  </div>
+                                             </div>
+
+                                             <!-- Sub Tabs -->
+                                             <div class="card-header bg-white border-bottom" style="padding: 9px 20px;">
+                                                  <ul class="nav nav-pills gap-4" style="border: none;">
+                                                       <li class="nav-item">
+                                                            <a class="nav-link active p-0" href="#" style="font-size: 16px; font-weight: 600; color: #212529; background: none; border: none; position: relative; padding-bottom: 14px !important;">
+                                                                 All
+                                                                 <span class="position-absolute bottom-0 start-0" style="width: 100%; height: 2px; background: #2948FF;"></span>
+                                                            </a>
+                                                       </li>
+                                                       <li class="nav-item">
+                                                            <a class="nav-link p-0" href="#" style="font-size: 16px; font-weight: 600; color: #212529; background: none; border: none;">
+                                                                 Pending
+                                                            </a>
+                                                       </li>
+                                                       <li class="nav-item">
+                                                            <a class="nav-link p-0" href="#" style="font-size: 16px; font-weight: 600; color: #212529; background: none; border: none;">
+                                                                 Completed
+                                                            </a>
+                                                       </li>
+                                                       <li class="nav-item">
+                                                            <a class="nav-link p-0" href="#" style="font-size: 16px; font-weight: 600; color: #212529; background: none; border: none;">
+                                                                 Scheduled
+                                                            </a>
+                                                       </li>
+                                                  </ul>
+                                             </div>
+
+                                             <!-- Table -->
+                                             <div class="table-responsive">
+                                                  <table class="table table-hover mb-0">
+                                                       <thead>
+                                                            <tr style="background: #FFF; border-bottom: 1px solid #EAEDF1;">
+                                                                 <th class="fw-medium text-muted" style="padding: 20px 13px; font-size: 16px;">
+                                                                      <input type="checkbox" class="form-check-input me-2">
+                                                                      Service ID
+                                                                 </th>
+                                                                 <th class="fw-medium text-muted" style="padding: 20px 13px; font-size: 16px;">Boat Details</th>
+                                                                 <th class="fw-medium text-muted" style="padding: 20px 13px; font-size: 16px;">Service Info</th>
+                                                                 <th class="fw-medium text-muted" style="padding: 20px 13px; font-size: 16px;">Scheduled Date</th>
+                                                                 <th class="fw-medium text-muted" style="padding: 20px 13px; font-size: 16px;">Assigned Staff</th>
+                                                                 <th class="fw-medium text-muted" style="padding: 20px 13px; font-size: 16px;">Notes</th>
+                                                                 <th class="fw-medium text-muted" style="padding: 20px 13px; font-size: 16px;">Cost</th>
+                                                                 <th class="fw-medium text-muted" style="padding: 20px 13px; font-size: 16px;">Status</th>
+                                                                 <th class="fw-medium text-muted" style="padding: 20px 13px; font-size: 16px;">Action</th>
+                                                            </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                            <!-- Row 1 -->
+                                                            <tr style="border-bottom: 1px solid #EAEDF1;">
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <div class="d-flex align-items-center gap-2">
+                                                                           <input type="checkbox" class="form-check-input">
+                                                                           <span class="fw-medium" style="color: #212529; font-size: 16px;">SRV001</span>
+                                                                      </div>
+                                                                 </td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <div>
+                                                                           <div class="fw-medium" style="color: #212529; font-size: 16px;">Ocean Explorer</div>
+                                                                           <div class="text-muted" style="font-size: 16px;">FL001</div>
+                                                                           <div class="text-muted" style="font-size: 16px;">Marina Bay Dock A1</div>
+                                                                      </div>
+                                                                 </td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">Engine Maintenance</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">Jan 15,2024</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">John Martinez</td>
+                                                                 <td class="align-middle text-muted fw-medium" style="padding: 20px 13px; font-size: 16px; max-width: 180px;">Oil change and filter replacement completed successfully</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">$450.00</td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <span class="badge" style="padding: 4px 8px; font-size: 14px; font-weight: 600; background: #5971FF; color: #FFF; border-radius: 4px;">Scheduled</span>
+                                                                 </td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <button class="btn btn-sm p-0" style="border: none; background: none;">
+                                                                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <path d="M21 12C21 10.9 20.1 10 19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12ZM7 12C7 10.9 6.1 10 5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12ZM14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z" fill="#2948FF"/>
+                                                                           </svg>
+                                                                      </button>
+                                                                 </td>
+                                                            </tr>
+
+                                                            <!-- Row 2 -->
+                                                            <tr style="border-bottom: 1px solid #EAEDF1;">
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <div class="d-flex align-items-center gap-2">
+                                                                           <input type="checkbox" class="form-check-input">
+                                                                           <span class="fw-medium" style="color: #212529; font-size: 16px;">SRV001</span>
+                                                                      </div>
+                                                                 </td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <div>
+                                                                           <div class="fw-medium" style="color: #212529; font-size: 16px;">Sea Breeze</div>
+                                                                           <div class="text-muted" style="font-size: 16px;">FL001</div>
+                                                                           <div class="text-muted" style="font-size: 16px;">Harbor Point</div>
+                                                                      </div>
+                                                                 </td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">Safety Inspection</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">Jan 15,2024</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">Robert</td>
+                                                                 <td class="align-middle text-muted fw-medium" style="padding: 20px 13px; font-size: 16px; max-width: 180px;">Oil change and filter replacement completed successfully</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">$450.00</td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <span class="badge" style="padding: 4px 8px; font-size: 14px; font-weight: 600; background: #E5383B; color: #FFF; border-radius: 4px;">Overdue</span>
+                                                                 </td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <button class="btn btn-sm p-0" style="border: none; background: none;">
+                                                                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <path d="M21 12C21 10.9 20.1 10 19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12ZM7 12C7 10.9 6.1 10 5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12ZM14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z" fill="#2948FF"/>
+                                                                           </svg>
+                                                                      </button>
+                                                                 </td>
+                                                            </tr>
+
+                                                            <!-- Row 3 -->
+                                                            <tr style="border-bottom: 1px solid #EAEDF1;">
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <div class="d-flex align-items-center gap-2">
+                                                                           <input type="checkbox" class="form-check-input">
+                                                                           <span class="fw-medium" style="color: #212529; font-size: 16px;">SRV001</span>
+                                                                      </div>
+                                                                 </td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <div>
+                                                                           <div class="fw-medium" style="color: #212529; font-size: 16px;">Wave Runner</div>
+                                                                           <div class="text-muted" style="font-size: 16px;">FL001</div>
+                                                                           <div class="text-muted" style="font-size: 16px;">Sunset Marina</div>
+                                                                      </div>
+                                                                 </td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">Hull Cleaning</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">Jan 15,2024</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">Jack</td>
+                                                                 <td class="align-middle text-muted fw-medium" style="padding: 20px 13px; font-size: 16px; max-width: 180px;">Oil change and filter replacement completed successfully</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">$450.00</td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <span class="badge" style="padding: 4px 8px; font-size: 14px; font-weight: 600; background: #2BA84A; color: #FFF; border-radius: 4px;">Completed</span>
+                                                                 </td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <button class="btn btn-sm p-0" style="border: none; background: none;">
+                                                                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <path d="M21 12C21 10.9 20.1 10 19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12ZM7 12C7 10.9 6.1 10 5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12ZM14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z" fill="#2948FF"/>
+                                                                           </svg>
+                                                                      </button>
+                                                                 </td>
+                                                            </tr>
+
+                                                            <!-- Row 4 -->
+                                                            <tr style="border-bottom: 1px solid #EAEDF1;">
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <div class="d-flex align-items-center gap-2">
+                                                                           <input type="checkbox" class="form-check-input">
+                                                                           <span class="fw-medium" style="color: #212529; font-size: 16px;">SRV001</span>
+                                                                      </div>
+                                                                 </td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <div>
+                                                                           <div class="fw-medium" style="color: #212529; font-size: 16px;">Blue Horizon</div>
+                                                                           <div class="text-muted" style="font-size: 16px;">FL001</div>
+                                                                           <div class="text-muted" style="font-size: 16px;">Marina Bay workshop</div>
+                                                                      </div>
+                                                                 </td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">Electrical Service</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">Jan 15,2024</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">Mike Davis</td>
+                                                                 <td class="align-middle text-muted fw-medium" style="padding: 20px 13px; font-size: 16px; max-width: 180px;">Oil change and filter replacement completed successfully</td>
+                                                                 <td class="align-middle fw-medium" style="padding: 20px 13px; color: #212529; font-size: 16px;">$450.00</td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <span class="badge" style="padding: 4px 8px; font-size: 14px; font-weight: 600; background: #E7B008; color: #FFF; border-radius: 4px;">In Progress</span>
+                                                                 </td>
+                                                                 <td class="align-middle" style="padding: 20px 13px;">
+                                                                      <button class="btn btn-sm p-0" style="border: none; background: none;">
+                                                                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <path d="M21 12C21 10.9 20.1 10 19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12ZM7 12C7 10.9 6.1 10 5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12ZM14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12Z" fill="#2948FF"/>
+                                                                           </svg>
+                                                                      </button>
+                                                                 </td>
+                                                            </tr>
+                                                       </tbody>
+                                                  </table>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+                         <!-- Repairs Tab -->
+                         <div class="tab-pane fade" id="repairs-tab">
+                              <div class="row mt-0">
+                                   <div class="col-12">
+                                        <div class="card shadow-sm">
+                                             <div class="card-body">
+                                                  <h5 class="mb-3">Repairs Content</h5>
+                                                  <p class="text-muted">Repairs tab content will be displayed here.</p>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+               <!-- End Container Fluid -->
+
+               @@include("partials/footer.html")
+
+          </div>
+          <!-- ==================================================== -->
+          <!-- End Page Content -->
+          <!-- ==================================================== -->
+
+     </div>
+     <!-- END Wrapper -->
+
+     @@include("partials/vendor-scripts.html")
+
+</body>
+
+</html>

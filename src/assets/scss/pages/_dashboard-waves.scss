@@ -266,22 +266,12 @@
     width: 28px;
     height: 28px;
     border-radius: 3px;
-    background-color: #e8f0fe;
-    border: 1px solid #d3e3fd;
+    border: 1px solid rgba(107, 163, 247, 0.3);
+    transition: opacity 0.2s ease;
+    cursor: pointer;
 
-    &.light {
-        background-color: #c5d9f9;
-        border-color: #a8c8f8;
-    }
-
-    &.medium {
-        background-color: #6fa3f7;
-        border-color: #5a94f2;
-    }
-
-    &.dark {
-        background-color: #1e40af;
-        border-color: #1e3a8a;
+    &:hover {
+        opacity: 0.8;
     }
 
     @media (max-width: 480px) {

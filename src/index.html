@@ -5,530 +5,6 @@
      @@include("partials/title-meta.html", {"sub-title": "Executive Overview"})
 
      @@include("partials/head-css.html")
-
-     <style>
-          .page-header {
-               display: flex;
-               justify-content: space-between;
-               align-items: center;
-               margin-bottom: 2rem;
-               padding-bottom: 1rem;
-               border-bottom: 1px solid #e9ecef;
-          }
-
-          .page-header h2 {
-               margin: 0;
-               font-size: 1.5rem;
-               font-weight: 600;
-               color: #1a1a1a;
-          }
-
-          .page-header-meta {
-               display: flex;
-               align-items: center;
-               gap: 0.5rem;
-               color: #6c757d;
-               font-size: 0.875rem;
-          }
-
-          .page-header-meta .badge {
-               display: flex;
-               align-items: center;
-               justify-content: center;
-               width: 20px;
-               height: 20px;
-               border-radius: 50%;
-               background-color: #ff6b6b;
-               color: white;
-               font-size: 0.75rem;
-               font-weight: bold;
-               margin-left: 0.25rem;
-          }
-
-          .section-title {
-               font-size: 0.75rem;
-               font-weight: 700;
-               text-transform: uppercase;
-               color: #999;
-               letter-spacing: 0.05em;
-               margin-bottom: 1rem;
-               margin-top: 1.5rem;
-          }
-
-          .snapshot-grid {
-               display: grid;
-               grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-               gap: 1rem;
-               margin-bottom: 2rem;
-          }
-
-          .snapshot-card {
-               background: #f8f9fa;
-               border: 1px solid #e9ecef;
-               border-radius: 0.5rem;
-               padding: 1.25rem;
-               display: flex;
-               flex-direction: column;
-               gap: 0.5rem;
-          }
-
-          .snapshot-card .label {
-               font-size: 0.813rem;
-               color: #6c757d;
-               font-weight: 500;
-          }
-
-          .snapshot-card .value {
-               font-size: 1.75rem;
-               font-weight: 700;
-               color: #1a1a1a;
-          }
-
-          .snapshot-card .meta {
-               font-size: 0.75rem;
-               color: #999;
-               display: flex;
-               align-items: center;
-               gap: 0.25rem;
-          }
-
-          .snapshot-card .meta i {
-               font-size: 0.7rem;
-          }
-
-          .highlight-card {
-               background: linear-gradient(135deg, #fff3e0 0%, #fff8f0 100%);
-               border: 2px solid #ffb74d;
-               border-radius: 0.5rem;
-               padding: 1.25rem;
-               grid-column: span 1;
-          }
-
-          .highlight-card .label {
-               font-size: 0.75rem;
-               color: #f57c00;
-               font-weight: 600;
-          }
-
-          .highlight-card .value {
-               font-size: 1.75rem;
-               font-weight: 700;
-               color: #e65100;
-               margin: 0.5rem 0;
-          }
-
-          .highlight-card .tag {
-               display: inline-block;
-               background: #f57c00;
-               color: white;
-               padding: 0.25rem 0.5rem;
-               border-radius: 0.25rem;
-               font-size: 0.7rem;
-               font-weight: 600;
-          }
-
-          .highlight-card .sublabel {
-               font-size: 0.75rem;
-               color: #999;
-               margin-top: 0.5rem;
-          }
-
-          .highlight-card .cta {
-               font-size: 0.75rem;
-               color: #e65100;
-               font-weight: 600;
-               margin-top: 0.75rem;
-               display: flex;
-               align-items: center;
-               gap: 0.25rem;
-               cursor: pointer;
-          }
-
-          .metrics-grid {
-               display: grid;
-               grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-               gap: 1rem;
-               margin-bottom: 2rem;
-          }
-
-          .metric-card {
-               background: white;
-               border: 1px solid #e9ecef;
-               border-radius: 0.5rem;
-               padding: 1.5rem;
-               text-align: center;
-          }
-
-          .metric-card .label {
-               font-size: 0.75rem;
-               color: #6c757d;
-               font-weight: 500;
-               margin-bottom: 0.5rem;
-          }
-
-          .metric-card .value {
-               font-size: 2.5rem;
-               font-weight: 700;
-               color: #1a1a1a;
-               line-height: 1;
-          }
-
-          .metric-card .change {
-               font-size: 0.813rem;
-               color: #28a745;
-               margin-top: 0.5rem;
-               font-weight: 600;
-          }
-
-          .metric-card .change.negative {
-               color: #dc3545;
-          }
-
-          .metric-card .sublabel {
-               font-size: 0.75rem;
-               color: #999;
-               margin-top: 0.75rem;
-          }
-
-          .metric-card .progress {
-               height: 4px;
-               margin-top: 1rem;
-          }
-
-          .chart-card {
-               background: white;
-               border: 1px solid #e9ecef;
-               border-radius: 0.5rem;
-               padding: 1.5rem;
-               margin-bottom: 2rem;
-          }
-
-          .chart-card-header {
-               display: flex;
-               justify-content: space-between;
-               align-items: center;
-               margin-bottom: 1rem;
-               padding-bottom: 1rem;
-               border-bottom: 1px solid #f0f0f0;
-          }
-
-          .chart-card-header h4 {
-               margin: 0;
-               font-size: 1rem;
-               font-weight: 600;
-               color: #1a1a1a;
-          }
-
-          .chart-legend {
-               display: flex;
-               gap: 1.5rem;
-               font-size: 0.75rem;
-          }
-
-          .chart-legend-item {
-               display: flex;
-               align-items: center;
-               gap: 0.5rem;
-          }
-
-          .chart-legend-color {
-               width: 12px;
-               height: 12px;
-               border-radius: 2px;
-          }
-
-          .heatmap-container {
-               display: flex;
-               flex-direction: column;
-               gap: 0.75rem;
-          }
-
-          .heatmap-row {
-               display: flex;
-               align-items: center;
-               gap: 1rem;
-          }
-
-          .heatmap-label {
-               min-width: 80px;
-               font-size: 0.75rem;
-               font-weight: 600;
-               color: #6c757d;
-          }
-
-          .heatmap-cells {
-               display: flex;
-               gap: 0.5rem;
-               flex-wrap: wrap;
-               flex: 1;
-          }
-
-          .heatmap-cell {
-               width: 28px;
-               height: 28px;
-               border-radius: 3px;
-               background-color: #e8f0fe;
-               border: 1px solid #d3e3fd;
-          }
-
-          .heatmap-cell.light {
-               background-color: #c5d9f9;
-               border-color: #a8c8f8;
-          }
-
-          .heatmap-cell.medium {
-               background-color: #6fa3f7;
-               border-color: #5a94f2;
-          }
-
-          .heatmap-cell.dark {
-               background-color: #1e40af;
-               border-color: #1e3a8a;
-          }
-
-          .stacked-bars {
-               display: grid;
-               grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-               gap: 1.5rem;
-               margin-top: 1.5rem;
-          }
-
-          .stacked-bar {
-               display: flex;
-               flex-direction: column;
-               gap: 0.5rem;
-          }
-
-          .stacked-bar-chart {
-               display: flex;
-               height: 150px;
-               border-radius: 4px;
-               overflow: hidden;
-               flex-direction: column;
-          }
-
-          .stacked-bar-segment {
-               flex: 1;
-               background-color: #6fa3f7;
-          }
-
-          .stacked-bar-segment.top {
-               background-color: #b3d9f8;
-          }
-
-          .stacked-bar-label {
-               font-size: 0.75rem;
-               font-weight: 600;
-               color: #6c757d;
-               text-align: center;
-          }
-
-          .risks-grid {
-               display: grid;
-               grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-               gap: 1.5rem;
-               margin-bottom: 2rem;
-          }
-
-          .risk-item {
-               background: white;
-               border: 1px solid #e9ecef;
-               border-radius: 0.5rem;
-               padding: 1.25rem;
-          }
-
-          .risk-item-header {
-               display: flex;
-               justify-content: space-between;
-               align-items: start;
-               margin-bottom: 0.5rem;
-          }
-
-          .risk-item-title {
-               font-size: 0.875rem;
-               font-weight: 600;
-               color: #1a1a1a;
-          }
-
-          .risk-item-status {
-               font-size: 0.7rem;
-               font-weight: 600;
-               padding: 0.25rem 0.5rem;
-               border-radius: 0.25rem;
-               background: #e8f5e9;
-               color: #2e7d32;
-          }
-
-          .risk-item-status.upcoming {
-               background: #e3f2fd;
-               color: #1565c0;
-          }
-
-          .risk-item-status.scheduled {
-               background: #fff3e0;
-               color: #e65100;
-          }
-
-          .risk-item-status.out-of-service {
-               background: #ffebee;
-               color: #c62828;
-          }
-
-          .risk-item-description {
-               font-size: 0.75rem;
-               color: #6c757d;
-               margin-bottom: 0.75rem;
-          }
-
-          .risk-item-meta {
-               font-size: 0.7rem;
-               color: #999;
-          }
-
-          .activity-table {
-               width: 100%;
-               border-collapse: collapse;
-          }
-
-          .activity-table thead {
-               background-color: #f8f9fa;
-          }
-
-          .activity-table th {
-               padding: 0.75rem;
-               font-size: 0.75rem;
-               font-weight: 600;
-               color: #6c757d;
-               text-align: left;
-               border-bottom: 2px solid #e9ecef;
-               text-transform: uppercase;
-               letter-spacing: 0.05em;
-          }
-
-          .activity-table td {
-               padding: 1rem 0.75rem;
-               font-size: 0.875rem;
-               color: #1a1a1a;
-               border-bottom: 1px solid #e9ecef;
-          }
-
-          .activity-table tbody tr:hover {
-               background-color: #f8f9fa;
-          }
-
-          .member-info {
-               display: flex;
-               align-items: center;
-               gap: 0.75rem;
-          }
-
-          .member-badge {
-               width: 32px;
-               height: 32px;
-               border-radius: 50%;
-               background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-               color: white;
-               display: flex;
-               align-items: center;
-               justify-content: center;
-               font-size: 0.75rem;
-               font-weight: 600;
-          }
-
-          .member-details {
-               display: flex;
-               flex-direction: column;
-               gap: 0.125rem;
-          }
-
-          .member-name {
-               font-weight: 600;
-               color: #1a1a1a;
-          }
-
-          .member-type {
-               font-size: 0.75rem;
-               color: #6c757d;
-          }
-
-          .status-badge {
-               display: inline-block;
-               padding: 0.25rem 0.75rem;
-               border-radius: 0.25rem;
-               font-size: 0.7rem;
-               font-weight: 600;
-               text-transform: capitalize;
-          }
-
-          .status-badge.active {
-               background: #d4edda;
-               color: #155724;
-          }
-
-          .status-badge.pending {
-               background: #fff3cd;
-               color: #856404;
-          }
-
-          .status-badge.upcoming {
-               background: #d1ecf1;
-               color: #0c5460;
-          }
-
-          .status-badge.completed {
-               background: #d4edda;
-               color: #155724;
-          }
-
-          .status-badge.logged {
-               background: #d1ecf1;
-               color: #0c5460;
-          }
-
-          .action-link {
-               color: #1e40af;
-               text-decoration: none;
-               font-size: 0.75rem;
-               font-weight: 600;
-               cursor: pointer;
-          }
-
-          .action-link:hover {
-               text-decoration: underline;
-          }
-
-          .view-all-link {
-               color: #1e40af;
-               font-size: 0.875rem;
-               font-weight: 600;
-               text-decoration: none;
-          }
-
-          .view-all-link:hover {
-               text-decoration: underline;
-          }
-
-          @media (max-width: 768px) {
-               .snapshot-grid,
-               .metrics-grid,
-               .risks-grid {
-                    grid-template-columns: 1fr;
-               }
-
-               .stacked-bars {
-                    grid-template-columns: repeat(2, 1fr);
-               }
-
-               .activity-table {
-                    font-size: 0.75rem;
-               }
-
-               .activity-table th,
-               .activity-table td {
-                    padding: 0.5rem;
-               }
-          }
-     </style>
 </head>
 
 <body>
@@ -547,9 +23,9 @@
                <div class="container-fluid">
 
                     <!-- Page Header -->
-                    <div class="page-header">
+                    <div class="waves-page-header">
                          <h2>EXECUTIVE OVERVIEW</h2>
-                         <div class="page-header-meta">
+                         <div class="waves-page-meta">
                               Last updated: Just now
                               <span class="badge">3</span>
                          </div>
@@ -582,7 +58,7 @@
                                    Pending check-in
                               </div>
                          </div>
-                         <div class="highlight-card">
+                         <div class="snapshot-card highlight-card">
                               <div class="label">ALERT</div>
                               <div class="value">$2,840</div>
                               <div class="tag">unallocated fuel</div>
@@ -613,7 +89,7 @@
                               <div class="label">Utilization Rate</div>
                               <div class="value">72%</div>
                               <div class="sublabel">Healthy range: 65-400k</div>
-                              <div class="progress" style="background: #e9ecef;">
+                              <div class="progress">
                                    <div class="progress-bar" style="width: 72%; background: #6fa3f7;"></div>
                               </div>
                          </div>
@@ -621,8 +97,8 @@
                               <div class="label">Membership Revenue</div>
                               <div class="value">$42.5k</div>
                               <div class="sublabel">
-                                   <span>Collected</span><br>
-                                   <span style="color: #28a745; font-weight: 600;">Recurring $38.2k New</span>
+                                   Collected<br>
+                                   <span style="color: #28a745; font-weight: 600; font-size: 0.85rem;">Recurring $38.2k New</span>
                               </div>
                          </div>
                     </div>
@@ -791,7 +267,7 @@
                     <div class="section-title">Operational Risks</div>
                     <div class="risks-grid">
                          <div>
-                              <h4 style="font-size: 0.9rem; margin-bottom: 1rem; color: #1a1a1a;">Upcoming Services (Next 7 Days)</h4>
+                              <h4>Upcoming Services (Next 7 Days)</h4>
                               <div style="display: flex; flex-direction: column; gap: 0.75rem;">
                                    <div class="risk-item">
                                         <div class="risk-item-header">
@@ -818,10 +294,10 @@
                                         <div class="risk-item-meta">Feb 24</div>
                                    </div>
                               </div>
-                              <a href="#" class="view-all-link" style="display: inline-block; margin-top: 1rem;">View All</a>
+                              <a href="#" class="view-all-link">View All</a>
                          </div>
                          <div>
-                              <h4 style="font-size: 0.9rem; margin-bottom: 1rem; color: #1a1a1a;">Fleet Downtime / Repairs</h4>
+                              <h4>Fleet Downtime / Repairs</h4>
                               <div style="display: flex; flex-direction: column; gap: 0.75rem;">
                                    <div class="risk-item">
                                         <div class="risk-item-header">
@@ -878,7 +354,7 @@
                                    <tr>
                                         <td>
                                              <div class="member-info">
-                                                  <div class="member-badge" style="background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%);">MR</div>
+                                                  <div class="member-badge" style="background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%); color: white;">MR</div>
                                                   <div class="member-details">
                                                        <div class="member-name">Mike Ross</div>
                                                        <div class="member-type">Premium</div>
@@ -895,7 +371,7 @@
                                    <tr>
                                         <td>
                                              <div class="member-info">
-                                                  <div class="member-badge" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">DK</div>
+                                                  <div class="member-badge" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: #333;">DK</div>
                                                   <div class="member-details">
                                                        <div class="member-name">David Kim</div>
                                                        <div class="member-type">Gold Member</div>
@@ -929,7 +405,7 @@
                                    <tr>
                                         <td>
                                              <div class="member-info">
-                                                  <div class="member-badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">TH</div>
+                                                  <div class="member-badge" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">TH</div>
                                                   <div class="member-details">
                                                        <div class="member-name">Tom Huddleston</div>
                                                        <div class="member-type">Gold Member</div>

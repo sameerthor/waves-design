@@ -434,6 +434,325 @@
                     gap: 6px;
                }
           }
+
+          /* ── Fuel Log Drawer ── */
+          .fuel-log-overlay {
+               position: fixed;
+               inset: 0;
+               background: rgba(0, 0, 0, 0.40);
+               z-index: 1050;
+               opacity: 0;
+               visibility: hidden;
+               transition: opacity 0.3s ease, visibility 0.3s ease;
+          }
+
+          .fuel-log-overlay.active {
+               opacity: 1;
+               visibility: visible;
+          }
+
+          .fuel-log-drawer {
+               position: fixed;
+               top: 0;
+               right: 0;
+               height: 100vh;
+               width: 520px;
+               max-width: 100vw;
+               background: #fff;
+               box-shadow: -4px 0 24px 0 rgba(0, 0, 0, 0.15);
+               z-index: 1051;
+               display: flex;
+               flex-direction: column;
+               transform: translateX(100%);
+               transition: transform 0.3s ease;
+          }
+
+          .fuel-log-drawer.active {
+               transform: translateX(0);
+          }
+
+          .drawer-header {
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               padding: 20px 24px;
+               border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+               flex-shrink: 0;
+          }
+
+          .drawer-header-left {
+               display: flex;
+               align-items: center;
+               gap: 12px;
+          }
+
+          .drawer-title {
+               font-size: 18px;
+               font-weight: 600;
+               color: #0F1723;
+               margin: 0;
+          }
+
+          .drawer-close-btn {
+               background: none;
+               border: none;
+               padding: 4px;
+               cursor: pointer;
+               display: flex;
+               align-items: center;
+               color: #94A3B8;
+               line-height: 1;
+          }
+
+          .drawer-close-btn:hover {
+               color: #64748B;
+          }
+
+          .drawer-body {
+               flex: 1;
+               overflow-y: auto;
+               padding: 24px;
+               display: flex;
+               flex-direction: column;
+               gap: 24px;
+          }
+
+          .drawer-field-group {
+               display: flex;
+               flex-direction: column;
+               gap: 8px;
+          }
+
+          .drawer-field-label {
+               font-size: 13px;
+               font-weight: 500;
+               color: #23303F;
+          }
+
+          .drawer-boat-selector {
+               display: flex;
+               align-items: center;
+               gap: 12px;
+               padding: 12px;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 6px;
+               background: #fff;
+               cursor: pointer;
+          }
+
+          .drawer-boat-icon {
+               width: 32px;
+               height: 32px;
+               background: #F2F6FF;
+               border-radius: 4px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               flex-shrink: 0;
+          }
+
+          .drawer-boat-info {
+               flex: 1;
+          }
+
+          .drawer-boat-name {
+               font-size: 14px;
+               font-weight: 500;
+               color: #0F1723;
+               line-height: 1.3;
+          }
+
+          .drawer-boat-meta {
+               font-size: 12px;
+               color: #94A3B8;
+               font-weight: 400;
+          }
+
+          .drawer-row {
+               display: flex;
+               gap: 16px;
+          }
+
+          .drawer-row .drawer-field-group {
+               flex: 1;
+          }
+
+          .drawer-input {
+               width: 100%;
+               padding: 10px 12px;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 6px;
+               font-size: 14px;
+               color: #0F1723;
+               background: #fff;
+               font-family: inherit;
+               outline: none;
+          }
+
+          .drawer-input:focus {
+               border-color: #3B63FF;
+          }
+
+          .drawer-input-with-suffix {
+               position: relative;
+               display: flex;
+               align-items: center;
+          }
+
+          .drawer-input-with-suffix input {
+               padding-right: 36px;
+          }
+
+          .drawer-input-suffix {
+               position: absolute;
+               right: 12px;
+               font-size: 13px;
+               color: #94A3B8;
+               pointer-events: none;
+          }
+
+          .drawer-input-with-prefix {
+               position: relative;
+               display: flex;
+               align-items: center;
+          }
+
+          .drawer-input-with-prefix input {
+               padding-left: 28px;
+          }
+
+          .drawer-input-prefix {
+               position: absolute;
+               left: 12px;
+               font-size: 13px;
+               color: #94A3B8;
+               pointer-events: none;
+          }
+
+          .drawer-total-cost {
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               padding: 14px 16px;
+               background: #F5F7FA;
+               border-radius: 6px;
+          }
+
+          .drawer-total-cost-label {
+               font-size: 13px;
+               color: #94A3B8;
+               font-weight: 400;
+          }
+
+          .drawer-total-cost-value {
+               font-size: 18px;
+               font-weight: 700;
+               color: #0F1723;
+          }
+
+          .drawer-staff-box {
+               padding: 12px 16px;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 6px;
+               font-size: 14px;
+               color: #0F1723;
+               background: #fff;
+          }
+
+          .drawer-upload-area {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+               gap: 8px;
+               padding: 32px 16px;
+               border: 1.5px dashed rgba(0, 0, 0, 0.12);
+               border-radius: 6px;
+               background: #F8FAFF;
+               cursor: pointer;
+               text-align: center;
+          }
+
+          .drawer-upload-area:hover {
+               background: #EFF4FF;
+          }
+
+          .drawer-upload-text {
+               font-size: 13px;
+               font-weight: 500;
+               color: #94A3B8;
+          }
+
+          .drawer-textarea {
+               width: 100%;
+               padding: 10px 12px;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 6px;
+               font-size: 14px;
+               color: #757575;
+               background: #fff;
+               font-family: inherit;
+               outline: none;
+               resize: vertical;
+               min-height: 80px;
+          }
+
+          .drawer-textarea:focus {
+               border-color: #3B63FF;
+               color: #0F1723;
+          }
+
+          .drawer-footer {
+               display: flex;
+               align-items: center;
+               gap: 12px;
+               padding: 20px 24px;
+               border-top: 1px solid rgba(0, 0, 0, 0.08);
+               background: #F5F7FA;
+               flex-shrink: 0;
+          }
+
+          .drawer-cancel-btn {
+               flex: 1;
+               padding: 12px 16px;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 6px;
+               background: #fff;
+               font-size: 13px;
+               font-weight: 600;
+               color: #0F1723;
+               cursor: pointer;
+               font-family: inherit;
+               text-align: center;
+          }
+
+          .drawer-cancel-btn:hover {
+               background: #F5F7FA;
+          }
+
+          .drawer-save-btn {
+               flex: 1;
+               padding: 13px 16px;
+               border: none;
+               border-radius: 6px;
+               background: #3B63FF;
+               font-size: 13px;
+               font-weight: 600;
+               color: #fff;
+               cursor: pointer;
+               font-family: inherit;
+               text-align: center;
+          }
+
+          .drawer-save-btn:hover {
+               background: #2948FF;
+          }
+
+          @media (max-width: 576px) {
+               .fuel-log-drawer {
+                    width: 100vw;
+               }
+          }
      </style>
 </head>
 
@@ -729,6 +1048,155 @@
           <!-- End Main Area -->
 
      </div>
+
+     <!-- Log Fuel Event Drawer -->
+     <div class="fuel-log-overlay" id="fuelLogOverlay" onclick="closeFuelLogDrawer()"></div>
+
+     <aside class="fuel-log-drawer" id="fuelLogDrawer" role="dialog" aria-modal="true" aria-label="Log Fuel Event">
+
+          <!-- Drawer Header -->
+          <div class="drawer-header">
+               <div class="drawer-header-left">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.667 10.8333H13.3337C14.2541 10.8333 15.0003 11.5795 15.0003 12.5V14.1667C15.0003 15.0865 15.7471 15.8333 16.667 15.8333C17.5869 15.8333 18.3337 15.0865 18.3337 14.1667V8.335C18.334 7.8908 18.157 7.46483 17.842 7.15167L15.0003 4.16667M11.667 17.5V4.16667C11.667 3.24619 10.9208 2.5 10.0003 2.5H4.16699C3.24652 2.5 2.50033 3.24619 2.50033 4.16667V17.5M1.66699 17.5H12.5003M2.50033 7.5H11.667" stroke="#3B63FF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h2 class="drawer-title">Log Fuel Event</h2>
+               </div>
+               <button class="drawer-close-btn" onclick="closeFuelLogDrawer()" aria-label="Close">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M15 5L5 15M5 5L15 15" stroke="#94A3B8" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+               </button>
+          </div>
+
+          <!-- Drawer Body -->
+          <div class="drawer-body">
+
+               <!-- Select Boat -->
+               <div class="drawer-field-group">
+                    <span class="drawer-field-label">Select Boat</span>
+                    <div class="drawer-boat-selector">
+                         <div class="drawer-boat-icon">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                   <g clip-path="url(#clip0_drawer_boat)">
+                                        <path d="M7.99967 6.79259V9.33325M7.99967 1.33325V3.33325M12.6663 8.66659V4.66659C12.6663 3.9307 12.0689 3.33325 11.333 3.33325H4.66634C3.93045 3.33325 3.33301 3.9307 3.33301 4.66659V8.66659" stroke="#94A3B8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12.92 13.3333C13.6372 12.123 14.0106 10.7401 14 9.33332L8.54138 6.90732C8.19673 6.7542 7.80336 6.7542 7.45872 6.90732L2.00005 9.33332C1.96919 11.2291 2.63586 13.0702 3.87338 14.5066" stroke="#94A3B8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M1.33301 13.9999C1.73301 14.3333 2.13301 14.6666 2.99967 14.6666C4.66634 14.6666 4.66634 13.3333 6.33301 13.3333C7.19967 13.3333 7.59967 13.6666 7.99967 13.9999C8.39967 14.3333 8.79968 14.6666 9.66634 14.6666C11.333 14.6666 11.333 13.3333 12.9997 13.3333C13.8663 13.3333 14.2663 13.6666 14.6663 13.9999" stroke="#94A3B8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                   </g>
+                                   <defs>
+                                        <clipPath id="clip0_drawer_boat">
+                                             <rect width="16" height="16" fill="white"/>
+                                        </clipPath>
+                                   </defs>
+                              </svg>
+                         </div>
+                         <div class="drawer-boat-info">
+                              <div class="drawer-boat-name">Chaparral 23 Surf</div>
+                              <div class="drawer-boat-meta">Returned 10m ago &bull; North Dock</div>
+                         </div>
+                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M4 6L8 10L12 6" stroke="#94A3B8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                         </svg>
+                    </div>
+               </div>
+
+               <!-- Date & Time -->
+               <div class="drawer-row">
+                    <div class="drawer-field-group">
+                         <label class="drawer-field-label" for="fuelDate">Date</label>
+                         <input class="drawer-input" type="date" id="fuelDate" value="2024-02-21">
+                    </div>
+                    <div class="drawer-field-group">
+                         <label class="drawer-field-label" for="fuelTime">Time</label>
+                         <input class="drawer-input" type="time" id="fuelTime" value="14:30">
+                    </div>
+               </div>
+
+               <!-- Gallons & Price per Gallon -->
+               <div class="drawer-row">
+                    <div class="drawer-field-group">
+                         <label class="drawer-field-label" for="gallonsAdded">Gallons Added</label>
+                         <div class="drawer-input-with-suffix">
+                              <input class="drawer-input" type="number" id="gallonsAdded" value="0.0" min="0" step="0.1" oninput="updateTotalCost()">
+                              <span class="drawer-input-suffix">gal</span>
+                         </div>
+                    </div>
+                    <div class="drawer-field-group">
+                         <label class="drawer-field-label" for="pricePerGallon">Price per Gallon</label>
+                         <div class="drawer-input-with-prefix">
+                              <span class="drawer-input-prefix">$</span>
+                              <input class="drawer-input" type="number" id="pricePerGallon" value="5.45" min="0" step="0.01" oninput="updateTotalCost()">
+                         </div>
+                    </div>
+               </div>
+
+               <!-- Total Cost -->
+               <div class="drawer-total-cost">
+                    <span class="drawer-total-cost-label">Total Cost</span>
+                    <span class="drawer-total-cost-value" id="totalCostDisplay">$0.00</span>
+               </div>
+
+               <!-- Staff on Duty -->
+               <div class="drawer-field-group">
+                    <span class="drawer-field-label">Staff on Duty</span>
+                    <div class="drawer-staff-box">Mike Ross (Dockmaster)</div>
+               </div>
+
+               <!-- Upload Receipt / Meter Photo -->
+               <div class="drawer-field-group">
+                    <span class="drawer-field-label">Upload Receipt / Meter Photo</span>
+                    <div class="drawer-upload-area">
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M13.997 4C14.732 3.99999 15.4079 4.40317 15.757 5.05L16.243 5.95C16.5921 6.59683 17.268 7.00001 18.003 7H20C21.1038 7 22 7.89617 22 9V18C22 19.1038 21.1038 20 20 20H4C2.89617 20 2 19.1038 2 18V9C2 7.89617 2.89617 7 4 7H5.997C6.73126 7.00004 7.40649 6.59774 7.756 5.952L8.245 5.048C8.59451 4.40226 9.26974 3.99996 10.004 4H13.997" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M9 13C9 14.6557 10.3443 16 12 16C13.6557 16 15 14.6557 15 13C15 11.3443 13.6557 10 12 10C10.3443 10 9 11.3443 9 13V13" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                         </svg>
+                         <span class="drawer-upload-text">Tap to take photo or upload</span>
+                    </div>
+               </div>
+
+               <!-- Notes -->
+               <div class="drawer-field-group">
+                    <label class="drawer-field-label" for="fuelNotes">Notes (Optional)</label>
+                    <textarea class="drawer-textarea" id="fuelNotes" placeholder="Any issues with the pump or fueling process?"></textarea>
+               </div>
+
+          </div>
+          <!-- End Drawer Body -->
+
+          <!-- Drawer Footer -->
+          <div class="drawer-footer">
+               <button class="drawer-cancel-btn" onclick="closeFuelLogDrawer()">Cancel</button>
+               <button class="drawer-save-btn">Save Fuel Log</button>
+          </div>
+
+     </aside>
+
+     <script>
+          function openFuelLogDrawer() {
+               document.getElementById('fuelLogDrawer').classList.add('active');
+               document.getElementById('fuelLogOverlay').classList.add('active');
+               document.body.style.overflow = 'hidden';
+          }
+
+          function closeFuelLogDrawer() {
+               document.getElementById('fuelLogDrawer').classList.remove('active');
+               document.getElementById('fuelLogOverlay').classList.remove('active');
+               document.body.style.overflow = '';
+          }
+
+          function updateTotalCost() {
+               var gallons = parseFloat(document.getElementById('gallonsAdded').value) || 0;
+               var price = parseFloat(document.getElementById('pricePerGallon').value) || 0;
+               var total = gallons * price;
+               document.getElementById('totalCostDisplay').textContent = '$' + total.toFixed(2);
+          }
+
+          document.querySelector('.log-fuel-btn').addEventListener('click', openFuelLogDrawer);
+
+          document.addEventListener('keydown', function(e) {
+               if (e.key === 'Escape') closeFuelLogDrawer();
+          });
+     </script>
 
      @@include("partials/vendor-scripts.html")
 </body>

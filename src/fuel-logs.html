@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     @@include("partials/title-meta.html", {"sub-title": "Fuel Logs"})
+     @@include("partials/head-css.html")
+     <style>
+          /* Fuel Logs Control - Custom Page Styles */
+          .fuel-logs-wrapper {
+               display: flex;
+               height: 100vh;
+               overflow: hidden;
+          }
+
+          .fuel-logs-main {
+               flex: 1;
+               display: flex;
+               flex-direction: column;
+               overflow: hidden;
+               background: #F5F7FA;
+          }
+
+          /* Custom header replacing topbar for this page */
+          .fuel-logs-header {
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               padding: 0 32px;
+               height: 64px;
+               background: #fff;
+               border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+               flex-shrink: 0;
+          }
+
+          .fuel-logs-page-title {
+               font-size: 18px;
+               font-weight: 600;
+               color: #0F1723;
+               margin: 0;
+          }
+
+          .fuel-logs-sync-info {
+               display: flex;
+               align-items: center;
+               gap: 16px;
+          }
+
+          .sync-text-group {
+               display: flex;
+               align-items: center;
+               gap: 8px;
+               color: #94A3B8;
+               font-size: 13px;
+          }
+
+          .user-avatar {
+               width: 32px;
+               height: 32px;
+               border-radius: 50%;
+               background: #E2E8F0;
+               flex-shrink: 0;
+          }
+
+          /* Content scrollable area */
+          .fuel-logs-content {
+               flex: 1;
+               overflow-y: auto;
+               padding: 24px 32px;
+          }
+
+          /* Summary Cards */
+          .summary-card {
+               background: #fff;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 8px;
+               box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+               padding: 16px 20px;
+               height: 100%;
+               display: flex;
+               flex-direction: column;
+               justify-content: space-between;
+               gap: 8px;
+          }
+
+          .summary-card-label {
+               font-size: 11px;
+               font-weight: 500;
+               color: #94A3B8;
+               letter-spacing: 0.24px;
+               text-transform: uppercase;
+               margin-bottom: 4px;
+          }
+
+          .summary-card-value {
+               font-size: 24px;
+               font-weight: 700;
+               color: #0F1723;
+               line-height: 1.2;
+          }
+
+          .summary-card-value .value-unit {
+               font-size: 14px;
+               font-weight: 500;
+               color: #94A3B8;
+               margin-left: 4px;
+          }
+
+          .summary-card-status {
+               font-size: 12px;
+               font-weight: 500;
+          }
+
+          .status-requires-action { color: #C24B28; }
+          .status-operational { color: #16A34A; }
+          .status-warning { color: #C24B28; }
+          .status-muted { color: #94A3B8; }
+
+          .summary-card-value-warning {
+               font-size: 24px;
+               font-weight: 700;
+               color: #C24B28;
+               line-height: 1.2;
+          }
+
+          /* Filter Bar */
+          .filter-bar {
+               display: flex;
+               align-items: center;
+               gap: 8px;
+               flex-wrap: wrap;
+          }
+
+          .filter-dropdown-btn {
+               display: flex;
+               align-items: center;
+               gap: 6px;
+               padding: 8px 12px;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 6px;
+               background: #fff;
+               font-size: 13px;
+               font-weight: 500;
+               color: #23303F;
+               cursor: pointer;
+               white-space: nowrap;
+               font-family: inherit;
+          }
+
+          .filter-dropdown-btn:hover {
+               background: #F5F7FA;
+          }
+
+          .log-fuel-btn {
+               display: flex;
+               align-items: center;
+               gap: 4px;
+               padding: 8px 14px;
+               border: 1px solid #0F1723;
+               border-radius: 6px;
+               background: #0F1723;
+               color: #fff;
+               font-size: 13px;
+               font-weight: 500;
+               cursor: pointer;
+               white-space: nowrap;
+               font-family: inherit;
+               margin-left: auto;
+          }
+
+          .log-fuel-btn:hover {
+               background: #1a2535;
+          }
+
+          /* Fuel Logs Table */
+          .fuel-logs-table-card {
+               background: #fff;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 8px;
+               box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+               overflow: hidden;
+          }
+
+          .fuel-table {
+               width: 100%;
+               border-collapse: collapse;
+          }
+
+          .fuel-table thead {
+               background: #F0F3F5;
+               border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+          }
+
+          .fuel-table thead th {
+               font-size: 11px;
+               font-weight: 600;
+               color: #94A3B8;
+               letter-spacing: 0.44px;
+               text-transform: uppercase;
+               padding: 14px 16px;
+               white-space: nowrap;
+               border: none;
+          }
+
+          .fuel-table thead th.align-right {
+               text-align: right;
+          }
+
+          .fuel-table tbody tr {
+               border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+          }
+
+          .fuel-table tbody tr:last-child {
+               border-bottom: none;
+          }
+
+          .fuel-table tbody tr.row-pending-highlight {
+               background: #F2F6FF;
+          }
+
+          .fuel-table tbody td {
+               padding: 16px;
+               vertical-align: middle;
+               border: none;
+               font-size: 13px;
+               color: #0F1723;
+          }
+
+          .fuel-table tbody td.align-right {
+               text-align: right;
+          }
+
+          /* Status Badges */
+          .status-badge {
+               display: inline-flex;
+               align-items: center;
+               padding: 4px 10px;
+               border-radius: 999px;
+               font-size: 11px;
+               font-weight: 600;
+               white-space: nowrap;
+          }
+
+          .badge-pending {
+               background: #FFF0E9;
+               color: #C24B28;
+          }
+
+          .badge-suggested {
+               background: #EFF6FF;
+               color: #2563EB;
+          }
+
+          .badge-locked {
+               background: #F0FDF4;
+               color: #16A34A;
+               border: 1px solid #BBF7D0;
+          }
+
+          .badge-billed {
+               background: #F1F5F9;
+               color: #64748B;
+               border: 1px solid #E2E8F0;
+          }
+
+          /* Boat Name */
+          .boat-name {
+               font-size: 13px;
+               font-weight: 600;
+               color: #0F1723;
+               margin-bottom: 2px;
+          }
+
+          .boat-location {
+               font-size: 11px;
+               color: #94A3B8;
+               font-weight: 400;
+          }
+
+          /* Date Time */
+          .fuel-date {
+               font-size: 13px;
+               color: #0F1723;
+               font-weight: 400;
+               margin-bottom: 2px;
+          }
+
+          .fuel-time {
+               font-size: 11px;
+               color: #94A3B8;
+               font-weight: 400;
+          }
+
+          /* Cost */
+          .total-cost {
+               font-size: 13px;
+               font-weight: 600;
+               color: #0F1723;
+          }
+
+          /* Reservations Linked */
+          .reservations-linked-link {
+               color: #3B63FF;
+               font-size: 13px;
+               font-weight: 500;
+               text-decoration: none;
+          }
+
+          .reservations-linked-link:hover {
+               text-decoration: underline;
+               color: #2948FF;
+          }
+
+          /* Progress Bar */
+          .allocation-progress-cell {
+               display: flex;
+               align-items: center;
+               gap: 8px;
+          }
+
+          .progress-bar-track {
+               width: 60px;
+               height: 6px;
+               border-radius: 999px;
+               background: #F2F6FF;
+               overflow: hidden;
+               flex-shrink: 0;
+          }
+
+          .progress-bar-fill {
+               height: 100%;
+               border-radius: 999px;
+          }
+
+          .progress-fill-blue { background: #3B63FF; }
+          .progress-fill-blue-auto { background: #3B63FF; opacity: 0.5; }
+          .progress-fill-gray { background: #94A3B8; }
+
+          .progress-bar-track.track-gray { background: #F0F3F5; }
+
+          .progress-label {
+               font-size: 11px;
+               color: #94A3B8;
+               white-space: nowrap;
+          }
+
+          /* Aging */
+          .aging-text {
+               font-size: 13px;
+               color: #94A3B8;
+               white-space: nowrap;
+          }
+
+          .aging-text-warning {
+               font-size: 13px;
+               color: #C24B28;
+               font-weight: 500;
+               white-space: nowrap;
+          }
+
+          /* Action Buttons */
+          .action-btn {
+               display: inline-flex;
+               align-items: center;
+               justify-content: center;
+               padding: 6px 12px;
+               border-radius: 6px;
+               font-size: 12px;
+               font-weight: 500;
+               cursor: pointer;
+               white-space: nowrap;
+               font-family: inherit;
+               text-decoration: none;
+          }
+
+          .action-btn-dark {
+               background: #0F1723;
+               border: 1px solid #0F1723;
+               color: #fff;
+          }
+
+          .action-btn-dark:hover {
+               background: #1a2535;
+               color: #fff;
+          }
+
+          .action-btn-outline {
+               background: #fff;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               color: #0F1723;
+          }
+
+          .action-btn-outline:hover {
+               background: #F5F7FA;
+               color: #0F1723;
+          }
+
+          /* Percentage text in progress */
+          .progress-percent {
+               font-size: 11px;
+               color: #94A3B8;
+          }
+
+          @media (max-width: 1200px) {
+               .fuel-logs-content {
+                    padding: 20px 20px;
+               }
+
+               .fuel-logs-header {
+                    padding: 0 20px;
+               }
+          }
+
+          @media (max-width: 991px) {
+               .fuel-table thead th,
+               .fuel-table tbody td {
+                    padding: 12px 10px;
+               }
+
+               .fuel-logs-content {
+                    padding: 16px;
+               }
+
+               .fuel-logs-header {
+                    padding: 0 16px;
+               }
+          }
+
+          @media (max-width: 767px) {
+               .fuel-table-wrapper {
+                    overflow-x: auto;
+               }
+
+               .filter-bar {
+                    gap: 6px;
+               }
+          }
+     </style>
+</head>
+
+<body data-menu-color="dark">
+     <div class="wrapper">
+          @@include("partials/main-nav-fuel-logs.html")
+
+          <!-- Main Area -->
+          <div class="page-content p-0" style="background: #F5F7FA;">
+
+               <!-- Custom Page Header -->
+               <div class="fuel-logs-header">
+                    <h1 class="fuel-logs-page-title">Fuel Logs Control</h1>
+                    <div class="fuel-logs-sync-info">
+                         <div class="sync-text-group">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M2 8C2 11.3115 4.68851 14 8 14C11.3115 14 14 11.3115 14 8C14 4.68851 11.3115 2 8 2C6.32263 2.00631 4.71265 2.66082 3.50667 3.82667L2 5.33333" stroke="#94A3B8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                   <path d="M2 2V5.33333H5.33333M8 4.66667V8L10.6667 9.33333" stroke="#94A3B8" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                              <span>Last synced: 2m ago</span>
+                         </div>
+                         <div class="user-avatar"></div>
+                    </div>
+               </div>
+
+               <!-- Page Content -->
+               <div class="fuel-logs-content">
+
+                    <!-- Summary Cards Strip -->
+                    <div class="row g-3 mb-4">
+
+                         <!-- Pending Allocation -->
+                         <div class="col-6 col-xl-3">
+                              <div class="summary-card">
+                                   <div class="summary-card-label">Pending Allocation</div>
+                                   <div>
+                                        <span class="summary-card-value">4</span>
+                                        <span class="value-unit" style="font-size:14px; color:#94A3B8; font-weight:500; margin-left:4px;">events</span>
+                                   </div>
+                                   <div class="summary-card-status status-requires-action">Requires action</div>
+                              </div>
+                         </div>
+
+                         <!-- Unbilled Fuel $ -->
+                         <div class="col-6 col-xl-3">
+                              <div class="summary-card">
+                                   <div class="summary-card-label">Unbilled Fuel $</div>
+                                   <div class="summary-card-value">$2,840</div>
+                                   <div class="summary-card-status status-muted">Allocated but not invoiced</div>
+                              </div>
+                         </div>
+
+                         <!-- Fuel Logged Today -->
+                         <div class="col-6 col-xl-3">
+                              <div class="summary-card">
+                                   <div class="summary-card-label">Fuel Logged Today</div>
+                                   <div>
+                                        <span class="summary-card-value">120</span>
+                                        <span class="value-unit" style="font-size:14px; color:#94A3B8; font-weight:500; margin-left:4px;">gal</span>
+                                   </div>
+                                   <div class="summary-card-status status-operational">Operational active</div>
+                              </div>
+                         </div>
+
+                         <!-- Oldest Pending Event -->
+                         <div class="col-6 col-xl-3">
+                              <div class="summary-card">
+                                   <div class="summary-card-label">Oldest Pending Event</div>
+                                   <div class="summary-card-value-warning">3 <span style="font-size:16px;">days</span></div>
+                                   <div class="summary-card-status status-warning">Warning: &gt; 48h</div>
+                              </div>
+                         </div>
+
+                    </div>
+
+                    <!-- Filter Bar -->
+                    <div class="filter-bar mb-3">
+
+                         <!-- Status Filter -->
+                         <button class="filter-dropdown-btn">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M12.8332 1.75H1.1665L5.83317 7.26833V11.0833L8.1665 12.25V7.26833L12.8332 1.75" stroke="#23303F" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                              Status: All
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="#23303F" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                         </button>
+
+                         <!-- Marina Filter -->
+                         <button class="filter-dropdown-btn">
+                              Marina: South Dock
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="#23303F" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                         </button>
+
+                         <!-- Boat Filter -->
+                         <button class="filter-dropdown-btn">
+                              Boat: All
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="#23303F" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                         </button>
+
+                         <!-- Date Filter -->
+                         <button class="filter-dropdown-btn">
+                              Date: Last 7 Days
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="#23303F" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                         </button>
+
+                         <!-- Log Fuel Event Button -->
+                         <button class="log-fuel-btn">
+                              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M2.5 6H9.5M6 2.5V9.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                              Log Fuel Event
+                         </button>
+
+                    </div>
+
+                    <!-- Fuel Logs Table -->
+                    <div class="fuel-logs-table-card">
+                         <div class="fuel-table-wrapper">
+                              <table class="fuel-table">
+                                   <thead>
+                                        <tr>
+                                             <th>Status</th>
+                                             <th>Boat Name</th>
+                                             <th>Fuel Date &amp; Time</th>
+                                             <th class="align-right">Gallons</th>
+                                             <th class="align-right">Total Cost</th>
+                                             <th>Reservations Linked</th>
+                                             <th>Allocation Progress</th>
+                                             <th>Aging</th>
+                                             <th>Action</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody>
+
+                                        <!-- Row 1: Pending -->
+                                        <tr class="row-pending-highlight">
+                                             <td>
+                                                  <span class="status-badge badge-pending">Pending</span>
+                                             </td>
+                                             <td>
+                                                  <div class="boat-name">Sea Ray 290</div>
+                                                  <div class="boat-location">South Dock &bull; Slip 14</div>
+                                             </td>
+                                             <td>
+                                                  <div class="fuel-date">Feb 20, 2024</div>
+                                                  <div class="fuel-time">08:30 AM</div>
+                                             </td>
+                                             <td class="align-right">45.0</td>
+                                             <td class="align-right">
+                                                  <span class="total-cost">$240.00</span>
+                                             </td>
+                                             <td>
+                                                  <a href="#" class="reservations-linked-link">3 detected</a>
+                                             </td>
+                                             <td>
+                                                  <div class="allocation-progress-cell">
+                                                       <span class="progress-percent">0%</span>
+                                                  </div>
+                                             </td>
+                                             <td>
+                                                  <div class="aging-text-warning">3 days<br>ago</div>
+                                             </td>
+                                             <td>
+                                                  <a href="#" class="action-btn action-btn-dark">Allocate</a>
+                                             </td>
+                                        </tr>
+
+                                        <!-- Row 2: Suggested -->
+                                        <tr>
+                                             <td>
+                                                  <span class="status-badge badge-suggested">Suggested</span>
+                                             </td>
+                                             <td>
+                                                  <div class="boat-name">Cobalt R5</div>
+                                                  <div class="boat-location">North Marina &bull; Slip 02</div>
+                                             </td>
+                                             <td>
+                                                  <div class="fuel-date">Feb 20, 2024</div>
+                                                  <div class="fuel-time">10:15 AM</div>
+                                             </td>
+                                             <td class="align-right">30.0</td>
+                                             <td class="align-right">
+                                                  <span class="total-cost">$165.00</span>
+                                             </td>
+                                             <td>
+                                                  <a href="#" class="reservations-linked-link">2 detected</a>
+                                             </td>
+                                             <td>
+                                                  <div class="allocation-progress-cell">
+                                                       <div class="progress-bar-track">
+                                                            <div class="progress-bar-fill progress-fill-blue-auto" style="width: 50%;"></div>
+                                                       </div>
+                                                       <span class="progress-label">Auto</span>
+                                                  </div>
+                                             </td>
+                                             <td>
+                                                  <div class="aging-text">1 day ago</div>
+                                             </td>
+                                             <td>
+                                                  <a href="#" class="action-btn action-btn-outline">Review</a>
+                                             </td>
+                                        </tr>
+
+                                        <!-- Row 3: Locked -->
+                                        <tr>
+                                             <td>
+                                                  <span class="status-badge badge-locked">Locked</span>
+                                             </td>
+                                             <td>
+                                                  <div class="boat-name">Yamaha 242</div>
+                                                  <div class="boat-location">South Dock &bull; Slip 08</div>
+                                             </td>
+                                             <td>
+                                                  <div class="fuel-date">Feb 19, 2024</div>
+                                                  <div class="fuel-time">04:00 PM</div>
+                                             </td>
+                                             <td class="align-right">20.0</td>
+                                             <td class="align-right">
+                                                  <span class="total-cost">$110.00</span>
+                                             </td>
+                                             <td>
+                                                  <a href="#" class="reservations-linked-link">1 linked</a>
+                                             </td>
+                                             <td>
+                                                  <div class="allocation-progress-cell">
+                                                       <div class="progress-bar-track">
+                                                            <div class="progress-bar-fill progress-fill-blue" style="width: 100%;"></div>
+                                                       </div>
+                                                       <span class="progress-label">100%</span>
+                                                  </div>
+                                             </td>
+                                             <td>
+                                                  <div class="aging-text">1 day ago</div>
+                                             </td>
+                                             <td>
+                                                  <a href="#" class="action-btn action-btn-outline">View Split</a>
+                                             </td>
+                                        </tr>
+
+                                        <!-- Row 4: Billed -->
+                                        <tr>
+                                             <td>
+                                                  <span class="status-badge badge-billed">Billed</span>
+                                             </td>
+                                             <td>
+                                                  <div class="boat-name">Boston Whaler</div>
+                                                  <div class="boat-location">North Marina &bull; Slip 21</div>
+                                             </td>
+                                             <td>
+                                                  <div class="fuel-date">Feb 18, 2024</div>
+                                                  <div class="fuel-time">02:00 PM</div>
+                                             </td>
+                                             <td class="align-right">60.0</td>
+                                             <td class="align-right">
+                                                  <span class="total-cost">$330.00</span>
+                                             </td>
+                                             <td>
+                                                  <a href="#" class="reservations-linked-link">4 linked</a>
+                                             </td>
+                                             <td>
+                                                  <div class="allocation-progress-cell">
+                                                       <div class="progress-bar-track track-gray">
+                                                            <div class="progress-bar-fill progress-fill-gray" style="width: 100%;"></div>
+                                                       </div>
+                                                       <span class="progress-label">Done</span>
+                                                  </div>
+                                             </td>
+                                             <td>
+                                                  <div class="aging-text">2 days<br>ago</div>
+                                             </td>
+                                             <td>
+                                                  <a href="#" class="action-btn action-btn-outline">View Invoice</a>
+                                             </td>
+                                        </tr>
+
+                                   </tbody>
+                              </table>
+                         </div>
+                    </div>
+
+               </div>
+               <!-- End Page Content -->
+
+          </div>
+          <!-- End Main Area -->
+
+     </div>
+
+     @@include("partials/vendor-scripts.html")
+</body>
+
+</html>

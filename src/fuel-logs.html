@@ -753,6 +753,330 @@
                     width: 100vw;
                }
           }
+
+          /* ── Allocation Split Drawer ── */
+          .allocation-drawer-overlay {
+               position: fixed;
+               inset: 0;
+               background: rgba(0, 0, 0, 0.40);
+               z-index: 1050;
+               opacity: 0;
+               visibility: hidden;
+               transition: opacity 0.3s ease, visibility 0.3s ease;
+          }
+
+          .allocation-drawer-overlay.active {
+               opacity: 1;
+               visibility: visible;
+          }
+
+          .allocation-drawer {
+               position: fixed;
+               top: 0;
+               right: 0;
+               height: 100vh;
+               width: 520px;
+               max-width: 100vw;
+               background: #fff;
+               box-shadow: -4px 0 24px 0 rgba(0, 0, 0, 0.15);
+               z-index: 1051;
+               display: flex;
+               flex-direction: column;
+               transform: translateX(100%);
+               transition: transform 0.3s ease;
+          }
+
+          .allocation-drawer.active {
+               transform: translateX(0);
+          }
+
+          .allocation-drawer-header {
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               padding: 20px 24px;
+               border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+               flex-shrink: 0;
+          }
+
+          .allocation-drawer-title {
+               font-size: 16px;
+               font-weight: 600;
+               color: #0F1723;
+               margin: 0;
+          }
+
+          .allocation-drawer-body {
+               flex: 1;
+               overflow-y: auto;
+               padding: 24px;
+               display: flex;
+               flex-direction: column;
+               gap: 24px;
+          }
+
+          .event-summary-card {
+               display: flex;
+               align-items: flex-start;
+               gap: 16px;
+               padding: 16px;
+               background: #F0F3F5;
+               border-radius: 8px;
+          }
+
+          .event-summary-icon {
+               width: 60px;
+               height: 60px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               background: #E2E8F0;
+               border-radius: 6px;
+               flex-shrink: 0;
+          }
+
+          .event-summary-info {
+               flex: 1;
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+               gap: 16px 24px;
+          }
+
+          .event-info-field {
+               display: flex;
+               flex-direction: column;
+               gap: 2px;
+          }
+
+          .event-info-label {
+               font-size: 11px;
+               font-weight: 400;
+               color: #94A3B8;
+          }
+
+          .event-info-value {
+               font-size: 14px;
+               font-weight: 600;
+               color: #0F1723;
+          }
+
+          .auto-detection-banner {
+               display: flex;
+               align-items: center;
+               gap: 8px;
+               padding: 10px 14px;
+               background: #EFF6FF;
+               border-radius: 6px;
+          }
+
+          .auto-detection-text {
+               font-size: 13px;
+               font-weight: 500;
+               color: #2563EB;
+          }
+
+          .allocation-section-label {
+               font-size: 12px;
+               font-weight: 600;
+               color: #94A3B8;
+               letter-spacing: 0.48px;
+               text-transform: uppercase;
+               margin-bottom: 12px;
+          }
+
+          .allocation-table-wrapper {
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 6px;
+               overflow: hidden;
+          }
+
+          .allocation-table {
+               width: 100%;
+               border-collapse: collapse;
+          }
+
+          .allocation-table thead {
+               background: #F5F7FA;
+               border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+          }
+
+          .allocation-table thead th {
+               font-size: 11px;
+               font-weight: 600;
+               color: #94A3B8;
+               letter-spacing: 0.44px;
+               text-transform: uppercase;
+               padding: 8px 12px;
+               border: none;
+          }
+
+          .allocation-table thead th.col-right {
+               text-align: right;
+          }
+
+          .allocation-table tbody tr {
+               border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+          }
+
+          .allocation-table tbody tr:last-child {
+               border-bottom: none;
+          }
+
+          .allocation-table tbody td {
+               padding: 10px 12px;
+               vertical-align: middle;
+               border: none;
+          }
+
+          .allocation-member-name {
+               font-size: 13px;
+               font-weight: 500;
+               color: #0F1723;
+               margin-bottom: 2px;
+          }
+
+          .allocation-booking-meta {
+               font-size: 11px;
+               color: #94A3B8;
+               font-weight: 400;
+               line-height: 1.4;
+          }
+
+          .allocation-input {
+               width: 100%;
+               padding: 6px 8px;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 4px;
+               font-size: 13px;
+               color: #0F1723;
+               background: #fff;
+               font-family: inherit;
+               outline: none;
+               text-align: right;
+          }
+
+          .allocation-input:focus {
+               border-color: #3B63FF;
+          }
+
+          .remove-btn {
+               display: inline-flex;
+               align-items: center;
+               gap: 4px;
+               padding: 4px 8px;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 6px;
+               background: #fff;
+               font-size: 11px;
+               font-weight: 500;
+               color: #0F1723;
+               cursor: pointer;
+               font-family: inherit;
+               white-space: nowrap;
+          }
+
+          .remove-btn:hover {
+               background: #F5F7FA;
+          }
+
+          .add-reservation-row {
+               display: flex;
+               justify-content: flex-end;
+               margin-top: 8px;
+          }
+
+          .add-reservation-btn {
+               display: inline-flex;
+               align-items: center;
+               gap: 6px;
+               padding: 6px 10px;
+               border: 1px solid rgba(0, 0, 0, 0.08);
+               border-radius: 6px;
+               background: #fff;
+               font-size: 12px;
+               font-weight: 500;
+               color: #0F1723;
+               cursor: pointer;
+               font-family: inherit;
+          }
+
+          .add-reservation-btn:hover {
+               background: #F5F7FA;
+          }
+
+          .allocation-drawer-footer {
+               display: flex;
+               flex-direction: column;
+               gap: 16px;
+               padding: 20px 24px;
+               border-top: 1px solid rgba(0, 0, 0, 0.08);
+               background: #F5F7FA;
+               flex-shrink: 0;
+          }
+
+          .allocation-totals {
+               display: flex;
+               flex-direction: column;
+               gap: 8px;
+          }
+
+          .allocation-total-row {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+          }
+
+          .allocation-total-label {
+               font-size: 13px;
+               font-weight: 400;
+               color: #94A3B8;
+          }
+
+          .allocation-total-value {
+               font-size: 13px;
+               font-weight: 600;
+               color: #0F1723;
+          }
+
+          .allocation-remaining-value {
+               font-size: 13px;
+               font-weight: 600;
+               color: #008A3A;
+          }
+
+          .lock-allocation-btn {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               gap: 8px;
+               padding: 13px 12px;
+               border: none;
+               border-radius: 6px;
+               background: #0F1723;
+               font-size: 14px;
+               font-weight: 600;
+               color: #fff;
+               cursor: pointer;
+               font-family: inherit;
+               width: 100%;
+          }
+
+          .lock-allocation-btn:hover {
+               background: #1a2535;
+          }
+
+          .allocation-footer-note {
+               font-size: 11px;
+               color: #94A3B8;
+               text-align: center;
+               margin: 0;
+          }
+
+          @media (max-width: 576px) {
+               .allocation-drawer {
+                    width: 100vw;
+               }
+          }
      </style>
 </head>
 
@@ -924,7 +1248,7 @@
                                                   <div class="aging-text-warning">3 days<br>ago</div>
                                              </td>
                                              <td>
-                                                  <a href="#" class="action-btn action-btn-dark">Allocate</a>
+                                                  <a href="#" class="action-btn action-btn-dark" onclick="openAllocationDrawer(event)">Allocate</a>
                                              </td>
                                         </tr>
 
@@ -1048,6 +1372,201 @@
           <!-- End Main Area -->
 
      </div>
+
+     <!-- Allocation Split Drawer -->
+     <div class="allocation-drawer-overlay" id="allocationDrawerOverlay" onclick="closeAllocationDrawer()"></div>
+
+     <aside class="allocation-drawer" id="allocationDrawer" role="dialog" aria-modal="true" aria-label="Allocation Split">
+
+          <!-- Drawer Header -->
+          <div class="allocation-drawer-header">
+               <h2 class="allocation-drawer-title">Allocation Split</h2>
+               <button class="drawer-close-btn" onclick="closeAllocationDrawer()" aria-label="Close">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M15 5L5 15M5 5L15 15" stroke="#94A3B8" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+               </button>
+          </div>
+
+          <!-- Drawer Body -->
+          <div class="allocation-drawer-body">
+
+               <!-- Event Summary -->
+               <div class="event-summary-card">
+                    <div class="event-summary-icon">
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M4 2V22L6 21L8 22L10 21L12 22L14 21L16 22L18 21L20 22V2L18 3L16 2L14 3L12 2L10 3L8 2L6 3L4 2" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M16 8H10C8.89617 8 8 8.89617 8 10C8 11.1038 8.89617 12 10 12H14C15.1038 12 16 12.8962 16 14C16 15.1038 15.1038 16 14 16H8M12 17.5V6.5" stroke="#94A3B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                         </svg>
+                    </div>
+                    <div class="event-summary-info">
+                         <div class="event-info-field">
+                              <span class="event-info-label">Boat</span>
+                              <span class="event-info-value" id="alloc-boat-name">Sea Ray 290</span>
+                         </div>
+                         <div class="event-info-field">
+                              <span class="event-info-label">Date</span>
+                              <span class="event-info-value" id="alloc-date">Feb 20, 8:30 AM</span>
+                         </div>
+                         <div class="event-info-field">
+                              <span class="event-info-label">Total Gallons</span>
+                              <span class="event-info-value" id="alloc-gallons">45.0 gal</span>
+                         </div>
+                         <div class="event-info-field">
+                              <span class="event-info-label">Total Cost</span>
+                              <span class="event-info-value" id="alloc-total-cost">$240.00</span>
+                         </div>
+                    </div>
+               </div>
+
+               <!-- Auto Detection Banner -->
+               <div class="auto-detection-banner">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <g clip-path="url(#clip0_alloc_auto)">
+                              <path d="M7.34496 1.87605C7.4039 1.56052 7.67931 1.33179 8.00029 1.33179C8.32128 1.33179 8.59669 1.56052 8.65563 1.87605L9.35629 5.58138C9.45814 6.12051 9.87984 6.54221 10.419 6.64405L14.1243 7.34472C14.4398 7.40365 14.6686 7.67907 14.6686 8.00005C14.6686 8.32103 14.4398 8.59645 14.1243 8.65538L10.419 9.35605C9.87984 9.45789 9.45814 9.87959 9.35629 10.4187L8.65563 14.1241C8.59669 14.4396 8.32128 14.6683 8.00029 14.6683C7.67931 14.6683 7.4039 14.4396 7.34496 14.1241L6.64429 10.4187C6.54245 9.87959 6.12075 9.45789 5.58163 9.35605L1.87629 8.65538C1.56077 8.59645 1.33203 8.32103 1.33203 8.00005C1.33203 7.67907 1.56077 7.40365 1.87629 7.34472L5.58163 6.64405C6.12075 6.54221 6.54245 6.12051 6.64429 5.58138L7.34496 1.87605M13.3336 1.33338V4.00005M14.667 2.66672H12.0003" stroke="#2563EB" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                              <path d="M1.33398 13.3333C1.33398 14.0692 1.93143 14.6667 2.66732 14.6667C3.4032 14.6667 4.00065 14.0692 4.00065 13.3333C4.00065 12.5974 3.4032 12 2.66732 12C1.93143 12 1.33398 12.5974 1.33398 13.3333H1.33398" stroke="#2563EB" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                         </g>
+                         <defs>
+                              <clipPath id="clip0_alloc_auto">
+                                   <rect width="16" height="16" fill="white"/>
+                              </clipPath>
+                         </defs>
+                    </svg>
+                    <span class="auto-detection-text">3 reservations detected since last fuel event.</span>
+               </div>
+
+               <!-- Allocation Table Section -->
+               <div>
+                    <div class="allocation-section-label">Allocation</div>
+                    <div class="allocation-table-wrapper">
+                         <table class="allocation-table">
+                              <thead>
+                                   <tr>
+                                        <th>Member</th>
+                                        <th class="col-right">%</th>
+                                        <th class="col-right">Gal</th>
+                                        <th class="col-right">Cost</th>
+                                        <th class="col-right">Actions</th>
+                                   </tr>
+                              </thead>
+                              <tbody>
+
+                                   <!-- Mike Ross -->
+                                   <tr>
+                                        <td>
+                                             <div class="allocation-member-name">Mike Ross</div>
+                                             <div class="allocation-booking-meta">Booking BK-1042 b7 Feb 20, 2024<br>2h b7 9am&ndash;11am</div>
+                                        </td>
+                                        <td>
+                                             <input class="allocation-input" type="number" value="33" min="0" max="100" oninput="recalcAllocation(this, 'pct', 0)">
+                                        </td>
+                                        <td>
+                                             <input class="allocation-input" type="number" value="15.0" min="0" step="0.1" oninput="recalcAllocation(this, 'gal', 0)">
+                                        </td>
+                                        <td>
+                                             <input class="allocation-input" type="text" value="$80.00" readonly>
+                                        </td>
+                                        <td style="text-align:right;">
+                                             <button class="remove-btn">
+                                                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <path d="M5.83333 6.41675V9.91675M8.16667 6.41675V9.91675M11.0833 3.50008V11.6667C11.0833 12.3106 10.5606 12.8334 9.91667 12.8334H4.08333C3.43943 12.8334 2.91667 12.3106 2.91667 11.6667V3.50008M1.75 3.50008H12.25M4.66667 3.50008V2.33341C4.66667 1.68951 5.18943 1.16675 5.83333 1.16675H8.16667C8.81057 1.16675 9.33333 1.68951 9.33333 2.33341V3.50008" stroke="#94A3B8" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  </svg>
+                                                  Remove
+                                             </button>
+                                        </td>
+                                   </tr>
+
+                                   <!-- Sarah Jenkins -->
+                                   <tr>
+                                        <td>
+                                             <div class="allocation-member-name">Sarah Jenkins</div>
+                                             <div class="allocation-booking-meta">Booking BK-1043 b7 Feb 20, 2024<br>3h b7 11am&ndash;12pm</div>
+                                        </td>
+                                        <td>
+                                             <input class="allocation-input" type="number" value="50" min="0" max="100" oninput="recalcAllocation(this, 'pct', 1)">
+                                        </td>
+                                        <td>
+                                             <input class="allocation-input" type="number" value="22.5" min="0" step="0.1" oninput="recalcAllocation(this, 'gal', 1)">
+                                        </td>
+                                        <td>
+                                             <input class="allocation-input" type="text" value="$120.00" readonly>
+                                        </td>
+                                        <td style="text-align:right;">
+                                             <button class="remove-btn">
+                                                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <path d="M5.83333 6.4165V9.9165M8.16667 6.4165V9.9165M11.0833 3.49984V11.6665C11.0833 12.3104 10.5606 12.8332 9.91667 12.8332H4.08333C3.43943 12.8332 2.91667 12.3104 2.91667 11.6665V3.49984M1.75 3.49984H12.25M4.66667 3.49984V2.33317C4.66667 1.68927 5.18943 1.1665 5.83333 1.1665H8.16667C8.81057 1.1665 9.33333 1.68927 9.33333 2.33317V3.49984" stroke="#94A3B8" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  </svg>
+                                                  Remove
+                                             </button>
+                                        </td>
+                                   </tr>
+
+                                   <!-- Tom Hiddle -->
+                                   <tr>
+                                        <td>
+                                             <div class="allocation-member-name">Tom Hiddle</div>
+                                             <div class="allocation-booking-meta">Booking BK-1044 b7 Feb 20, 2024<br>1h b7 2pm&ndash;3pm</div>
+                                        </td>
+                                        <td>
+                                             <input class="allocation-input" type="number" value="17" min="0" max="100" oninput="recalcAllocation(this, 'pct', 2)">
+                                        </td>
+                                        <td>
+                                             <input class="allocation-input" type="number" value="7.5" min="0" step="0.1" oninput="recalcAllocation(this, 'gal', 2)">
+                                        </td>
+                                        <td>
+                                             <input class="allocation-input" type="text" value="$40.00" readonly>
+                                        </td>
+                                        <td style="text-align:right;">
+                                             <button class="remove-btn">
+                                                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <path d="M5.83333 6.4165V9.9165M8.16667 6.4165V9.9165M11.0833 3.49984V11.6665C11.0833 12.3104 10.5606 12.8332 9.91667 12.8332H4.08333C3.43943 12.8332 2.91667 12.3104 2.91667 11.6665V3.49984M1.75 3.49984H12.25M4.66667 3.49984V2.33317C4.66667 1.68927 5.18943 1.1665 5.83333 1.1665H8.16667C8.81057 1.1665 9.33333 1.68927 9.33333 2.33317V3.49984" stroke="#94A3B8" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  </svg>
+                                                  Remove
+                                             </button>
+                                        </td>
+                                   </tr>
+
+                              </tbody>
+                         </table>
+                    </div>
+
+                    <!-- Add Reservation -->
+                    <div class="add-reservation-row">
+                         <button class="add-reservation-btn">
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                   <path d="M2.91699 6.99984H11.0837M7.00033 2.9165V11.0832" stroke="#0F1723" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                              Add reservation
+                         </button>
+                    </div>
+               </div>
+
+          </div>
+          <!-- End Drawer Body -->
+
+          <!-- Drawer Footer -->
+          <div class="allocation-drawer-footer">
+               <div class="allocation-totals">
+                    <div class="allocation-total-row">
+                         <span class="allocation-total-label">Allocated</span>
+                         <span class="allocation-total-value" id="alloc-allocated-display">$240.00</span>
+                    </div>
+                    <div class="allocation-total-row">
+                         <span class="allocation-total-label">Remaining</span>
+                         <span class="allocation-remaining-value" id="alloc-remaining-display">$0.00</span>
+                    </div>
+               </div>
+               <button class="lock-allocation-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M3.33333 7.33301H12.6667C13.4026 7.33301 14 7.93045 14 8.66634V13.333C14 14.0689 13.4026 14.6663 12.6667 14.6663H3.33333C2.59745 14.6663 2 14.0689 2 13.333V8.66634C2 7.93045 2.59745 7.33301 3.33333 7.33301V7.33301" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                         <path d="M4.66699 7.33301V4.66634C4.66699 2.82662 6.16061 1.33301 8.00033 1.33301C9.84004 1.33301 11.3337 2.82662 11.3337 4.66634V7.33301" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Lock Allocation
+               </button>
+               <p class="allocation-footer-note">Locking will push charges to invoice queue.</p>
+          </div>
+
+     </aside>
 
      <!-- Log Fuel Event Drawer -->
      <div class="fuel-log-overlay" id="fuelLogOverlay" onclick="closeFuelLogDrawer()"></div>
@@ -1194,8 +1713,48 @@
           document.querySelector('.log-fuel-btn').addEventListener('click', openFuelLogDrawer);
 
           document.addEventListener('keydown', function(e) {
-               if (e.key === 'Escape') closeFuelLogDrawer();
+               if (e.key === 'Escape') {
+                    closeFuelLogDrawer();
+                    closeAllocationDrawer();
+               }
           });
+
+          function openAllocationDrawer(e) {
+               e.preventDefault();
+               document.getElementById('allocationDrawer').classList.add('active');
+               document.getElementById('allocationDrawerOverlay').classList.add('active');
+               document.body.style.overflow = 'hidden';
+          }
+
+          function closeAllocationDrawer() {
+               document.getElementById('allocationDrawer').classList.remove('active');
+               document.getElementById('allocationDrawerOverlay').classList.remove('active');
+               document.body.style.overflow = '';
+          }
+
+          function recalcAllocation(inputEl, type, rowIndex) {
+               var totalCost = 240;
+               var totalGal = 45;
+               var row = inputEl.closest('tr');
+               var inputs = row.querySelectorAll('input');
+               var pctInput = inputs[0];
+               var galInput = inputs[1];
+               var costInput = inputs[2];
+
+               if (type === 'pct') {
+                    var pct = parseFloat(pctInput.value) || 0;
+                    var gal = (pct / 100) * totalGal;
+                    var cost = (pct / 100) * totalCost;
+                    galInput.value = gal.toFixed(1);
+                    costInput.value = '$' + cost.toFixed(2);
+               } else {
+                    var gal = parseFloat(galInput.value) || 0;
+                    var pct = (gal / totalGal) * 100;
+                    var cost = (gal / totalGal) * totalCost;
+                    pctInput.value = Math.round(pct);
+                    costInput.value = '$' + cost.toFixed(2);
+               }
+          }
      </script>
 
      @@include("partials/vendor-scripts.html")
